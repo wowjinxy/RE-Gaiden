@@ -55,3 +55,9 @@ used_space.png
 
 # macos files
 .DS_STORE
+/.claude
+nul
+CLAUDE.md
+rgbds.zip
+rgbds_tools/libpng16.dll
+rgbds_tools/zlib1.dll
