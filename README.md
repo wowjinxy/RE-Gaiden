@@ -40,12 +40,22 @@ src/
 
 - `tools/text_dump.py` - Dumps English text strings from the ROM (banks $67-$6A)
 - `tools/map_dump.py` - Extracts and visualizes room/map data (75 rooms)
+- `tools/map_viewer.py` - Tkinter room viewer/editor for tilemap and collision layers
+- `tools/extract_map_assets.py` - Extracts fixed-size map layer files into `data/maps/`
+- `tools/apply_map_assets.py` - Applies `data/maps/` edits during the ROM build
 
 ```
 python tools/text_dump.py game.gbc
 python tools/map_dump.py game.gbc --list
 python tools/map_dump.py game.gbc --room 6
+python tools/extract_map_assets.py game.gbc --force
+python tools/map_viewer.py game.gbc
 ```
+
+Map edits saved by the viewer live in `data/maps/room_XXX/*.bin`. Running
+`make` assembles the disassembly, overlays those map assets into `game.gbc`,
+then runs `rgbfix`, so fixed-size tilemap/collision edits compile without
+manually touching raw bank assembly.
 
 ## Technical Details
 
