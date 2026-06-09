@@ -1,0 +1,2803 @@
+{
+  "format": "re-gaiden-text-assets-v1",
+  "bank": 105,
+  "notes": [
+    "Edit the text field. original_text/raw are used for exact round-tripping when text is unchanged.",
+    "Edited text must fit in the original fixed-size payload.",
+    "Use {XX} inside text to force a raw byte if needed."
+  ],
+  "entries": [
+    {
+      "id": "text_069_40af",
+      "addr": 16559,
+      "rom_offset": 1720495,
+      "length": 14,
+      "original_text": "The Personal",
+      "text": "The Personal",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "14 22 1F 00 00 10 1F 2C 2D 29 28 1B 26 01"
+    },
+    {
+      "id": "text_069_411e",
+      "addr": 16670,
+      "rom_offset": 1720606,
+      "length": 12,
+      "original_text": "This key is",
+      "text": "This key is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 25 1F 33 00 23 2D"
+    },
+    {
+      "id": "text_069_4175",
+      "addr": 16757,
+      "rom_offset": 1720693,
+      "length": 15,
+      "original_text": "This security",
+      "text": "This security",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "14 22 23 2D 00 00 2D 1F 1D 2F 2C 23 2E 02 33"
+    },
+    {
+      "id": "text_069_41ca",
+      "addr": 16842,
+      "rom_offset": 1720778,
+      "length": 12,
+      "original_text": "This key is",
+      "text": "This key is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 25 1F 33 00 23 2D"
+    },
+    {
+      "id": "text_069_420e",
+      "addr": 16910,
+      "rom_offset": 1720846,
+      "length": 12,
+      "original_text": "This key is",
+      "text": "This key is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 25 1F 33 00 23 2D"
+    },
+    {
+      "id": "text_069_4267",
+      "addr": 16999,
+      "rom_offset": 1720935,
+      "length": 12,
+      "original_text": "This key is",
+      "text": "This key is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 25 1F 33 00 23 2D"
+    },
+    {
+      "id": "text_069_42b4",
+      "addr": 17076,
+      "rom_offset": 1721012,
+      "length": 15,
+      "original_text": "A good set of",
+      "text": "A good set of",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "01 00 21 29 00 29 1E 00 2D 1F 2E 00 29 02 20"
+    },
+    {
+      "id": "text_069_4314",
+      "addr": 17172,
+      "rom_offset": 1721108,
+      "length": 12,
+      "original_text": "This key is",
+      "text": "This key is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 25 1F 33 00 23 2D"
+    },
+    {
+      "id": "text_069_4369",
+      "addr": 17257,
+      "rom_offset": 1721193,
+      "length": 12,
+      "original_text": "This key is",
+      "text": "This key is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 25 1F 33 00 23 2D"
+    },
+    {
+      "id": "text_069_43b6",
+      "addr": 17334,
+      "rom_offset": 1721270,
+      "length": 14,
+      "original_text": "This Rope is",
+      "text": "This Rope is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "14 22 23 2D 00 00 12 29 2A 1F 00 23 2D 01"
+    },
+    {
+      "id": "text_069_440a",
+      "addr": 17418,
+      "rom_offset": 1721354,
+      "length": 12,
+      "original_text": "A well worn",
+      "text": "A well worn",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "01 00 31 1F 80 26 26 00 31 29 2C 28"
+    },
+    {
+      "id": "text_069_4462",
+      "addr": 17506,
+      "rom_offset": 1721442,
+      "length": 14,
+      "original_text": "A lavish key",
+      "text": "A lavish key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "01 00 26 1B 00 30 23 2D 22 00 25 1F 33 01"
+    },
+    {
+      "id": "text_069_44aa",
+      "addr": 17578,
+      "rom_offset": 1721514,
+      "length": 15,
+      "original_text": "A key that is",
+      "text": "A key that is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "01 00 25 1F 00 33 00 2E 22 1B 2E 00 23 02 2D"
+    },
+    {
+      "id": "text_069_44ec",
+      "addr": 17644,
+      "rom_offset": 1721580,
+      "length": 12,
+      "original_text": "This key is",
+      "text": "This key is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 25 1F 33 00 23 2D"
+    },
+    {
+      "id": "text_069_4541",
+      "addr": 17729,
+      "rom_offset": 1721665,
+      "length": 14,
+      "original_text": "A grubby key",
+      "text": "A grubby key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "01 00 21 2C 00 2F 1C 1C 33 00 25 1F 33 01"
+    },
+    {
+      "id": "text_069_458b",
+      "addr": 17803,
+      "rom_offset": 1721739,
+      "length": 14,
+      "original_text": "A heavy duty",
+      "text": "A heavy duty",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "01 00 22 1F 00 1B 30 33 00 1E 2F 2E 33 01"
+    },
+    {
+      "id": "text_069_45f5",
+      "addr": 17909,
+      "rom_offset": 1721845,
+      "length": 12,
+      "original_text": "This key is",
+      "text": "This key is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 25 1F 33 00 23 2D"
+    },
+    {
+      "id": "text_069_463a",
+      "addr": 17978,
+      "rom_offset": 1721914,
+      "length": 10,
+      "original_text": "When used",
+      "text": "When used",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 32
+        }
+      ],
+      "raw": "17 22 1F 28 20 00 2F 2D 1F 1E"
+    },
+    {
+      "id": "text_069_468e",
+      "addr": 18062,
+      "rom_offset": 1721998,
+      "length": 15,
+      "original_text": "T hekeys Phae",
+      "text": "T hekeys Phae",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 48
+        }
+      ],
+      "raw": "14 00 22 1F 00 25 1F 33 2D 00 10 22 1B 30 1F"
+    },
+    {
+      "id": "text_069_4702",
+      "addr": 18178,
+      "rom_offset": 1722114,
+      "length": 10,
+      "original_text": "Semtex is",
+      "text": "Semtex is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 32
+        }
+      ],
+      "raw": "13 1F 27 2E 20 1F 32 00 23 2D"
+    },
+    {
+      "id": "text_069_476c",
+      "addr": 18284,
+      "rom_offset": 1722220,
+      "length": 12,
+      "original_text": "It mgfht be",
+      "text": "It mgfht be",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        }
+      ],
+      "raw": "09 2E 00 27 23 21 20 22 2E 00 1C 1F"
+    },
+    {
+      "id": "text_069_47bf",
+      "addr": 18367,
+      "rom_offset": 1722303,
+      "length": 15,
+      "original_text": "This security",
+      "text": "This security",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "14 22 23 2D 00 00 2D 1F 1D 2F 2C 23 2E 02 33"
+    },
+    {
+      "id": "text_069_4825",
+      "addr": 18469,
+      "rom_offset": 1722405,
+      "length": 15,
+      "original_text": "This security",
+      "text": "This security",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "14 22 23 2D 00 00 2D 1F 1D 2F 2C 23 2E 02 33"
+    },
+    {
+      "id": "text_069_4893",
+      "addr": 18579,
+      "rom_offset": 1722515,
+      "length": 17,
+      "original_text": "This is a heavy",
+      "text": "This is a heavy",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "14 22 23 2D 00 00 23 2D 00 1B 00 22 1F 08 1B 30 33"
+    },
+    {
+      "id": "text_069_48ec",
+      "addr": 18668,
+      "rom_offset": 1722604,
+      "length": 11,
+      "original_text": "Maybf this",
+      "text": "Maybf this",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 31
+        }
+      ],
+      "raw": "0D 1B 33 1C 1F 20 00 2E 22 23 2D"
+    },
+    {
+      "id": "text_069_493c",
+      "addr": 18748,
+      "rom_offset": 1722684,
+      "length": 12,
+      "original_text": "This key is",
+      "text": "This key is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 25 1F 33 00 23 2D"
+    },
+    {
+      "id": "text_069_498a",
+      "addr": 18826,
+      "rom_offset": 1722762,
+      "length": 16,
+      "original_text": "This is a Data",
+      "text": "This is a Data",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "14 22 23 2D 00 00 23 2D 00 1B 00 04 1B 04 2E 1B"
+    },
+    {
+      "id": "text_069_49eb",
+      "addr": 18923,
+      "rom_offset": 1722859,
+      "length": 7,
+      "original_text": "A Fire",
+      "text": "A Fire",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 4
+        }
+      ],
+      "raw": "01 00 06 23 04 2C 1F"
+    },
+    {
+      "id": "text_069_4a35",
+      "addr": 18997,
+      "rom_offset": 1722933,
+      "length": 15,
+      "original_text": "This security",
+      "text": "This security",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "14 22 23 2D 00 00 2D 1F 1D 2F 2C 23 2E 02 33"
+    },
+    {
+      "id": "text_069_4a9b",
+      "addr": 19099,
+      "rom_offset": 1723035,
+      "length": 12,
+      "original_text": "This key is",
+      "text": "This key is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 25 1F 33 00 23 2D"
+    },
+    {
+      "id": "text_069_4ae2",
+      "addr": 19170,
+      "rom_offset": 1723106,
+      "length": 12,
+      "original_text": "A low level",
+      "text": "A low level",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "01 00 26 29 80 31 00 26 1F 30 1F 26"
+    },
+    {
+      "id": "text_069_4b3b",
+      "addr": 19259,
+      "rom_offset": 1723195,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4b43",
+      "addr": 19267,
+      "rom_offset": 1723203,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4b4b",
+      "addr": 19275,
+      "rom_offset": 1723211,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4b53",
+      "addr": 19283,
+      "rom_offset": 1723219,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4b5b",
+      "addr": 19291,
+      "rom_offset": 1723227,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4b63",
+      "addr": 19299,
+      "rom_offset": 1723235,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4b6b",
+      "addr": 19307,
+      "rom_offset": 1723243,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4b73",
+      "addr": 19315,
+      "rom_offset": 1723251,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4b7b",
+      "addr": 19323,
+      "rom_offset": 1723259,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4b83",
+      "addr": 19331,
+      "rom_offset": 1723267,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4b8b",
+      "addr": 19339,
+      "rom_offset": 1723275,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4b93",
+      "addr": 19347,
+      "rom_offset": 1723283,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4b9b",
+      "addr": 19355,
+      "rom_offset": 1723291,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4ba3",
+      "addr": 19363,
+      "rom_offset": 1723299,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4bab",
+      "addr": 19371,
+      "rom_offset": 1723307,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4bb3",
+      "addr": 19379,
+      "rom_offset": 1723315,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4bbb",
+      "addr": 19387,
+      "rom_offset": 1723323,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4bc3",
+      "addr": 19395,
+      "rom_offset": 1723331,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4bcb",
+      "addr": 19403,
+      "rom_offset": 1723339,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_4bd3",
+      "addr": 19411,
+      "rom_offset": 1723347,
+      "length": 16,
+      "original_text": "Used to remove",
+      "text": "Used to remove",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "15 2D 1F 1E 00 00 2E 29 00 2C 1F 27 29 04 30 1F"
+    },
+    {
+      "id": "text_069_4bf5",
+      "addr": 19445,
+      "rom_offset": 1723381,
+      "length": 14,
+      "original_text": "The Knife is",
+      "text": "The Knife is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "14 22 1F 00 00 0B 28 23 20 1F 00 23 2D 01"
+    },
+    {
+      "id": "text_069_4c72",
+      "addr": 19570,
+      "rom_offset": 1723506,
+      "length": 11,
+      "original_text": "The trusty",
+      "text": "The trusty",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 64
+        }
+      ],
+      "raw": "14 22 1F 00 40 2E 2C 2F 2D 2E 33"
+    },
+    {
+      "id": "text_069_4cef",
+      "addr": 19695,
+      "rom_offset": 1723631,
+      "length": 16,
+      "original_text": "This is a pump",
+      "text": "This is a pump",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "14 22 23 2D 00 00 23 2D 00 1B 00 2A 2F 04 27 2A"
+    },
+    {
+      "id": "text_069_4d4c",
+      "addr": 19788,
+      "rom_offset": 1723724,
+      "length": 17,
+      "original_text": "This is a fully",
+      "text": "This is a fully",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "14 22 23 2D 00 00 23 2D 00 1B 00 20 2F 08 26 26 33"
+    },
+    {
+      "id": "text_069_4dce",
+      "addr": 19918,
+      "rom_offset": 1723854,
+      "length": 17,
+      "original_text": "This is a heavy",
+      "text": "This is a heavy",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "14 22 23 2D 00 00 23 2D 00 1B 00 22 1F 08 1B 30 33"
+    },
+    {
+      "id": "text_069_4e3d",
+      "addr": 20029,
+      "rom_offset": 1723965,
+      "length": 15,
+      "original_text": "This is a top",
+      "text": "This is a top",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "14 22 23 2D 00 00 23 2D 00 1B 00 2E 29 02 2A"
+    },
+    {
+      "id": "text_069_4ebe",
+      "addr": 20158,
+      "rom_offset": 1724094,
+      "length": 17,
+      "original_text": "When faced with",
+      "text": "When faced with",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "17 22 1F 28 00 00 20 1B 1D 1F 1E 00 31 08 23 2E 22"
+    },
+    {
+      "id": "text_069_4f21",
+      "addr": 20257,
+      "rom_offset": 1724193,
+      "length": 16,
+      "original_text": "Used to remove",
+      "text": "Used to remove",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "15 2D 1F 1E 00 00 2E 29 00 2C 1F 27 29 04 30 1F"
+    },
+    {
+      "id": "text_069_4f41",
+      "addr": 20289,
+      "rom_offset": 1724225,
+      "length": 15,
+      "original_text": "This is light",
+      "text": "This is light",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "14 22 23 2D 00 00 23 2D 00 26 23 21 22 02 2E"
+    },
+    {
+      "id": "text_069_4f94",
+      "addr": 20372,
+      "rom_offset": 1724308,
+      "length": 12,
+      "original_text": "This medium",
+      "text": "This medium",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 27 1F 1E 23 2F 27"
+    },
+    {
+      "id": "text_069_4fe1",
+      "addr": 20449,
+      "rom_offset": 1724385,
+      "length": 11,
+      "original_text": "This heavy",
+      "text": "This heavy",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 64
+        }
+      ],
+      "raw": "14 22 23 2D 40 00 22 1F 1B 30 33"
+    },
+    {
+      "id": "text_069_502d",
+      "addr": 20525,
+      "rom_offset": 1724461,
+      "length": 12,
+      "original_text": "This herbal",
+      "text": "This herbal",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 22 1F 2C 1C 1B 26"
+    },
+    {
+      "id": "text_069_5069",
+      "addr": 20585,
+      "rom_offset": 1724521,
+      "length": 12,
+      "original_text": "This herbal",
+      "text": "This herbal",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 22 1F 2C 1C 1B 26"
+    },
+    {
+      "id": "text_069_50a6",
+      "addr": 20646,
+      "rom_offset": 1724582,
+      "length": 12,
+      "original_text": "This herbal",
+      "text": "This herbal",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 22 1F 2C 1C 1B 26"
+    },
+    {
+      "id": "text_069_50e2",
+      "addr": 20706,
+      "rom_offset": 1724642,
+      "length": 12,
+      "original_text": "This herbal",
+      "text": "This herbal",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 22 1F 2C 1C 1B 26"
+    },
+    {
+      "id": "text_069_512c",
+      "addr": 20780,
+      "rom_offset": 1724716,
+      "length": 12,
+      "original_text": "This herbal",
+      "text": "This herbal",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 22 1F 2C 1C 1B 26"
+    },
+    {
+      "id": "text_069_5197",
+      "addr": 20887,
+      "rom_offset": 1724823,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_519f",
+      "addr": 20895,
+      "rom_offset": 1724831,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_51a7",
+      "addr": 20903,
+      "rom_offset": 1724839,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_51af",
+      "addr": 20911,
+      "rom_offset": 1724847,
+      "length": 15,
+      "original_text": "These bullets",
+      "text": "These bullets",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "14 22 1F 2D 00 1F 00 1C 2F 26 26 1F 2E 02 2D"
+    },
+    {
+      "id": "text_069_51e3",
+      "addr": 20963,
+      "rom_offset": 1724899,
+      "length": 14,
+      "original_text": "These shells",
+      "text": "These shells",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "14 22 1F 2D 00 1F 00 2D 22 1F 26 26 2D 01"
+    },
+    {
+      "id": "text_069_5216",
+      "addr": 21014,
+      "rom_offset": 1724950,
+      "length": 12,
+      "original_text": "This bullet",
+      "text": "This bullet",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 22 23 2D 80 00 1C 2F 26 26 1F 2E"
+    },
+    {
+      "id": "text_069_5253",
+      "addr": 21075,
+      "rom_offset": 1725011,
+      "length": 14,
+      "original_text": "These rounds",
+      "text": "These rounds",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "14 22 1F 2D 00 1F 00 2C 29 2F 28 1E 2D 01"
+    },
+    {
+      "id": "text_069_528b",
+      "addr": 21131,
+      "rom_offset": 1725067,
+      "length": 16,
+      "original_text": "These missiles",
+      "text": "These missiles",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "14 22 1F 2D 00 1F 00 27 23 2D 2D 23 26 04 1F 2D"
+    },
+    {
+      "id": "text_069_52c9",
+      "addr": 21193,
+      "rom_offset": 1725129,
+      "length": 14,
+      "original_text": "These rounds",
+      "text": "These rounds",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "14 22 1F 2D 00 1F 00 2C 29 2F 28 1E 2D 01"
+    },
+    {
+      "id": "text_069_5302",
+      "addr": 21250,
+      "rom_offset": 1725186,
+      "length": 14,
+      "original_text": "Always be on",
+      "text": "Always be on",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "01 26 31 1B 00 33 2D 00 1C 1F 00 29 28 01"
+    },
+    {
+      "id": "text_069_5372",
+      "addr": 21362,
+      "rom_offset": 1725298,
+      "length": 14,
+      "original_text": " Appy a Pher",
+      "text": " Appy a Pher",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 38
+        },
+        {
+          "after": 12,
+          "byte": 28
+        }
+      ],
+      "raw": "00 01 2A 2A 26 33 00 1B 00 10 22 1F 2C 1C"
+    },
+    {
+      "id": "text_069_53b7",
+      "addr": 21431,
+      "rom_offset": 1725367,
+      "length": 16,
+      "original_text": "Sea ch zombHes",
+      "text": "Sea ch zombHes",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 35
+        }
+      ],
+      "raw": "13 1F 1B 00 2C 1D 22 00 34 29 27 1C 08 23 1F 2D"
+    },
+    {
+      "id": "text_069_5416",
+      "addr": 21526,
+      "rom_offset": 1725462,
+      "length": 16,
+      "original_text": "To escape from",
+      "text": "To escape from",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "14 29 00 1F 00 2D 1D 1B 2A 1F 00 20 2C 04 29 27"
+    },
+    {
+      "id": "text_069_5461",
+      "addr": 21601,
+      "rom_offset": 1725537,
+      "length": 17,
+      "original_text": "When you try to",
+      "text": "When you try to",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "17 22 1F 28 00 00 33 29 2F 00 2E 2C 33 08 00 2E 29"
+    },
+    {
+      "id": "text_069_54d1",
+      "addr": 21713,
+      "rom_offset": 1725649,
+      "length": 14,
+      "original_text": " Zomies Pwil",
+      "text": " Zomies Pwil",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 28
+        },
+        {
+          "after": 12,
+          "byte": 38
+        }
+      ],
+      "raw": "00 1A 29 27 1C 23 1F 2D 00 10 31 23 26 26"
+    },
+    {
+      "id": "text_069_551c",
+      "addr": 21788,
+      "rom_offset": 1725724,
+      "length": 16,
+      "original_text": "Oncey ou statA",
+      "text": "Oncey ou statA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 44
+        }
+      ],
+      "raw": "0F 28 1D 1F 00 33 00 29 2F 00 2D 2E 1B 2C 2E 01"
+    },
+    {
+      "id": "text_069_5563",
+      "addr": 21859,
+      "rom_offset": 1725795,
+      "length": 15,
+      "original_text": "You can equip",
+      "text": "You can equip",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "19 29 2F 00 00 1D 1B 28 00 1F 2B 2F 23 02 2A"
+    },
+    {
+      "id": "text_069_55b4",
+      "addr": 21940,
+      "rom_offset": 1725876,
+      "length": 15,
+      "original_text": "You also have",
+      "text": "You also have",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "19 29 2F 00 00 1B 26 2D 29 00 22 1B 30 02 1F"
+    },
+    {
+      "id": "text_069_5626",
+      "addr": 22054,
+      "rom_offset": 1725990,
+      "length": 12,
+      "original_text": "To unlock a",
+      "text": "To unlock a",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "14 29 00 2F 80 28 26 29 1D 25 00 1B"
+    },
+    {
+      "id": "text_069_5674",
+      "addr": 22132,
+      "rom_offset": 1726068,
+      "length": 17,
+      "original_text": "To ue  an itm.A",
+      "text": "To ue  an itm.A",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 45
+        },
+        {
+          "after": 12,
+          "byte": 31
+        }
+      ],
+      "raw": "14 29 00 2F 2D 1F 00 00 1B 28 00 23 2E 1F 27 3F 01"
+    },
+    {
+      "id": "text_069_56bc",
+      "addr": 22204,
+      "rom_offset": 1726140,
+      "length": 15,
+      "original_text": "Some of these",
+      "text": "Some of these",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "13 29 27 1F 00 00 29 20 00 2E 22 1F 2D 02 1F"
+    },
+    {
+      "id": "text_069_56ff",
+      "addr": 22271,
+      "rom_offset": 1726207,
+      "length": 12,
+      "original_text": " If ou aDre",
+      "text": " If ou aDre",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 51
+        }
+      ],
+      "raw": "00 09 20 00 33 29 2F 00 1B 04 2C 1F"
+    },
+    {
+      "id": "text_069_574c",
+      "addr": 22348,
+      "rom_offset": 1726284,
+      "length": 17,
+      "original_text": "Use the blue or",
+      "text": "Use the blue or",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "15 2D 1F 00 00 2E 22 1F 00 1C 26 2F 1F 08 00 29 2C"
+    },
+    {
+      "id": "text_069_5795",
+      "addr": 22421,
+      "rom_offset": 1726357,
+      "length": 14,
+      "original_text": "You  displaB",
+      "text": "You  displaB",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 51
+        }
+      ],
+      "raw": "19 29 2F 00 2C 00 1E 23 2D 2A 26 1B 02 33"
+    },
+    {
+      "id": "text_069_57d3",
+      "addr": 22483,
+      "rom_offset": 1726419,
+      "length": 10,
+      "original_text": "Be on the",
+      "text": "Be on the",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 32
+        }
+      ],
+      "raw": "02 1F 00 29 20 28 00 2E 22 1F"
+    },
+    {
+      "id": "text_069_583c",
+      "addr": 22588,
+      "rom_offset": 1726524,
+      "length": 13,
+      "original_text": "The trfonger",
+      "text": "The trfonger",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 45
+        }
+      ],
+      "raw": "14 22 1F 00 2D 2E 2C 20 29 28 21 1F 2C"
+    },
+    {
+      "id": "text_069_58a0",
+      "addr": 22688,
+      "rom_offset": 1726624,
+      "length": 10,
+      "original_text": "RemebHer.",
+      "text": "RemebHer.",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 39
+        }
+      ],
+      "raw": "12 1F 27 1F 27 1C 08 1F 2C 3F"
+    },
+    {
+      "id": "text_069_590c",
+      "addr": 22796,
+      "rom_offset": 1726732,
+      "length": 12,
+      "original_text": "Lookuft for",
+      "text": "Lookuft for",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 41
+        }
+      ],
+      "raw": "0C 29 29 25 29 2F 20 2E 00 20 29 2C"
+    },
+    {
+      "id": "text_069_5958",
+      "addr": 22872,
+      "rom_offset": 1726808,
+      "length": 14,
+      "original_text": "Your current",
+      "text": "Your current",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "19 29 2F 2C 00 00 1D 2F 2C 2C 1F 28 2E 01"
+    },
+    {
+      "id": "text_069_5992",
+      "addr": 22930,
+      "rom_offset": 1726866,
+      "length": 15,
+      "original_text": " You PDAf wil",
+      "text": " You PDAf wil",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 38
+        }
+      ],
+      "raw": "00 19 29 2F 2C 00 10 04 01 20 00 31 23 26 26"
+    },
+    {
+      "id": "text_069_5a0c",
+      "addr": 23052,
+      "rom_offset": 1726988,
+      "length": 14,
+      "original_text": "Your current",
+      "text": "Your current",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "19 29 2F 2C 00 00 1D 2F 2C 2C 1F 28 2E 01"
+    },
+    {
+      "id": "text_069_5a6f",
+      "addr": 23151,
+      "rom_offset": 1727087,
+      "length": 15,
+      "original_text": "Your map will",
+      "text": "Your map will",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "19 29 2F 2C 00 00 27 1B 2A 00 31 23 26 02 26"
+    },
+    {
+      "id": "text_069_5ac0",
+      "addr": 23232,
+      "rom_offset": 1727168,
+      "length": 17,
+      "original_text": "As you complete",
+      "text": "As you complete",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "01 2D 00 33 00 29 2F 00 1D 29 27 2A 26 08 1F 2E 1F"
+    },
+    {
+      "id": "text_069_5b0e",
+      "addr": 23310,
+      "rom_offset": 1727246,
+      "length": 13,
+      "original_text": "You ayf then",
+      "text": "You ayf then",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 39
+        }
+      ],
+      "raw": "19 29 2F 00 27 1B 33 20 00 2E 22 1F 28"
+    },
+    {
+      "id": "text_069_5b4a",
+      "addr": 23370,
+      "rom_offset": 1727306,
+      "length": 14,
+      "original_text": "A t et tiHme",
+      "text": "A t et tiHme",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 45
+        },
+        {
+          "after": 12,
+          "byte": 45
+        }
+      ],
+      "raw": "01 00 2E 00 2D 1F 2E 00 2E 23 08 27 1F 2D"
+    },
+    {
+      "id": "text_069_5b92",
+      "addr": 23442,
+      "rom_offset": 1727378,
+      "length": 14,
+      "original_text": "Y oumay tHhe",
+      "text": "Y oumay tHhe",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 40
+        }
+      ],
+      "raw": "19 00 29 2F 00 27 1B 33 00 2E 08 22 1F 28"
+    },
+    {
+      "id": "text_069_5beb",
+      "addr": 23531,
+      "rom_offset": 1727467,
+      "length": 12,
+      "original_text": "You may use",
+      "text": "You may use",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "19 29 2F 00 80 27 1B 33 00 2F 2D 1F"
+    },
+    {
+      "id": "text_069_5c2e",
+      "addr": 23598,
+      "rom_offset": 1727534,
+      "length": 11,
+      "original_text": " Onc youBr",
+      "text": " Onc youBr",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 31
+        }
+      ],
+      "raw": "00 0F 28 1D 1F 00 33 29 2F 02 2C"
+    },
+    {
+      "id": "text_069_5c7d",
+      "addr": 23677,
+      "rom_offset": 1727613,
+      "length": 16,
+      "original_text": "Th esight Pwll",
+      "text": "Th esight Pwll",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 35
+        }
+      ],
+      "raw": "14 22 00 1F 00 2D 23 21 22 2E 00 10 31 23 26 26"
+    },
+    {
+      "id": "text_069_5cba",
+      "addr": 23738,
+      "rom_offset": 1727674,
+      "length": 12,
+      "original_text": "Deacivate",
+      "text": "Deacivate",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 46
+        }
+      ],
+      "raw": "04 1F 49 1B 80 1D 2E 23 30 1B 2E 1F"
+    },
+    {
+      "id": "text_069_5d12",
+      "addr": 23826,
+      "rom_offset": 1727762,
+      "length": 10,
+      "original_text": "OnceiHn a",
+      "text": "OnceiHn a",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        }
+      ],
+      "raw": "0F 28 1D 1F 00 23 08 28 00 1B"
+    },
+    {
+      "id": "text_069_5d79",
+      "addr": 23929,
+      "rom_offset": 1727865,
+      "length": 15,
+      "original_text": "Re mmber tHht",
+      "text": "Re mmber tHht",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 31
+        },
+        {
+          "after": 12,
+          "byte": 27
+        }
+      ],
+      "raw": "12 1F 00 27 1F 27 1C 1F 2C 00 2E 08 22 1B 2E"
+    },
+    {
+      "id": "text_069_5dcc",
+      "addr": 24012,
+      "rom_offset": 1727948,
+      "length": 14,
+      "original_text": "You need the",
+      "text": "You need the",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "19 29 2F 00 00 28 1F 1F 1E 00 2E 22 1F 01"
+    },
+    {
+      "id": "text_069_5e13",
+      "addr": 24083,
+      "rom_offset": 1728019,
+      "length": 13,
+      "original_text": "The perator",
+      "text": "The perator",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 41
+        }
+      ],
+      "raw": "14 22 1F 00 29 80 2A 1F 2C 1B 2E 29 2C"
+    },
+    {
+      "id": "text_069_5e6e",
+      "addr": 24174,
+      "rom_offset": 1728110,
+      "length": 16,
+      "original_text": "To catch up on",
+      "text": "To catch up on",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "14 29 00 1D 00 1B 2E 1D 22 00 2F 2A 00 04 29 28"
+    },
+    {
+      "id": "text_069_5ec1",
+      "addr": 24257,
+      "rom_offset": 1728193,
+      "length": 16,
+      "original_text": "Ma n technPial",
+      "text": "Ma n technPial",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 51
+        },
+        {
+          "after": 12,
+          "byte": 29
+        }
+      ],
+      "raw": "0D 1B 00 28 33 00 2E 1F 1D 22 28 10 23 1D 1B 26"
+    },
+    {
+      "id": "text_069_5f06",
+      "addr": 24326,
+      "rom_offset": 1728262,
+      "length": 12,
+      "original_text": "During meal",
+      "text": "During meal",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "04 2F 2C 23 80 28 21 00 27 1F 1B 26"
+    },
+    {
+      "id": "text_069_5f49",
+      "addr": 24393,
+      "rom_offset": 1728329,
+      "length": 14,
+      "original_text": " Thi KitPche",
+      "text": " Thi KitPche",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 45
+        },
+        {
+          "after": 12,
+          "byte": 40
+        }
+      ],
+      "raw": "00 14 22 23 2D 00 0B 23 2E 10 1D 22 1F 28"
+    },
+    {
+      "id": "text_069_5fbd",
+      "addr": 24509,
+      "rom_offset": 1728445,
+      "length": 10,
+      "original_text": "Objective",
+      "text": "Objective",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "0F 1C 24 1F 60 1D 2E 23 30 1F"
+    },
+    {
+      "id": "text_069_5fce",
+      "addr": 24526,
+      "rom_offset": 1728462,
+      "length": 15,
+      "original_text": "Make your way",
+      "text": "Make your way",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "0D 1B 25 1F 00 00 33 29 2F 2C 00 31 1B 02 33"
+    },
+    {
+      "id": "text_069_602b",
+      "addr": 24619,
+      "rom_offset": 1728555,
+      "length": 15,
+      "original_text": "Make your way",
+      "text": "Make your way",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "0D 1B 25 1F 00 00 33 29 2F 2C 00 31 1B 02 33"
+    },
+    {
+      "id": "text_069_6083",
+      "addr": 24707,
+      "rom_offset": 1728643,
+      "length": 17,
+      "original_text": "Find the key to",
+      "text": "Find the key to",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "06 23 28 1E 00 00 2E 22 1F 00 25 1F 33 08 00 2E 29"
+    },
+    {
+      "id": "text_069_60e0",
+      "addr": 24800,
+      "rom_offset": 1728736,
+      "length": 16,
+      "original_text": "Locate the Sun",
+      "text": "Locate the Sun",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "0C 29 1D 1B 00 2E 1F 00 2E 22 1F 00 13 04 2F 28"
+    },
+    {
+      "id": "text_069_6118",
+      "addr": 24856,
+      "rom_offset": 1728792,
+      "length": 11,
+      "original_text": "Follow the",
+      "text": "Follow the",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 64
+        }
+      ],
+      "raw": "06 29 26 26 40 29 31 00 2E 22 1F"
+    },
+    {
+      "id": "text_069_6154",
+      "addr": 24916,
+      "rom_offset": 1728852,
+      "length": 14,
+      "original_text": "Locate Leon\n",
+      "text": "Locate Leon\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "0C 29 1D 1B 00 2E 1F 00 0C 1F 29 28 40 03"
+    },
+    {
+      "id": "text_069_6169",
+      "addr": 24937,
+      "rom_offset": 1728873,
+      "length": 14,
+      "original_text": "Find the 2nd",
+      "text": "Find the 2nd",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "06 23 28 1E 00 00 2E 22 1F 00 37 28 1E 01"
+    },
+    {
+      "id": "text_069_61c6",
+      "addr": 25030,
+      "rom_offset": 1728966,
+      "length": 16,
+      "original_text": "Locate the 2nd",
+      "text": "Locate the 2nd",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "0C 29 1D 1B 00 2E 1F 00 2E 22 1F 00 37 04 28 1E"
+    },
+    {
+      "id": "text_069_6224",
+      "addr": 25124,
+      "rom_offset": 1729060,
+      "length": 15,
+      "original_text": "Gain entry to",
+      "text": "Gain entry to",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "07 1B 23 28 00 00 1F 28 2E 2C 33 00 2E 02 29"
+    },
+    {
+      "id": "text_069_627f",
+      "addr": 25215,
+      "rom_offset": 1729151,
+      "length": 15,
+      "original_text": "Rop  is oftDn",
+      "text": "Rop  is oftDn",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 31
+        },
+        {
+          "after": 12,
+          "byte": 31
+        }
+      ],
+      "raw": "12 29 2A 00 1F 00 23 2D 00 29 20 2E 04 1F 28"
+    },
+    {
+      "id": "text_069_62b4",
+      "addr": 25268,
+      "rom_offset": 1729204,
+      "length": 17,
+      "original_text": "Use the monitor",
+      "text": "Use the monitor",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "15 2D 1F 00 00 2E 22 1F 00 27 29 28 23 08 2E 29 2C"
+    },
+    {
+      "id": "text_069_62fe",
+      "addr": 25342,
+      "rom_offset": 1729278,
+      "length": 17,
+      "original_text": "Go to the Upper",
+      "text": "Go to the Upper",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "07 29 00 2E 00 29 00 2E 22 1F 00 15 2A 08 2A 1F 2C"
+    },
+    {
+      "id": "text_069_6343",
+      "addr": 25411,
+      "rom_offset": 1729347,
+      "length": 17,
+      "original_text": "Escape from the",
+      "text": "Escape from the",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "05 2D 1D 1B 00 2A 1F 00 20 2C 29 27 00 08 2E 22 1F"
+    },
+    {
+      "id": "text_069_6385",
+      "addr": 25477,
+      "rom_offset": 1729413,
+      "length": 11,
+      "original_text": "Locate the",
+      "text": "Locate the",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 64
+        }
+      ],
+      "raw": "0C 29 1D 1B 40 2E 1F 00 2E 22 1F"
+    },
+    {
+      "id": "text_069_63d4",
+      "addr": 25556,
+      "rom_offset": 1729492,
+      "length": 15,
+      "original_text": "Find the Data",
+      "text": "Find the Data",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "06 23 28 1E 00 00 2E 22 1F 00 04 1B 2E 02 1B"
+    },
+    {
+      "id": "text_069_6423",
+      "addr": 25635,
+      "rom_offset": 1729571,
+      "length": 14,
+      "original_text": "Activate the",
+      "text": "Activate the",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "01 1D 2E 23 00 30 1B 2E 1F 00 2E 22 1F 01"
+    },
+    {
+      "id": "text_069_6470",
+      "addr": 25712,
+      "rom_offset": 1729648,
+      "length": 11,
+      "original_text": "Locate the",
+      "text": "Locate the",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 64
+        }
+      ],
+      "raw": "0C 29 1D 1B 40 2E 1F 00 2E 22 1F"
+    },
+    {
+      "id": "text_069_64ab",
+      "addr": 25771,
+      "rom_offset": 1729707,
+      "length": 11,
+      "original_text": "Locate the",
+      "text": "Locate the",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 64
+        }
+      ],
+      "raw": "0C 29 1D 1B 40 2E 1F 00 2E 22 1F"
+    },
+    {
+      "id": "text_069_64fe",
+      "addr": 25854,
+      "rom_offset": 1729790,
+      "length": 10,
+      "original_text": "Force the",
+      "text": "Force the",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 32
+        }
+      ],
+      "raw": "06 29 2C 1D 20 1F 00 2E 22 1F"
+    },
+    {
+      "id": "text_069_6536",
+      "addr": 25910,
+      "rom_offset": 1729846,
+      "length": 15,
+      "original_text": "Make your way",
+      "text": "Make your way",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "0D 1B 25 1F 00 00 33 29 2F 2C 00 31 1B 02 33"
+    },
+    {
+      "id": "text_069_656a",
+      "addr": 25962,
+      "rom_offset": 1729898,
+      "length": 15,
+      "original_text": "Locate ship's",
+      "text": "Locate ship's",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "0C 29 1D 1B 00 2E 1F 00 2D 22 23 2A 44 02 2D"
+    },
+    {
+      "id": "text_069_65a5",
+      "addr": 26021,
+      "rom_offset": 1729957,
+      "length": 15,
+      "original_text": "Return to the",
+      "text": "Return to the",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "12 1F 2E 2F 00 2C 28 00 2E 29 00 2E 22 02 1F"
+    },
+    {
+      "id": "text_069_662b",
+      "addr": 26155,
+      "rom_offset": 1730091,
+      "length": 9,
+      "original_text": "WARNING-",
+      "text": "WARNING-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 112
+        }
+      ],
+      "raw": "17 01 12 0E 70 09 0E 07 45"
+    },
+    {
+      "id": "text_069_663c",
+      "addr": 26172,
+      "rom_offset": 1730108,
+      "length": 12,
+      "original_text": "You already",
+      "text": "You already",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "19 29 2F 00 80 1B 26 2C 1F 1B 1E 33"
+    },
+    {
+      "id": "text_069_66a4",
+      "addr": 26276,
+      "rom_offset": 1730212,
+      "length": 9,
+      "original_text": "WARNING-",
+      "text": "WARNING-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 112
+        }
+      ],
+      "raw": "17 01 12 0E 70 09 0E 07 45"
+    },
+    {
+      "id": "text_069_66b5",
+      "addr": 26293,
+      "rom_offset": 1730229,
+      "length": 17,
+      "original_text": "You do not have",
+      "text": "You do not have",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "19 29 2F 00 00 1E 29 00 28 29 2E 00 22 08 1B 30 1F"
+    },
+    {
+      "id": "text_069_6724",
+      "addr": 26404,
+      "rom_offset": 1730340,
+      "length": 9,
+      "original_text": "WARNING-",
+      "text": "WARNING-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 112
+        }
+      ],
+      "raw": "17 01 12 0E 70 09 0E 07 45"
+    },
+    {
+      "id": "text_069_6735",
+      "addr": 26421,
+      "rom_offset": 1730357,
+      "length": 12,
+      "original_text": "You already",
+      "text": "You already",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "19 29 2F 00 80 1B 26 2C 1F 1B 1E 33"
+    },
+    {
+      "id": "text_069_679d",
+      "addr": 26525,
+      "rom_offset": 1730461,
+      "length": 9,
+      "original_text": "WARNING-",
+      "text": "WARNING-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 112
+        }
+      ],
+      "raw": "17 01 12 0E 70 09 0E 07 45"
+    },
+    {
+      "id": "text_069_67ae",
+      "addr": 26542,
+      "rom_offset": 1730478,
+      "length": 12,
+      "original_text": "You already",
+      "text": "You already",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "19 29 2F 00 80 1B 26 2C 1F 1B 1E 33"
+    },
+    {
+      "id": "text_069_6816",
+      "addr": 26646,
+      "rom_offset": 1730582,
+      "length": 9,
+      "original_text": "WARNING-",
+      "text": "WARNING-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 112
+        }
+      ],
+      "raw": "17 01 12 0E 70 09 0E 07 45"
+    },
+    {
+      "id": "text_069_6827",
+      "addr": 26663,
+      "rom_offset": 1730599,
+      "length": 12,
+      "original_text": "You already",
+      "text": "You already",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "19 29 2F 00 80 1B 26 2C 1F 1B 1E 33"
+    },
+    {
+      "id": "text_069_6868",
+      "addr": 26728,
+      "rom_offset": 1730664,
+      "length": 12,
+      "original_text": "Yo ucannotA",
+      "text": "Yo ucannotA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        }
+      ],
+      "raw": "19 29 00 2F 00 1D 1B 28 28 29 2E 01"
+    },
+    {
+      "id": "text_069_6898",
+      "addr": 26776,
+      "rom_offset": 1730712,
+      "length": 9,
+      "original_text": "WARNING-",
+      "text": "WARNING-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 112
+        }
+      ],
+      "raw": "17 01 12 0E 70 09 0E 07 45"
+    },
+    {
+      "id": "text_069_68a9",
+      "addr": 26793,
+      "rom_offset": 1730729,
+      "length": 12,
+      "original_text": "You already",
+      "text": "You already",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "19 29 2F 00 80 1B 26 2C 1F 1B 1E 33"
+    },
+    {
+      "id": "text_069_68e8",
+      "addr": 26856,
+      "rom_offset": 1730792,
+      "length": 11,
+      "original_text": "You cannot",
+      "text": "You cannot",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 64
+        }
+      ],
+      "raw": "19 29 2F 00 40 1D 1B 28 28 29 2E"
+    },
+    {
+      "id": "text_069_6918",
+      "addr": 26904,
+      "rom_offset": 1730840,
+      "length": 9,
+      "original_text": "WARNING-",
+      "text": "WARNING-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 112
+        }
+      ],
+      "raw": "17 01 12 0E 70 09 0E 07 45"
+    },
+    {
+      "id": "text_069_6929",
+      "addr": 26921,
+      "rom_offset": 1730857,
+      "length": 12,
+      "original_text": "You already",
+      "text": "You already",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "19 29 2F 00 80 1B 26 2C 1F 1B 1E 33"
+    },
+    {
+      "id": "text_069_696c",
+      "addr": 26988,
+      "rom_offset": 1730924,
+      "length": 12,
+      "original_text": " YoucannDot",
+      "text": " YoucannDot",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        }
+      ],
+      "raw": "00 19 29 2F 00 1D 1B 28 28 04 29 2E"
+    },
+    {
+      "id": "text_069_699c",
+      "addr": 27036,
+      "rom_offset": 1730972,
+      "length": 9,
+      "original_text": "WARNING-",
+      "text": "WARNING-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 112
+        }
+      ],
+      "raw": "17 01 12 0E 70 09 0E 07 45"
+    },
+    {
+      "id": "text_069_69ad",
+      "addr": 27053,
+      "rom_offset": 1730989,
+      "length": 12,
+      "original_text": "You already",
+      "text": "You already",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "19 29 2F 00 80 1B 26 2C 1F 1B 1E 33"
+    },
+    {
+      "id": "text_069_69ed",
+      "addr": 27117,
+      "rom_offset": 1731053,
+      "length": 11,
+      "original_text": "You annot",
+      "text": "You annot",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 29
+        }
+      ],
+      "raw": "19 29 2F 80 00 1D 1B 28 28 29 2E"
+    },
+    {
+      "id": "text_069_6a1d",
+      "addr": 27165,
+      "rom_offset": 1731101,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_6a26",
+      "addr": 27174,
+      "rom_offset": 1731110,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_6a2f",
+      "addr": 27183,
+      "rom_offset": 1731119,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_6a38",
+      "addr": 27192,
+      "rom_offset": 1731128,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_069_6a41",
+      "addr": 27201,
+      "rom_offset": 1731137,
+      "length": 9,
+      "original_text": "WARNING-",
+      "text": "WARNING-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 112
+        }
+      ],
+      "raw": "17 01 12 0E 70 09 0E 07 45"
+    },
+    {
+      "id": "text_069_6a52",
+      "addr": 27218,
+      "rom_offset": 1731154,
+      "length": 17,
+      "original_text": "You do not have",
+      "text": "You do not have",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "19 29 2F 00 00 1E 29 00 28 29 2E 00 22 08 1B 30 1F"
+    },
+    {
+      "id": "text_069_6aa2",
+      "addr": 27298,
+      "rom_offset": 1731234,
+      "length": 9,
+      "original_text": "WARNING-",
+      "text": "WARNING-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 112
+        }
+      ],
+      "raw": "17 01 12 0E 70 09 0E 07 45"
+    },
+    {
+      "id": "text_069_6ab3",
+      "addr": 27315,
+      "rom_offset": 1731251,
+      "length": 17,
+      "original_text": "You do not have",
+      "text": "You do not have",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "19 29 2F 00 00 1E 29 00 28 29 2E 00 22 08 1B 30 1F"
+    },
+    {
+      "id": "text_069_6b03",
+      "addr": 27395,
+      "rom_offset": 1731331,
+      "length": 9,
+      "original_text": "WARNING-",
+      "text": "WARNING-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 112
+        }
+      ],
+      "raw": "17 01 12 0E 70 09 0E 07 45"
+    },
+    {
+      "id": "text_069_6b14",
+      "addr": 27412,
+      "rom_offset": 1731348,
+      "length": 17,
+      "original_text": "You do not have",
+      "text": "You do not have",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "19 29 2F 00 00 1E 29 00 28 29 2E 00 22 08 1B 30 1F"
+    },
+    {
+      "id": "text_069_6b6b",
+      "addr": 27499,
+      "rom_offset": 1731435,
+      "length": 9,
+      "original_text": "WARNING-",
+      "text": "WARNING-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 112
+        }
+      ],
+      "raw": "17 01 12 0E 70 09 0E 07 45"
+    },
+    {
+      "id": "text_069_6b7c",
+      "addr": 27516,
+      "rom_offset": 1731452,
+      "length": 17,
+      "original_text": "You do not have",
+      "text": "You do not have",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "19 29 2F 00 00 1E 29 00 28 29 2E 00 22 08 1B 30 1F"
+    },
+    {
+      "id": "text_069_6bd1",
+      "addr": 27601,
+      "rom_offset": 1731537,
+      "length": 9,
+      "original_text": "WARNING-",
+      "text": "WARNING-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 112
+        }
+      ],
+      "raw": "17 01 12 0E 70 09 0E 07 45"
+    },
+    {
+      "id": "text_069_6be2",
+      "addr": 27618,
+      "rom_offset": 1731554,
+      "length": 17,
+      "original_text": "You do not have",
+      "text": "You do not have",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "19 29 2F 00 00 1E 29 00 28 29 2E 00 22 08 1B 30 1F"
+    },
+    {
+      "id": "text_069_6c3b",
+      "addr": 27707,
+      "rom_offset": 1731643,
+      "length": 9,
+      "original_text": "WARNING-",
+      "text": "WARNING-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 112
+        }
+      ],
+      "raw": "17 01 12 0E 70 09 0E 07 45"
+    },
+    {
+      "id": "text_069_6c4c",
+      "addr": 27724,
+      "rom_offset": 1731660,
+      "length": 17,
+      "original_text": "You do not have",
+      "text": "You do not have",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "19 29 2F 00 00 1E 29 00 28 29 2E 00 22 08 1B 30 1F"
+    }
+  ]
+}

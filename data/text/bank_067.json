@@ -1,0 +1,3982 @@
+{
+  "format": "re-gaiden-text-assets-v1",
+  "bank": 103,
+  "notes": [
+    "Edit the text field. original_text/raw are used for exact round-tripping when text is unchanged.",
+    "Edited text must fit in the original fixed-size payload.",
+    "Use {XX} inside text to force a raw byte if needed."
+  ],
+  "entries": [
+    {
+      "id": "text_067_40af",
+      "addr": 16559,
+      "rom_offset": 1687727,
+      "length": 3,
+      "original_text": "PDA",
+      "text": "PDA",
+      "layout": [],
+      "raw": "10 04 01"
+    },
+    {
+      "id": "text_067_40ba",
+      "addr": 16570,
+      "rom_offset": 1687738,
+      "length": 16,
+      "original_text": "Elevator 1 Key",
+      "text": "Elevator 1 Key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "05 26 1F 30 00 1B 2E 29 2C 00 36 00 0B 0C 1F 33"
+    },
+    {
+      "id": "text_067_40d1",
+      "addr": 16593,
+      "rom_offset": 1687761,
+      "length": 15,
+      "original_text": "Security Card",
+      "text": "Security Card",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "13 1F 1D 2F 00 2C 23 2E 33 00 03 1B 2C 06 1E"
+    },
+    {
+      "id": "text_067_40e7",
+      "addr": 16615,
+      "rom_offset": 1687783,
+      "length": 14,
+      "original_text": "Bar Room Key",
+      "text": "Bar Room Key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "02 1B 2C 00 00 12 29 29 27 00 0B 1F 33 03"
+    },
+    {
+      "id": "text_067_40fc",
+      "addr": 16636,
+      "rom_offset": 1687804,
+      "length": 16,
+      "original_text": "Elevator 2 Key",
+      "text": "Elevator 2 Key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "05 26 1F 30 00 1B 2E 29 2C 00 37 00 0B 0C 1F 33"
+    },
+    {
+      "id": "text_067_4113",
+      "addr": 16659,
+      "rom_offset": 1687827,
+      "length": 15,
+      "original_text": "2nd Class Key",
+      "text": "2nd Class Key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "37 28 1E 00 00 03 26 1B 2D 2D 00 0B 1F 06 33"
+    },
+    {
+      "id": "text_067_4129",
+      "addr": 16681,
+      "rom_offset": 1687849,
+      "length": 10,
+      "original_text": "Lock Pick",
+      "text": "Lock Pick",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "0C 29 1D 25 60 00 10 23 1D 25"
+    },
+    {
+      "id": "text_067_413a",
+      "addr": 16698,
+      "rom_offset": 1687866,
+      "length": 15,
+      "original_text": "Cabin C34 Key",
+      "text": "Cabin C34 Key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "03 1B 1C 23 00 28 00 03 38 39 00 0B 1F 06 33"
+    },
+    {
+      "id": "text_067_4150",
+      "addr": 16720,
+      "rom_offset": 1687888,
+      "length": 15,
+      "original_text": "1st Class Key",
+      "text": "1st Class Key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "36 2D 2E 00 00 03 26 1B 2D 2D 00 0B 1F 06 33"
+    },
+    {
+      "id": "text_067_4166",
+      "addr": 16742,
+      "rom_offset": 1687910,
+      "length": 5,
+      "original_text": "Rope",
+      "text": "Rope",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 3
+        }
+      ],
+      "raw": "12 29 2A 1F 03"
+    },
+    {
+      "id": "text_067_4172",
+      "addr": 16754,
+      "rom_offset": 1687922,
+      "length": 12,
+      "original_text": "Library Key",
+      "text": "Library Key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "0C 23 1C 2C 80 1B 2C 33 00 0B 1F 33"
+    },
+    {
+      "id": "text_067_4186",
+      "addr": 16774,
+      "rom_offset": 1687942,
+      "length": 11,
+      "original_text": "Lounge Key",
+      "text": "Lounge Key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "0C 29 2F 28 C0 21 1F 00 0B 1F 33"
+    },
+    {
+      "id": "text_067_4198",
+      "addr": 16792,
+      "rom_offset": 1687960,
+      "length": 12,
+      "original_text": "Medical Key",
+      "text": "Medical Key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "0D 1F 1E 23 80 1D 1B 26 00 0B 1F 33"
+    },
+    {
+      "id": "text_067_41ac",
+      "addr": 16812,
+      "rom_offset": 1687980,
+      "length": 15,
+      "original_text": "Cabin F50 Key",
+      "text": "Cabin F50 Key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "03 1B 1C 23 00 28 00 06 3A 35 00 0B 1F 06 33"
+    },
+    {
+      "id": "text_067_41c2",
+      "addr": 16834,
+      "rom_offset": 1688002,
+      "length": 12,
+      "original_text": "Kitchen Key",
+      "text": "Kitchen Key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "0B 23 2E 1D 80 22 1F 28 00 0B 1F 33"
+    },
+    {
+      "id": "text_067_41d6",
+      "addr": 16854,
+      "rom_offset": 1688022,
+      "length": 14,
+      "original_text": "Coolant Fuse",
+      "text": "Coolant Fuse",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "03 29 29 26 00 1B 28 2E 00 06 2F 2D 1F 03"
+    },
+    {
+      "id": "text_067_41eb",
+      "addr": 16875,
+      "rom_offset": 1688043,
+      "length": 15,
+      "original_text": "Crew Area Key",
+      "text": "Crew Area Key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "03 2C 1F 31 00 00 01 2C 1F 1B 00 0B 1F 06 33"
+    },
+    {
+      "id": "text_067_4201",
+      "addr": 16897,
+      "rom_offset": 1688065,
+      "length": 10,
+      "original_text": "Blowtorch",
+      "text": "Blowtorch",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "02 26 29 31 60 2E 29 2C 1D 22"
+    },
+    {
+      "id": "text_067_4212",
+      "addr": 16914,
+      "rom_offset": 1688082,
+      "length": 7,
+      "original_text": "Semtex",
+      "text": "Semtex",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 12
+        }
+      ],
+      "raw": "13 1F 27 2E 0C 1F 32"
+    },
+    {
+      "id": "text_067_4220",
+      "addr": 16928,
+      "rom_offset": 1688096,
+      "length": 15,
+      "original_text": "Computer Card",
+      "text": "Computer Card",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "03 29 27 2A 00 2F 2E 1F 2C 00 03 1B 2C 06 1E"
+    },
+    {
+      "id": "text_067_4236",
+      "addr": 16950,
+      "rom_offset": 1688118,
+      "length": 15,
+      "original_text": "Operator Pass",
+      "text": "Operator Pass",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "0F 2A 1F 2C 00 1B 2E 29 2C 00 10 1B 2D 06 2D"
+    },
+    {
+      "id": "text_067_424c",
+      "addr": 16972,
+      "rom_offset": 1688140,
+      "length": 8,
+      "original_text": "Crowbar",
+      "text": "Crowbar",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 24
+        }
+      ],
+      "raw": "03 2C 29 31 18 1C 1B 2C"
+    },
+    {
+      "id": "text_067_425b",
+      "addr": 16987,
+      "rom_offset": 1688155,
+      "length": 14,
+      "original_text": "Control Pass",
+      "text": "Control Pass",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "03 29 28 2E 00 2C 29 26 00 10 1B 2D 2D 03"
+    },
+    {
+      "id": "text_067_4270",
+      "addr": 17008,
+      "rom_offset": 1688176,
+      "length": 10,
+      "original_text": "Data Disk",
+      "text": "Data Disk",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "04 1B 2E 1B 60 00 04 23 2D 25"
+    },
+    {
+      "id": "text_067_4281",
+      "addr": 17025,
+      "rom_offset": 1688193,
+      "length": 14,
+      "original_text": "Extinguisher",
+      "text": "Extinguisher",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "05 32 2E 23 00 28 21 2F 23 2D 22 1F 2C 03"
+    },
+    {
+      "id": "text_067_4296",
+      "addr": 17046,
+      "rom_offset": 1688214,
+      "length": 15,
+      "original_text": "Elevator Pass",
+      "text": "Elevator Pass",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "05 26 1F 30 00 1B 2E 29 2C 00 10 1B 2D 06 2D"
+    },
+    {
+      "id": "text_067_42ac",
+      "addr": 17068,
+      "rom_offset": 1688236,
+      "length": 11,
+      "original_text": "Boiler Key",
+      "text": "Boiler Key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "02 29 23 26 C0 1F 2C 00 0B 1F 33"
+    },
+    {
+      "id": "text_067_42be",
+      "addr": 17086,
+      "rom_offset": 1688254,
+      "length": 11,
+      "original_text": "Locker Key",
+      "text": "Locker Key",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "0C 29 1D 25 C0 1F 2C 00 0B 1F 33"
+    },
+    {
+      "id": "text_067_42d0",
+      "addr": 17104,
+      "rom_offset": 1688272,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_42d8",
+      "addr": 17112,
+      "rom_offset": 1688280,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_42e0",
+      "addr": 17120,
+      "rom_offset": 1688288,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_42e8",
+      "addr": 17128,
+      "rom_offset": 1688296,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_42f0",
+      "addr": 17136,
+      "rom_offset": 1688304,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_42f8",
+      "addr": 17144,
+      "rom_offset": 1688312,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_4300",
+      "addr": 17152,
+      "rom_offset": 1688320,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_4308",
+      "addr": 17160,
+      "rom_offset": 1688328,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_4310",
+      "addr": 17168,
+      "rom_offset": 1688336,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_4318",
+      "addr": 17176,
+      "rom_offset": 1688344,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_4320",
+      "addr": 17184,
+      "rom_offset": 1688352,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_4328",
+      "addr": 17192,
+      "rom_offset": 1688360,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_4330",
+      "addr": 17200,
+      "rom_offset": 1688368,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_4338",
+      "addr": 17208,
+      "rom_offset": 1688376,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_4340",
+      "addr": 17216,
+      "rom_offset": 1688384,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_4348",
+      "addr": 17224,
+      "rom_offset": 1688392,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_4350",
+      "addr": 17232,
+      "rom_offset": 1688400,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_4358",
+      "addr": 17240,
+      "rom_offset": 1688408,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_4360",
+      "addr": 17248,
+      "rom_offset": 1688416,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_4368",
+      "addr": 17256,
+      "rom_offset": 1688424,
+      "length": 16,
+      "original_text": "Discard Weapon",
+      "text": "Discard Weapon",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "04 23 2D 1D 00 1B 2C 1E 00 17 1F 1B 2A 0C 29 28"
+    },
+    {
+      "id": "text_067_437f",
+      "addr": 17279,
+      "rom_offset": 1688447,
+      "length": 6,
+      "original_text": "Knife",
+      "text": "Knife",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 6
+        }
+      ],
+      "raw": "0B 28 23 20 06 1F"
+    },
+    {
+      "id": "text_067_438c",
+      "addr": 17292,
+      "rom_offset": 1688460,
+      "length": 8,
+      "original_text": "Handgun",
+      "text": "Handgun",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 24
+        }
+      ],
+      "raw": "08 1B 28 1E 18 21 2F 28"
+    },
+    {
+      "id": "text_067_439b",
+      "addr": 17307,
+      "rom_offset": 1688475,
+      "length": 8,
+      "original_text": "Shotgun",
+      "text": "Shotgun",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 24
+        }
+      ],
+      "raw": "13 22 29 2E 18 21 2F 28"
+    },
+    {
+      "id": "text_067_43aa",
+      "addr": 17322,
+      "rom_offset": 1688490,
+      "length": 15,
+      "original_text": "Assault Rifle",
+      "text": "Assault Rifle",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "01 2D 2D 1B 00 2F 26 2E 00 12 23 20 26 06 1F"
+    },
+    {
+      "id": "text_067_43c0",
+      "addr": 17344,
+      "rom_offset": 1688512,
+      "length": 8,
+      "original_text": "Grenade",
+      "text": "Grenade",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 24
+        }
+      ],
+      "raw": "07 2C 1F 28 18 1B 1E 1F"
+    },
+    {
+      "id": "text_067_43cf",
+      "addr": 17359,
+      "rom_offset": 1688527,
+      "length": 15,
+      "original_text": "Rocket Launch",
+      "text": "Rocket Launch",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "12 29 1D 25 00 1F 2E 00 0C 1B 2F 28 1D 06 22"
+    },
+    {
+      "id": "text_067_43e5",
+      "addr": 17381,
+      "rom_offset": 1688549,
+      "length": 14,
+      "original_text": "Gas Launcher",
+      "text": "Gas Launcher",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "07 1B 2D 00 00 0C 1B 2F 28 1D 22 1F 2C 03"
+    },
+    {
+      "id": "text_067_43fa",
+      "addr": 17402,
+      "rom_offset": 1688570,
+      "length": 16,
+      "original_text": "Discard Armour",
+      "text": "Discard Armour",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "04 23 2D 1D 00 1B 2C 1E 00 01 2C 27 29 0C 2F 2C"
+    },
+    {
+      "id": "text_067_4411",
+      "addr": 17425,
+      "rom_offset": 1688593,
+      "length": 7,
+      "original_text": "Kevlar",
+      "text": "Kevlar",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 12
+        }
+      ],
+      "raw": "0B 1F 30 26 0C 1B 2C"
+    },
+    {
+      "id": "text_067_441f",
+      "addr": 17439,
+      "rom_offset": 1688607,
+      "length": 9,
+      "original_text": "Titanium",
+      "text": "Titanium",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 48
+        }
+      ],
+      "raw": "14 23 2E 1B 30 28 23 2F 27"
+    },
+    {
+      "id": "text_067_442f",
+      "addr": 17455,
+      "rom_offset": 1688623,
+      "length": 7,
+      "original_text": "Diamet",
+      "text": "Diamet",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 12
+        }
+      ],
+      "raw": "04 23 1B 27 0C 1F 2E"
+    },
+    {
+      "id": "text_067_443d",
+      "addr": 17469,
+      "rom_offset": 1688637,
+      "length": 12,
+      "original_text": "Green Herbs",
+      "text": "Green Herbs",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "07 2C 1F 1F 80 28 00 08 1F 2C 1C 2D"
+    },
+    {
+      "id": "text_067_4451",
+      "addr": 17489,
+      "rom_offset": 1688657,
+      "length": 14,
+      "original_text": "Yellow Herbs",
+      "text": "Yellow Herbs",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "19 1F 26 26 00 29 31 00 08 1F 2C 1C 2D 03"
+    },
+    {
+      "id": "text_067_4466",
+      "addr": 17510,
+      "rom_offset": 1688678,
+      "length": 10,
+      "original_text": "Red Herbs",
+      "text": "Red Herbs",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "12 1F 1E 00 60 08 1F 2C 1C 2D"
+    },
+    {
+      "id": "text_067_4477",
+      "addr": 17527,
+      "rom_offset": 1688695,
+      "length": 11,
+      "original_text": "Blue Herbs",
+      "text": "Blue Herbs",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "02 26 2F 1F C0 00 08 1F 2C 1C 2D"
+    },
+    {
+      "id": "text_067_4489",
+      "addr": 17545,
+      "rom_offset": 1688713,
+      "length": 14,
+      "original_text": "Purple Herbs",
+      "text": "Purple Herbs",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 15
+        }
+      ],
+      "raw": "10 2F 2C 2A 00 26 1F 00 08 1F 2C 1C 2D 0F"
+    },
+    {
+      "id": "text_067_44a0",
+      "addr": 17568,
+      "rom_offset": 1688736,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_44a8",
+      "addr": 17576,
+      "rom_offset": 1688744,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_44b0",
+      "addr": 17584,
+      "rom_offset": 1688752,
+      "length": 1,
+      "original_text": "\n",
+      "text": "\n",
+      "layout": [],
+      "raw": "40"
+    },
+    {
+      "id": "text_067_44b8",
+      "addr": 17592,
+      "rom_offset": 1688760,
+      "length": 11,
+      "original_text": "HG Bullets",
+      "text": "HG Bullets",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "08 07 00 02 C0 2F 26 26 1F 2E 2D"
+    },
+    {
+      "id": "text_067_44ca",
+      "addr": 17610,
+      "rom_offset": 1688778,
+      "length": 10,
+      "original_text": "SG Shells",
+      "text": "SG Shells",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "13 07 00 13 60 22 1F 26 26 2D"
+    },
+    {
+      "id": "text_067_44db",
+      "addr": 17627,
+      "rom_offset": 1688795,
+      "length": 16,
+      "original_text": "AR Bullet Clip",
+      "text": "AR Bullet Clip",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "01 12 00 02 00 2F 26 26 1F 2E 00 03 26 0C 23 2A"
+    },
+    {
+      "id": "text_067_44f2",
+      "addr": 17650,
+      "rom_offset": 1688818,
+      "length": 10,
+      "original_text": "GL Rounds",
+      "text": "GL Rounds",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "07 0C 00 12 60 29 2F 28 1E 2D"
+    },
+    {
+      "id": "text_067_4503",
+      "addr": 17667,
+      "rom_offset": 1688835,
+      "length": 12,
+      "original_text": "RL Missiles",
+      "text": "RL Missiles",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "12 0C 00 0D 80 23 2D 2D 23 26 1F 2D"
+    },
+    {
+      "id": "text_067_4517",
+      "addr": 17687,
+      "rom_offset": 1688855,
+      "length": 10,
+      "original_text": "GG Rounds",
+      "text": "GG Rounds",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 224
+        }
+      ],
+      "raw": "07 07 00 12 E0 29 2F 28 1E 2D"
+    },
+    {
+      "id": "text_067_4529",
+      "addr": 17705,
+      "rom_offset": 1688873,
+      "length": 11,
+      "original_text": "Health Doc",
+      "text": "Health Doc",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "08 1F 1B 26 C0 2E 22 00 04 29 1D"
+    },
+    {
+      "id": "text_067_453b",
+      "addr": 17723,
+      "rom_offset": 1688891,
+      "length": 11,
+      "original_text": "Escape Doc",
+      "text": "Escape Doc",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "05 2D 1D 1B C0 2A 1F 00 04 29 1D"
+    },
+    {
+      "id": "text_067_454d",
+      "addr": 17741,
+      "rom_offset": 1688909,
+      "length": 8,
+      "original_text": "Run Doc",
+      "text": "Run Doc",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 24
+        }
+      ],
+      "raw": "12 2F 28 00 18 04 29 1D"
+    },
+    {
+      "id": "text_067_455c",
+      "addr": 17756,
+      "rom_offset": 1688924,
+      "length": 10,
+      "original_text": "Equip Doc",
+      "text": "Equip Doc",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "05 2B 2F 23 60 2A 00 04 29 1D"
+    },
+    {
+      "id": "text_067_456d",
+      "addr": 17773,
+      "rom_offset": 1688941,
+      "length": 10,
+      "original_text": "Items Doc",
+      "text": "Items Doc",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "09 2E 1F 27 60 2D 00 04 29 1D"
+    },
+    {
+      "id": "text_067_457e",
+      "addr": 17790,
+      "rom_offset": 1688958,
+      "length": 11,
+      "original_text": "Poison Doc",
+      "text": "Poison Doc",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "10 29 23 2D C0 29 28 00 04 29 1D"
+    },
+    {
+      "id": "text_067_4590",
+      "addr": 17808,
+      "rom_offset": 1688976,
+      "length": 11,
+      "original_text": "Armour Doc",
+      "text": "Armour Doc",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "01 2C 27 29 C0 2F 2C 00 04 29 1D"
+    },
+    {
+      "id": "text_067_45a2",
+      "addr": 17826,
+      "rom_offset": 1688994,
+      "length": 9,
+      "original_text": "Info Doc",
+      "text": "Info Doc",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 48
+        }
+      ],
+      "raw": "09 28 20 29 30 00 04 29 1D"
+    },
+    {
+      "id": "text_067_45b2",
+      "addr": 17842,
+      "rom_offset": 1689010,
+      "length": 15,
+      "original_text": "Targeting Doc",
+      "text": "Targeting Doc",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "14 1B 2C 21 00 1F 2E 23 28 21 00 04 29 06 1D"
+    },
+    {
+      "id": "text_067_45c8",
+      "addr": 17864,
+      "rom_offset": 1689032,
+      "length": 14,
+      "original_text": "Computer Doc",
+      "text": "Computer Doc",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "03 29 27 2A 00 2F 2E 1F 2C 00 04 29 1D 03"
+    },
+    {
+      "id": "text_067_45dd",
+      "addr": 17885,
+      "rom_offset": 1689053,
+      "length": 12,
+      "original_text": "Library Doc",
+      "text": "Library Doc",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "0C 23 1C 2C 80 1B 2C 33 00 04 29 1D"
+    },
+    {
+      "id": "text_067_45f1",
+      "addr": 17905,
+      "rom_offset": 1689073,
+      "length": 12,
+      "original_text": "Kitchen Doc",
+      "text": "Kitchen Doc",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "0B 23 2E 1D 80 22 1F 28 00 04 29 1D"
+    },
+    {
+      "id": "text_067_461c",
+      "addr": 17948,
+      "rom_offset": 1689116,
+      "length": 6,
+      "original_text": "Empty",
+      "text": "Empty",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 6
+        }
+      ],
+      "raw": "05 27 2A 2E 06 33"
+    },
+    {
+      "id": "text_067_4629",
+      "addr": 17961,
+      "rom_offset": 1689129,
+      "length": 10,
+      "original_text": "Can't use",
+      "text": "Can't use",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "03 1B 28 44 60 2E 00 2F 2D 1F"
+    },
+    {
+      "id": "text_067_463a",
+      "addr": 17978,
+      "rom_offset": 1689146,
+      "length": 14,
+      "original_text": "No item here",
+      "text": "No item here",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "0E 29 00 23 00 2E 1F 27 00 22 1F 2C 1F 03"
+    },
+    {
+      "id": "text_067_464f",
+      "addr": 17999,
+      "rom_offset": 1689167,
+      "length": 11,
+      "original_text": "Herbs used",
+      "text": "Herbs used",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "08 1F 2C 1C C0 2D 00 2F 2D 1F 1E"
+    },
+    {
+      "id": "text_067_4661",
+      "addr": 18017,
+      "rom_offset": 1689185,
+      "length": 12,
+      "original_text": "Health full",
+      "text": "Health full",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "08 1F 1B 26 80 2E 22 00 20 2F 26 26"
+    },
+    {
+      "id": "text_067_4675",
+      "addr": 18037,
+      "rom_offset": 1689205,
+      "length": 16,
+      "original_text": "Already in use",
+      "text": "Already in use",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "01 26 2C 1F 00 1B 1E 33 00 23 28 00 2F 0C 2D 1F"
+    },
+    {
+      "id": "text_067_468c",
+      "addr": 18060,
+      "rom_offset": 1689228,
+      "length": 15,
+      "original_text": "Item equipped",
+      "text": "Item equipped",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "09 2E 1F 27 00 00 1F 2B 2F 23 2A 2A 1F 06 1E"
+    },
+    {
+      "id": "text_067_46a2",
+      "addr": 18082,
+      "rom_offset": 1689250,
+      "length": 10,
+      "original_text": "None left",
+      "text": "None left",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "0E 29 28 1F 60 00 26 1F 20 2E"
+    },
+    {
+      "id": "text_067_46b3",
+      "addr": 18099,
+      "rom_offset": 1689267,
+      "length": 16,
+      "original_text": "Armour removed",
+      "text": "Armour removed",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "01 2C 27 29 00 2F 2C 00 2C 1F 27 29 30 0C 1F 1E"
+    },
+    {
+      "id": "text_067_46ca",
+      "addr": 18122,
+      "rom_offset": 1689290,
+      "length": 16,
+      "original_text": " USE    INFO  ",
+      "text": " USE    INFO  ",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "00 15 13 05 00 00 00 00 00 09 0E 06 0F 0C 00 00"
+    },
+    {
+      "id": "text_067_46e1",
+      "addr": 18145,
+      "rom_offset": 1689313,
+      "length": 10,
+      "original_text": "Item used",
+      "text": "Item used",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 224
+        }
+      ],
+      "raw": "09 2E 1F 27 E0 00 2F 2D 1F 1E"
+    },
+    {
+      "id": "text_067_46ef",
+      "addr": 18159,
+      "rom_offset": 1689327,
+      "length": 23,
+      "original_text": "HXn3I  Levev 4F",
+      "text": "HXn3I  Levev 4F",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 71
+        },
+        {
+          "after": 12,
+          "byte": 38
+        }
+      ],
+      "raw": "46 08 47 18 47 28 47 38 47 09 FB 00 00 F8 0C 1F 30 1F 30 26 00 39 06"
+    },
+    {
+      "id": "text_067_470d",
+      "addr": 18189,
+      "rom_offset": 1689357,
+      "length": 9,
+      "original_text": "Level 3F",
+      "text": "Level 3F",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 48
+        }
+      ],
+      "raw": "0C 1F 30 1F 30 26 00 38 06"
+    },
+    {
+      "id": "text_067_471d",
+      "addr": 18205,
+      "rom_offset": 1689373,
+      "length": 9,
+      "original_text": "Level 2F",
+      "text": "Level 2F",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 48
+        }
+      ],
+      "raw": "0C 1F 30 1F 30 26 00 37 06"
+    },
+    {
+      "id": "text_067_472d",
+      "addr": 18221,
+      "rom_offset": 1689389,
+      "length": 9,
+      "original_text": "Level 1F",
+      "text": "Level 1F",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 48
+        }
+      ],
+      "raw": "0C 1F 30 1F 30 26 00 36 06"
+    },
+    {
+      "id": "text_067_473d",
+      "addr": 18237,
+      "rom_offset": 1689405,
+      "length": 10,
+      "original_text": "Submarine",
+      "text": "Submarine",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 224
+        }
+      ],
+      "raw": "13 2F 1C 27 E0 1B 2C 23 28 1F"
+    },
+    {
+      "id": "text_067_481f",
+      "addr": 18463,
+      "rom_offset": 1689631,
+      "length": 19,
+      "original_text": "Current location,",
+      "text": "Current location,",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 96
+        }
+      ],
+      "raw": "03 2F 2C 2C 00 1F 28 2E 00 26 29 1D 1B 60 2E 23 29 28 43"
+    },
+    {
+      "id": "text_067_4839",
+      "addr": 18489,
+      "rom_offset": 1689657,
+      "length": 10,
+      "original_text": "Side deck",
+      "text": "Side deck",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "13 23 1E 1F 60 00 1E 1F 1D 25"
+    },
+    {
+      "id": "text_067_484a",
+      "addr": 18506,
+      "rom_offset": 1689674,
+      "length": 6,
+      "original_text": "Lobby",
+      "text": "Lobby",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 6
+        }
+      ],
+      "raw": "0C 29 1C 1C 06 33"
+    },
+    {
+      "id": "text_067_4857",
+      "addr": 18519,
+      "rom_offset": 1689687,
+      "length": 15,
+      "original_text": "Rest\n balcony",
+      "text": "Rest\n balcony",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "12 1F 2D 2E 00 40 00 1C 1B 26 1D 29 28 06 33"
+    },
+    {
+      "id": "text_067_486d",
+      "addr": 18541,
+      "rom_offset": 1689709,
+      "length": 11,
+      "original_text": "Corridor A",
+      "text": "Corridor A",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "03 29 2C 2C C0 23 1E 29 2C 00 01"
+    },
+    {
+      "id": "text_067_487f",
+      "addr": 18559,
+      "rom_offset": 1689727,
+      "length": 11,
+      "original_text": "Bathroom 5",
+      "text": "Bathroom 5",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "02 1B 2E 22 C0 2C 29 29 27 00 3A"
+    },
+    {
+      "id": "text_067_4891",
+      "addr": 18577,
+      "rom_offset": 1689745,
+      "length": 11,
+      "original_text": "Bathroom 6",
+      "text": "Bathroom 6",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "02 1B 2E 22 C0 2C 29 29 27 00 3B"
+    },
+    {
+      "id": "text_067_48a3",
+      "addr": 18595,
+      "rom_offset": 1689763,
+      "length": 8,
+      "original_text": "Library",
+      "text": "Library",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 24
+        }
+      ],
+      "raw": "0C 23 1C 2C 18 1B 2C 33"
+    },
+    {
+      "id": "text_067_48b2",
+      "addr": 18610,
+      "rom_offset": 1689778,
+      "length": 16,
+      "original_text": "Medical office",
+      "text": "Medical office",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "0D 1F 1E 23 00 1D 1B 26 00 29 20 20 23 0C 1D 1F"
+    },
+    {
+      "id": "text_067_48c9",
+      "addr": 18633,
+      "rom_offset": 1689801,
+      "length": 15,
+      "original_text": "Rear elevator",
+      "text": "Rear elevator",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "12 1F 1B 2C 00 00 1F 26 1F 30 1B 2E 29 06 2C"
+    },
+    {
+      "id": "text_067_48df",
+      "addr": 18655,
+      "rom_offset": 1689823,
+      "length": 15,
+      "original_text": "Rear elevator",
+      "text": "Rear elevator",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "12 1F 1B 2C 00 00 1F 26 1F 30 1B 2E 29 06 2C"
+    },
+    {
+      "id": "text_067_48f5",
+      "addr": 18677,
+      "rom_offset": 1689845,
+      "length": 12,
+      "original_text": "Boiler room",
+      "text": "Boiler room",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "02 29 23 26 80 1F 2C 00 2C 29 29 27"
+    },
+    {
+      "id": "text_067_4909",
+      "addr": 18697,
+      "rom_offset": 1689865,
+      "length": 5,
+      "original_text": "Shop",
+      "text": "Shop",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 3
+        }
+      ],
+      "raw": "13 22 29 2A 03"
+    },
+    {
+      "id": "text_067_4915",
+      "addr": 18709,
+      "rom_offset": 1689877,
+      "length": 10,
+      "original_text": "Piano bar",
+      "text": "Piano bar",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "10 23 1B 28 60 29 00 1C 1B 2C"
+    },
+    {
+      "id": "text_067_4926",
+      "addr": 18726,
+      "rom_offset": 1689894,
+      "length": 7,
+      "original_text": "Toilet",
+      "text": "Toilet",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 12
+        }
+      ],
+      "raw": "14 29 23 26 0C 1F 2E"
+    },
+    {
+      "id": "text_067_4934",
+      "addr": 18740,
+      "rom_offset": 1689908,
+      "length": 7,
+      "original_text": "Toilet",
+      "text": "Toilet",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 12
+        }
+      ],
+      "raw": "14 29 23 26 0C 1F 2E"
+    },
+    {
+      "id": "text_067_4942",
+      "addr": 18754,
+      "rom_offset": 1689922,
+      "length": 11,
+      "original_text": "Corridor B",
+      "text": "Corridor B",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "03 29 2C 2C C0 23 1E 29 2C 00 02"
+    },
+    {
+      "id": "text_067_4954",
+      "addr": 18772,
+      "rom_offset": 1689940,
+      "length": 15,
+      "original_text": "Multi purpose",
+      "text": "Multi purpose",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "0D 2F 26 2E 00 23 00 2A 2F 2C 2A 29 2D 06 1F"
+    },
+    {
+      "id": "text_067_496a",
+      "addr": 18794,
+      "rom_offset": 1689962,
+      "length": 11,
+      "original_text": "Corridor C",
+      "text": "Corridor C",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "03 29 2C 2C C0 23 1E 29 2C 00 03"
+    },
+    {
+      "id": "text_067_497c",
+      "addr": 18812,
+      "rom_offset": 1689980,
+      "length": 11,
+      "original_text": "Radio room",
+      "text": "Radio room",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "12 1B 1E 23 C0 29 00 2C 29 29 27"
+    },
+    {
+      "id": "text_067_498e",
+      "addr": 18830,
+      "rom_offset": 1689998,
+      "length": 10,
+      "original_text": "Crew room",
+      "text": "Crew room",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "03 2C 1F 31 60 00 2C 29 29 27"
+    },
+    {
+      "id": "text_067_499f",
+      "addr": 18847,
+      "rom_offset": 1690015,
+      "length": 15,
+      "original_text": "Crew elevator",
+      "text": "Crew elevator",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "03 2C 1F 31 00 00 1F 26 1F 30 1B 2E 29 06 2C"
+    },
+    {
+      "id": "text_067_49b5",
+      "addr": 18869,
+      "rom_offset": 1690037,
+      "length": 15,
+      "original_text": "Crew elevator",
+      "text": "Crew elevator",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "03 2C 1F 31 00 00 1F 26 1F 30 1B 2E 29 06 2C"
+    },
+    {
+      "id": "text_067_49cb",
+      "addr": 18891,
+      "rom_offset": 1690059,
+      "length": 11,
+      "original_text": "Upper deck",
+      "text": "Upper deck",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "15 2A 2A 1F C0 2C 00 1E 1F 1D 25"
+    },
+    {
+      "id": "text_067_49dd",
+      "addr": 18909,
+      "rom_offset": 1690077,
+      "length": 15,
+      "original_text": "Lobby balcony",
+      "text": "Lobby balcony",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "0C 29 1C 1C 00 33 00 1C 1B 26 1D 29 28 06 33"
+    },
+    {
+      "id": "text_067_49f3",
+      "addr": 18931,
+      "rom_offset": 1690099,
+      "length": 18,
+      "original_text": "2nd class cabins",
+      "text": "2nd class cabins",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 48
+        }
+      ],
+      "raw": "37 28 1E 00 00 1D 26 1B 2D 2D 00 1D 1B 30 1C 23 28 2D"
+    },
+    {
+      "id": "text_067_4a0c",
+      "addr": 18956,
+      "rom_offset": 1690124,
+      "length": 17,
+      "original_text": "2nd class cabin",
+      "text": "2nd class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "37 28 1E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4a24",
+      "addr": 18980,
+      "rom_offset": 1690148,
+      "length": 17,
+      "original_text": "2nd class cabin",
+      "text": "2nd class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "37 28 1E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4a3c",
+      "addr": 19004,
+      "rom_offset": 1690172,
+      "length": 17,
+      "original_text": "2nd class cabin",
+      "text": "2nd class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "37 28 1E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4a54",
+      "addr": 19028,
+      "rom_offset": 1690196,
+      "length": 17,
+      "original_text": "2nd class cabin",
+      "text": "2nd class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "37 28 1E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4a6c",
+      "addr": 19052,
+      "rom_offset": 1690220,
+      "length": 17,
+      "original_text": "2nd class cabin",
+      "text": "2nd class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "37 28 1E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4a84",
+      "addr": 19076,
+      "rom_offset": 1690244,
+      "length": 17,
+      "original_text": "2nd class cabin",
+      "text": "2nd class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "37 28 1E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4a9c",
+      "addr": 19100,
+      "rom_offset": 1690268,
+      "length": 17,
+      "original_text": "2nd class cabin",
+      "text": "2nd class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "37 28 1E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4ab4",
+      "addr": 19124,
+      "rom_offset": 1690292,
+      "length": 17,
+      "original_text": "2nd class cabin",
+      "text": "2nd class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "37 28 1E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4acc",
+      "addr": 19148,
+      "rom_offset": 1690316,
+      "length": 17,
+      "original_text": "2nd class cabin",
+      "text": "2nd class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "37 28 1E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4ae4",
+      "addr": 19172,
+      "rom_offset": 1690340,
+      "length": 17,
+      "original_text": "2nd class cabin",
+      "text": "2nd class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "37 28 1E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4afc",
+      "addr": 19196,
+      "rom_offset": 1690364,
+      "length": 17,
+      "original_text": "2nd class cabin",
+      "text": "2nd class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "37 28 1E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4b14",
+      "addr": 19220,
+      "rom_offset": 1690388,
+      "length": 17,
+      "original_text": "2nd class cabin",
+      "text": "2nd class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "37 28 1E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4b2c",
+      "addr": 19244,
+      "rom_offset": 1690412,
+      "length": 17,
+      "original_text": "2nd class cabin",
+      "text": "2nd class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "37 28 1E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4b44",
+      "addr": 19268,
+      "rom_offset": 1690436,
+      "length": 17,
+      "original_text": "2nd class cabin",
+      "text": "2nd class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "37 28 1E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4b5c",
+      "addr": 19292,
+      "rom_offset": 1690460,
+      "length": 16,
+      "original_text": "Main elevators",
+      "text": "Main elevators",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "0D 1B 23 28 00 00 1F 26 1F 30 1B 2E 29 0C 2C 2D"
+    },
+    {
+      "id": "text_067_4b73",
+      "addr": 19315,
+      "rom_offset": 1690483,
+      "length": 16,
+      "original_text": "Main elevators",
+      "text": "Main elevators",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "0D 1B 23 28 00 00 1F 26 1F 30 1B 2E 29 0C 2C 2D"
+    },
+    {
+      "id": "text_067_4b8a",
+      "addr": 19338,
+      "rom_offset": 1690506,
+      "length": 16,
+      "original_text": "Main elevators",
+      "text": "Main elevators",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "0D 1B 23 28 00 00 1F 26 1F 30 1B 2E 29 0C 2C 2D"
+    },
+    {
+      "id": "text_067_4ba1",
+      "addr": 19361,
+      "rom_offset": 1690529,
+      "length": 16,
+      "original_text": "Main elevators",
+      "text": "Main elevators",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "0D 1B 23 28 00 00 1F 26 1F 30 1B 2E 29 0C 2C 2D"
+    },
+    {
+      "id": "text_067_4bb8",
+      "addr": 19384,
+      "rom_offset": 1690552,
+      "length": 18,
+      "original_text": "1st class cabins",
+      "text": "1st class cabins",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 48
+        }
+      ],
+      "raw": "36 2D 2E 00 00 1D 26 1B 2D 2D 00 1D 1B 30 1C 23 28 2D"
+    },
+    {
+      "id": "text_067_4bd1",
+      "addr": 19409,
+      "rom_offset": 1690577,
+      "length": 17,
+      "original_text": "1st class cabin",
+      "text": "1st class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "36 2D 2E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4be9",
+      "addr": 19433,
+      "rom_offset": 1690601,
+      "length": 17,
+      "original_text": "1st class cabin",
+      "text": "1st class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "36 2D 2E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4c01",
+      "addr": 19457,
+      "rom_offset": 1690625,
+      "length": 17,
+      "original_text": "1st class cabin",
+      "text": "1st class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "36 2D 2E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4c19",
+      "addr": 19481,
+      "rom_offset": 1690649,
+      "length": 17,
+      "original_text": "1st class cabin",
+      "text": "1st class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "36 2D 2E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4c31",
+      "addr": 19505,
+      "rom_offset": 1690673,
+      "length": 17,
+      "original_text": "1st class cabin",
+      "text": "1st class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "36 2D 2E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4c49",
+      "addr": 19529,
+      "rom_offset": 1690697,
+      "length": 17,
+      "original_text": "1st class cabin",
+      "text": "1st class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "36 2D 2E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4c61",
+      "addr": 19553,
+      "rom_offset": 1690721,
+      "length": 17,
+      "original_text": "1st class cabin",
+      "text": "1st class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "36 2D 2E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4c79",
+      "addr": 19577,
+      "rom_offset": 1690745,
+      "length": 16,
+      "original_text": "Captain's room",
+      "text": "Captain's room",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "03 1B 2A 2E 00 1B 23 28 44 2D 00 2C 29 0C 29 27"
+    },
+    {
+      "id": "text_067_4c90",
+      "addr": 19600,
+      "rom_offset": 1690768,
+      "length": 11,
+      "original_text": "Corridor D",
+      "text": "Corridor D",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "03 29 2C 2C C0 23 1E 29 2C 00 04"
+    },
+    {
+      "id": "text_067_4ca2",
+      "addr": 19618,
+      "rom_offset": 1690786,
+      "length": 17,
+      "original_text": "Crew elevator p",
+      "text": "Crew elevator p",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "03 2C 1F 31 00 00 1F 26 1F 30 1B 2E 29 18 2C 00 2A"
+    },
+    {
+      "id": "text_067_4cba",
+      "addr": 19642,
+      "rom_offset": 1690810,
+      "length": 17,
+      "original_text": "Crew elevator s",
+      "text": "Crew elevator s",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "03 2C 1F 31 00 00 1F 26 1F 30 1B 2E 29 18 2C 00 2D"
+    },
+    {
+      "id": "text_067_4cd2",
+      "addr": 19666,
+      "rom_offset": 1690834,
+      "length": 15,
+      "original_text": "Computer room",
+      "text": "Computer room",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "03 29 27 2A 00 2F 2E 1F 2C 00 2C 29 29 06 27"
+    },
+    {
+      "id": "text_067_4ce8",
+      "addr": 19688,
+      "rom_offset": 1690856,
+      "length": 10,
+      "original_text": "Kitchen p",
+      "text": "Kitchen p",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "0B 23 2E 1D 60 22 1F 28 00 2A"
+    },
+    {
+      "id": "text_067_4cf9",
+      "addr": 19705,
+      "rom_offset": 1690873,
+      "length": 10,
+      "original_text": "Kitchen s",
+      "text": "Kitchen s",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "0B 23 2E 1D 60 22 1F 28 00 2D"
+    },
+    {
+      "id": "text_067_4d0a",
+      "addr": 19722,
+      "rom_offset": 1690890,
+      "length": 16,
+      "original_text": "Viewing lounge",
+      "text": "Viewing lounge",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "16 23 1F 31 00 23 28 21 00 26 29 2F 28 0C 21 1F"
+    },
+    {
+      "id": "text_067_4d21",
+      "addr": 19745,
+      "rom_offset": 1690913,
+      "length": 17,
+      "original_text": "Rear elevator p",
+      "text": "Rear elevator p",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "12 1F 1B 2C 00 00 1F 26 1F 30 1B 2E 29 18 2C 00 2A"
+    },
+    {
+      "id": "text_067_4d39",
+      "addr": 19769,
+      "rom_offset": 1690937,
+      "length": 17,
+      "original_text": "Rear elevator s",
+      "text": "Rear elevator s",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "12 1F 1B 2C 00 00 1F 26 1F 30 1B 2E 29 18 2C 00 2D"
+    },
+    {
+      "id": "text_067_4d51",
+      "addr": 19793,
+      "rom_offset": 1690961,
+      "length": 10,
+      "original_text": "Seat deck",
+      "text": "Seat deck",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "13 1F 1B 2E 60 00 1E 1F 1D 25"
+    },
+    {
+      "id": "text_067_4d62",
+      "addr": 19810,
+      "rom_offset": 1690978,
+      "length": 15,
+      "original_text": "Dressing room",
+      "text": "Dressing room",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "04 2C 1F 2D 00 2D 23 28 21 00 2C 29 29 06 27"
+    },
+    {
+      "id": "text_067_4d78",
+      "addr": 19832,
+      "rom_offset": 1691000,
+      "length": 15,
+      "original_text": "Security room",
+      "text": "Security room",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "13 1F 1D 2F 00 2C 23 2E 33 00 2C 29 29 06 27"
+    },
+    {
+      "id": "text_067_4d8e",
+      "addr": 19854,
+      "rom_offset": 1691022,
+      "length": 5,
+      "original_text": "Pool",
+      "text": "Pool",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 3
+        }
+      ],
+      "raw": "10 29 29 26 03"
+    },
+    {
+      "id": "text_067_4d9a",
+      "addr": 19866,
+      "rom_offset": 1691034,
+      "length": 3,
+      "original_text": "Bar",
+      "text": "Bar",
+      "layout": [],
+      "raw": "02 1B 2C"
+    },
+    {
+      "id": "text_067_4da5",
+      "addr": 19877,
+      "rom_offset": 1691045,
+      "length": 18,
+      "original_text": "Elevator passage",
+      "text": "Elevator passage",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 48
+        }
+      ],
+      "raw": "05 26 1F 30 00 1B 2E 29 2C 00 2A 1B 2D 30 2D 1B 21 1F"
+    },
+    {
+      "id": "text_067_4dbe",
+      "addr": 19902,
+      "rom_offset": 1691070,
+      "length": 16,
+      "original_text": "Main elevators",
+      "text": "Main elevators",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "0D 1B 23 28 00 00 1F 26 1F 30 1B 2E 29 0C 2C 2D"
+    },
+    {
+      "id": "text_067_4dd5",
+      "addr": 19925,
+      "rom_offset": 1691093,
+      "length": 16,
+      "original_text": "Main elevators",
+      "text": "Main elevators",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "0D 1B 23 28 00 00 1F 26 1F 30 1B 2E 29 0C 2C 2D"
+    },
+    {
+      "id": "text_067_4dec",
+      "addr": 19948,
+      "rom_offset": 1691116,
+      "length": 16,
+      "original_text": "Main elevators",
+      "text": "Main elevators",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "0D 1B 23 28 00 00 1F 26 1F 30 1B 2E 29 0C 2C 2D"
+    },
+    {
+      "id": "text_067_4e03",
+      "addr": 19971,
+      "rom_offset": 1691139,
+      "length": 16,
+      "original_text": "Main elevators",
+      "text": "Main elevators",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "0D 1B 23 28 00 00 1F 26 1F 30 1B 2E 29 0C 2C 2D"
+    },
+    {
+      "id": "text_067_4e1a",
+      "addr": 19994,
+      "rom_offset": 1691162,
+      "length": 9,
+      "original_text": "Sun deck",
+      "text": "Sun deck",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 48
+        }
+      ],
+      "raw": "13 2F 28 00 30 1E 1F 1D 25"
+    },
+    {
+      "id": "text_067_4e2a",
+      "addr": 20010,
+      "rom_offset": 1691178,
+      "length": 14,
+      "original_text": "Suite room p",
+      "text": "Suite room p",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "13 2F 23 2E 00 1F 00 2C 29 29 27 00 2A 03"
+    },
+    {
+      "id": "text_067_4e3f",
+      "addr": 20031,
+      "rom_offset": 1691199,
+      "length": 14,
+      "original_text": "Suite room s",
+      "text": "Suite room s",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "13 2F 23 2E 00 1F 00 2C 29 29 27 00 2D 03"
+    },
+    {
+      "id": "text_067_4e54",
+      "addr": 20052,
+      "rom_offset": 1691220,
+      "length": 17,
+      "original_text": "Crew elevator p",
+      "text": "Crew elevator p",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "03 2C 1F 31 00 00 1F 26 1F 30 1B 2E 29 18 2C 00 2A"
+    },
+    {
+      "id": "text_067_4e6c",
+      "addr": 20076,
+      "rom_offset": 1691244,
+      "length": 17,
+      "original_text": "Crew elevator s",
+      "text": "Crew elevator s",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "03 2C 1F 31 00 00 1F 26 1F 30 1B 2E 29 18 2C 00 2D"
+    },
+    {
+      "id": "text_067_4e84",
+      "addr": 20100,
+      "rom_offset": 1691268,
+      "length": 18,
+      "original_text": "Crew access area",
+      "text": "Crew access area",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 48
+        }
+      ],
+      "raw": "03 2C 1F 31 00 00 1B 1D 1D 1F 2D 2D 00 30 1B 2C 1F 1B"
+    },
+    {
+      "id": "text_067_4e9d",
+      "addr": 20125,
+      "rom_offset": 1691293,
+      "length": 12,
+      "original_text": "Side deck p",
+      "text": "Side deck p",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "13 23 1E 1F 80 00 1E 1F 1D 25 00 2A"
+    },
+    {
+      "id": "text_067_4eb1",
+      "addr": 20145,
+      "rom_offset": 1691313,
+      "length": 12,
+      "original_text": "Side deck s",
+      "text": "Side deck s",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "13 23 1E 1F 80 00 1E 1F 1D 25 00 2D"
+    },
+    {
+      "id": "text_067_4ec5",
+      "addr": 20165,
+      "rom_offset": 1691333,
+      "length": 16,
+      "original_text": "Operation room",
+      "text": "Operation room",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "0F 2A 1F 2C 00 1B 2E 23 29 28 00 2C 29 0C 29 27"
+    },
+    {
+      "id": "text_067_4edc",
+      "addr": 20188,
+      "rom_offset": 1691356,
+      "length": 17,
+      "original_text": "Crew elevator p",
+      "text": "Crew elevator p",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "03 2C 1F 31 00 00 1F 26 1F 30 1B 2E 29 18 2C 00 2A"
+    },
+    {
+      "id": "text_067_4ef4",
+      "addr": 20212,
+      "rom_offset": 1691380,
+      "length": 17,
+      "original_text": "Crew elevator s",
+      "text": "Crew elevator s",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "03 2C 1F 31 00 00 1F 26 1F 30 1B 2E 29 18 2C 00 2D"
+    },
+    {
+      "id": "text_067_4f0c",
+      "addr": 20236,
+      "rom_offset": 1691404,
+      "length": 10,
+      "original_text": "Cargo bay",
+      "text": "Cargo bay",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 96
+        }
+      ],
+      "raw": "03 1B 2C 21 60 29 00 1C 1B 33"
+    },
+    {
+      "id": "text_067_4f1d",
+      "addr": 20253,
+      "rom_offset": 1691421,
+      "length": 12,
+      "original_text": "Storage bay",
+      "text": "Storage bay",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "13 2E 29 2C 80 1B 21 1F 00 1C 1B 33"
+    },
+    {
+      "id": "text_067_4f31",
+      "addr": 20273,
+      "rom_offset": 1691441,
+      "length": 17,
+      "original_text": "Special storage",
+      "text": "Special storage",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "13 2A 1F 1D 00 23 1B 26 00 2D 2E 29 2C 18 1B 21 1F"
+    },
+    {
+      "id": "text_067_4f49",
+      "addr": 20297,
+      "rom_offset": 1691465,
+      "length": 14,
+      "original_text": "Data control",
+      "text": "Data control",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "04 1B 2E 1B 00 00 1D 29 28 2E 2C 29 26 03"
+    },
+    {
+      "id": "text_067_4f5e",
+      "addr": 20318,
+      "rom_offset": 1691486,
+      "length": 11,
+      "original_text": "Cargo area",
+      "text": "Cargo area",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "03 1B 2C 21 C0 29 00 1B 2C 1F 1B"
+    },
+    {
+      "id": "text_067_4f70",
+      "addr": 20336,
+      "rom_offset": 1691504,
+      "length": 11,
+      "original_text": "Restaurant",
+      "text": "Restaurant",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "12 1F 2D 2E C0 1B 2F 2C 1B 28 2E"
+    },
+    {
+      "id": "text_067_4f82",
+      "addr": 20354,
+      "rom_offset": 1691522,
+      "length": 8,
+      "original_text": "Kitchen",
+      "text": "Kitchen",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 24
+        }
+      ],
+      "raw": "0B 23 2E 1D 18 22 1F 28"
+    },
+    {
+      "id": "text_067_4f91",
+      "addr": 20369,
+      "rom_offset": 1691537,
+      "length": 14,
+      "original_text": "Refrigerator",
+      "text": "Refrigerator",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "12 1F 20 2C 00 23 21 1F 2C 1B 2E 29 2C 03"
+    },
+    {
+      "id": "text_067_4fa6",
+      "addr": 20390,
+      "rom_offset": 1691558,
+      "length": 12,
+      "original_text": "Engine room",
+      "text": "Engine room",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "05 28 21 23 80 28 1F 00 2C 29 29 27"
+    },
+    {
+      "id": "text_067_4fba",
+      "addr": 20410,
+      "rom_offset": 1691578,
+      "length": 17,
+      "original_text": "1st class cabin",
+      "text": "1st class cabin",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "36 2D 2E 00 00 1D 26 1B 2D 2D 00 1D 1B 18 1C 23 28"
+    },
+    {
+      "id": "text_067_4fd2",
+      "addr": 20434,
+      "rom_offset": 1691602,
+      "length": 15,
+      "original_text": "Power control",
+      "text": "Power control",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 6
+        }
+      ],
+      "raw": "10 29 31 1F 00 2C 00 1D 29 28 2E 2C 29 06 26"
+    },
+    {
+      "id": "text_067_4fe8",
+      "addr": 20456,
+      "rom_offset": 1691624,
+      "length": 7,
+      "original_text": "Bridge",
+      "text": "Bridge",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 12
+        }
+      ],
+      "raw": "02 2C 23 1E 0C 21 1F"
+    },
+    {
+      "id": "text_067_4ff6",
+      "addr": 20470,
+      "rom_offset": 1691638,
+      "length": 9,
+      "original_text": "Corridor",
+      "text": "Corridor",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 48
+        }
+      ],
+      "raw": "03 29 2C 2C 30 23 1E 29 2C"
+    },
+    {
+      "id": "text_067_5006",
+      "addr": 20486,
+      "rom_offset": 1691654,
+      "length": 14,
+      "original_text": "Torpedo room",
+      "text": "Torpedo room",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "14 29 2C 2A 00 1F 1E 29 00 2C 29 29 27 03"
+    },
+    {
+      "id": "text_067_501b",
+      "addr": 20507,
+      "rom_offset": 1691675,
+      "length": 14,
+      "original_text": "Control room",
+      "text": "Control room",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "03 29 28 2E 00 2C 29 26 00 2C 29 29 27 03"
+    },
+    {
+      "id": "text_067_5030",
+      "addr": 20528,
+      "rom_offset": 1691696,
+      "length": 12,
+      "original_text": "Engine room",
+      "text": "Engine room",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "05 28 21 23 80 28 1F 00 2C 29 29 27"
+    },
+    {
+      "id": "text_067_5044",
+      "addr": 20548,
+      "rom_offset": 1691716,
+      "length": 8,
+      "original_text": "Sickbay",
+      "text": "Sickbay",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 24
+        }
+      ],
+      "raw": "13 23 1D 25 18 1C 1B 33"
+    },
+    {
+      "id": "text_067_5053",
+      "addr": 20563,
+      "rom_offset": 1691731,
+      "length": 17,
+      "original_text": "Crew's quarters",
+      "text": "Crew's quarters",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "03 2C 1F 31 00 44 2D 00 2B 2F 1B 2C 2E 18 1F 2C 2D"
+    },
+    {
+      "id": "text_067_506b",
+      "addr": 20587,
+      "rom_offset": 1691755,
+      "length": 16,
+      "original_text": "Stair corridor",
+      "text": "Stair corridor",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "13 2E 1B 23 00 2C 00 1D 29 2C 2C 23 1E 0C 29 2C"
+    },
+    {
+      "id": "text_067_5082",
+      "addr": 20610,
+      "rom_offset": 1691778,
+      "length": 17,
+      "original_text": "Operations room",
+      "text": "Operations room",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 24
+        }
+      ],
+      "raw": "0F 2A 1F 2C 00 1B 2E 23 29 28 2D 00 2C 18 29 29 27"
+    },
+    {
+      "id": "text_067_509a",
+      "addr": 20634,
+      "rom_offset": 1691802,
+      "length": 11,
+      "original_text": "Corridor E",
+      "text": "Corridor E",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 192
+        }
+      ],
+      "raw": "03 29 2C 2C C0 23 1E 29 2C 00 05"
+    },
+    {
+      "id": "text_067_50b4",
+      "addr": 20660,
+      "rom_offset": 1691828,
+      "length": 18,
+      "original_text": "Start a new game",
+      "text": "Start a new game",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 48
+        }
+      ],
+      "raw": "13 2E 1B 2C 00 2E 00 1B 00 28 1F 31 00 30 21 1B 27 1F"
+    },
+    {
+      "id": "text_067_50cd",
+      "addr": 20685,
+      "rom_offset": 1691853,
+      "length": 9,
+      "original_text": "Continue",
+      "text": "Continue",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 16
+        }
+      ],
+      "raw": "03 29 28 2E 10 23 28 2F 1F"
+    },
+    {
+      "id": "text_067_50ed",
+      "addr": 20717,
+      "rom_offset": 1691885,
+      "length": 3,
+      "original_text": "New",
+      "text": "New",
+      "layout": [],
+      "raw": "0E 1F 31"
+    },
+    {
+      "id": "text_067_511e",
+      "addr": 20766,
+      "rom_offset": 1691934,
+      "length": 9,
+      "original_text": "Continue",
+      "text": "Continue",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 16
+        }
+      ],
+      "raw": "03 29 28 2E 10 23 28 2F 1F"
+    },
+    {
+      "id": "text_067_513f",
+      "addr": 20799,
+      "rom_offset": 1691967,
+      "length": 8,
+      "original_text": "No Save",
+      "text": "No Save",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 8
+        }
+      ],
+      "raw": "0E 29 00 13 08 1B 30 1F"
+    },
+    {
+      "id": "text_067_516b",
+      "addr": 20843,
+      "rom_offset": 1692011,
+      "length": 16,
+      "original_text": "CAPCOM CREDITS",
+      "text": "CAPCOM CREDITS",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 12
+        }
+      ],
+      "raw": "03 01 10 03 00 0F 0D 00 03 12 05 04 09 0C 14 13"
+    },
+    {
+      "id": "text_067_51bf",
+      "addr": 20927,
+      "rom_offset": 1692095,
+      "length": 16,
+      "original_text": "M 4 TD CREDIS",
+      "text": "M 4 TD CREDIS",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 12
+        },
+        {
+          "after": 12,
+          "byte": 20
+        }
+      ],
+      "raw": "0D 00 39 00 0C 14 04 00 03 12 60 05 04 09 14 13"
+    },
+    {
+      "id": "text_067_521d",
+      "addr": 21021,
+      "rom_offset": 1692189,
+      "length": 8,
+      "original_text": "SUPPRBT",
+      "text": "SUPPRBT",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 15
+        }
+      ],
+      "raw": "13 15 10 10 0F 12 02 14"
+    },
+    {
+      "id": "text_067_5264",
+      "addr": 21092,
+      "rom_offset": 1692260,
+      "length": 19,
+      "original_text": "BACKRO UND ATIDST",
+      "text": "BACKRO UND ATIDST",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 7
+        },
+        {
+          "after": 12,
+          "byte": 18
+        }
+      ],
+      "raw": "02 01 03 0B 07 12 0F 00 15 0E 04 00 01 12 14 09 04 13 14"
+    },
+    {
+      "id": "text_067_52b2",
+      "addr": 21170,
+      "rom_offset": 1692338,
+      "length": 7,
+      "original_text": "AfRTST",
+      "text": "AfRTST",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 9
+        }
+      ],
+      "raw": "01 20 12 14 09 13 14"
+    },
+    {
+      "id": "text_067_5301",
+      "addr": 21249,
+      "rom_offset": 1692417,
+      "length": 10,
+      "original_text": "EXE\nUTIVE",
+      "text": "EXE\nUTIVE",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 3
+        }
+      ],
+      "raw": "05 18 05 40 03 15 14 09 16 05"
+    },
+    {
+      "id": "text_067_532f",
+      "addr": 21295,
+      "rom_offset": 1692463,
+      "length": 16,
+      "original_text": "WI T THANKPSTO",
+      "text": "WI T THANKPSTO",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 8
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "17 09 00 14 08 00 14 08 01 0E 0B 10 13 00 14 0F"
+    },
+    {
+      "id": "text_067_5350",
+      "addr": 21328,
+      "rom_offset": 1692496,
+      "length": 20,
+      "original_text": "VIRG N INTERfCTIVE",
+      "text": "VIRG N INTERfCTIVE",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 9
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "16 09 12 07 09 00 0E 00 09 0E 14 05 12 01 20 03 14 09 16 05"
+    },
+    {
+      "id": "text_067_53a9",
+      "addr": 21417,
+      "rom_offset": 1692585,
+      "length": 12,
+      "original_text": "LEADTfESTER",
+      "text": "LEADTfESTER",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        }
+      ],
+      "raw": "0C 05 01 04 00 14 20 05 13 14 05 12"
+    },
+    {
+      "id": "text_067_5404",
+      "addr": 21508,
+      "rom_offset": 1692676,
+      "length": 12,
+      "original_text": "PR M\nNANGER",
+      "text": "PR M\nNANGER",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 1
+        }
+      ],
+      "raw": "10 12 00 0D 01 40 0E 01 0E 07 05 12"
+    },
+    {
+      "id": "text_067_5468",
+      "addr": 21608,
+      "rom_offset": 1692776,
+      "length": 14,
+      "original_text": "LOCALISATION",
+      "text": "LOCALISATION",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 3
+        }
+      ],
+      "raw": "0C 0F 03 01 00 0C 09 13 01 14 09 0F 0E 03"
+    },
+    {
+      "id": "text_067_54cc",
+      "addr": 21708,
+      "rom_offset": 1692876,
+      "length": 8,
+      "original_text": "ITAPIAN",
+      "text": "ITAPIAN",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 12
+        }
+      ],
+      "raw": "09 14 01 10 0C 09 01 0E"
+    },
+    {
+      "id": "text_067_551f",
+      "addr": 21791,
+      "rom_offset": 1692959,
+      "length": 16,
+      "original_text": "S PEIAL TfHAKS",
+      "text": "S PEIAL TfHAKS",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 3
+        },
+        {
+          "after": 12,
+          "byte": 14
+        }
+      ],
+      "raw": "13 00 10 05 03 09 01 0C 00 14 20 08 01 0E 0B 13"
+    },
+    {
+      "id": "text_067_555f",
+      "addr": 21855,
+      "rom_offset": 1693023,
+      "length": 27,
+      "original_text": "AI F      THNK Y\nOU   ",
+      "text": "AI F      THNK Y\nOU   ",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 248
+        },
+        {
+          "after": 12,
+          "byte": 1
+        },
+        {
+          "after": 20,
+          "byte": 0
+        }
+      ],
+      "raw": "01 FC 09 FB 00 06 F8 00 00 00 00 00 00 14 08 01 0E 0B 00 19 40 0F 15 00 00 00 00"
+    },
+    {
+      "id": "text_067_5593",
+      "addr": 21907,
+      "rom_offset": 1693075,
+      "length": 27,
+      "original_text": "I  Pes s anybuPtton",
+      "text": "I  Pes s anybuPtton",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "FC FF 97 55 09 FB 00 00 F8 10 2C 1F 2D 00 2D 00 1B 28 33 00 1C 2F 10 2E 2E 29 28"
+    },
+    {
+      "id": "text_067_55e5",
+      "addr": 21989,
+      "rom_offset": 1693157,
+      "length": 6,
+      "original_text": "Empty",
+      "text": "Empty",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 6
+        }
+      ],
+      "raw": "05 27 2A 2E 06 33"
+    },
+    {
+      "id": "text_067_55f2",
+      "addr": 22002,
+      "rom_offset": 1693170,
+      "length": 14,
+      "original_text": "Save point 1",
+      "text": "Save point 1",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "13 1B 30 1F 00 00 2A 29 23 28 2E 00 36 01"
+    },
+    {
+      "id": "text_067_5611",
+      "addr": 22033,
+      "rom_offset": 1693201,
+      "length": 14,
+      "original_text": "Save point 2",
+      "text": "Save point 2",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "13 1B 30 1F 00 00 2A 29 23 28 2E 00 37 01"
+    },
+    {
+      "id": "text_067_5635",
+      "addr": 22069,
+      "rom_offset": 1693237,
+      "length": 14,
+      "original_text": "Save point 3",
+      "text": "Save point 3",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "13 1B 30 1F 00 00 2A 29 23 28 2E 00 38 01"
+    },
+    {
+      "id": "text_067_5654",
+      "addr": 22100,
+      "rom_offset": 1693268,
+      "length": 14,
+      "original_text": "Save point 4",
+      "text": "Save point 4",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "13 1B 30 1F 00 00 2A 29 23 28 2E 00 39 01"
+    },
+    {
+      "id": "text_067_567b",
+      "addr": 22139,
+      "rom_offset": 1693307,
+      "length": 14,
+      "original_text": "Save point 5",
+      "text": "Save point 5",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "13 1B 30 1F 00 00 2A 29 23 28 2E 00 3A 01"
+    },
+    {
+      "id": "text_067_569b",
+      "addr": 22171,
+      "rom_offset": 1693339,
+      "length": 14,
+      "original_text": "Save point 6",
+      "text": "Save point 6",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "13 1B 30 1F 00 00 2A 29 23 28 2E 00 3B 01"
+    },
+    {
+      "id": "text_067_56bf",
+      "addr": 22207,
+      "rom_offset": 1693375,
+      "length": 14,
+      "original_text": "Save point 7",
+      "text": "Save point 7",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "13 1B 30 1F 00 00 2A 29 23 28 2E 00 3C 01"
+    },
+    {
+      "id": "text_067_56df",
+      "addr": 22239,
+      "rom_offset": 1693407,
+      "length": 14,
+      "original_text": "Save point 8",
+      "text": "Save point 8",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "13 1B 30 1F 00 00 2A 29 23 28 2E 00 3D 01"
+    },
+    {
+      "id": "text_067_5703",
+      "addr": 22275,
+      "rom_offset": 1693443,
+      "length": 14,
+      "original_text": "Save point 9",
+      "text": "Save point 9",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "13 1B 30 1F 00 00 2A 29 23 28 2E 00 3E 01"
+    },
+    {
+      "id": "text_067_5723",
+      "addr": 22307,
+      "rom_offset": 1693475,
+      "length": 15,
+      "original_text": "Save point 10",
+      "text": "Save point 10",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "13 1B 30 1F 00 00 2A 29 23 28 2E 00 36 02 35"
+    },
+    {
+      "id": "text_067_5749",
+      "addr": 22345,
+      "rom_offset": 1693513,
+      "length": 15,
+      "original_text": "Save point 11",
+      "text": "Save point 11",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "13 1B 30 1F 00 00 2A 29 23 28 2E 00 36 02 36"
+    },
+    {
+      "id": "text_067_576b",
+      "addr": 22379,
+      "rom_offset": 1693547,
+      "length": 15,
+      "original_text": "Save point 12",
+      "text": "Save point 12",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "13 1B 30 1F 00 00 2A 29 23 28 2E 00 36 02 37"
+    },
+    {
+      "id": "text_067_578e",
+      "addr": 22414,
+      "rom_offset": 1693582,
+      "length": 15,
+      "original_text": "Save point 13",
+      "text": "Save point 13",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "13 1B 30 1F 00 00 2A 29 23 28 2E 00 36 02 38"
+    },
+    {
+      "id": "text_067_57b1",
+      "addr": 22449,
+      "rom_offset": 1693617,
+      "length": 15,
+      "original_text": "Save point 14",
+      "text": "Save point 14",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "13 1B 30 1F 00 00 2A 29 23 28 2E 00 36 02 39"
+    }
+  ]
+}

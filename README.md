@@ -39,13 +39,17 @@ src/
 ## Tools
 
 - `tools/text_dump.py` - Dumps English text strings from the ROM (banks $67-$6A)
+- `tools/extract_text_assets.py` - Extracts editable text JSON into `data/text/`
+- `tools/apply_text_assets.py` - Applies `data/text/` edits during the ROM build
 - `tools/map_dump.py` - Extracts and visualizes room/map data (75 rooms)
 - `tools/map_viewer.py` - Tkinter room viewer/editor for tilemap and collision layers
 - `tools/extract_map_assets.py` - Extracts fixed-size map layer files into `data/maps/`
 - `tools/apply_map_assets.py` - Applies `data/maps/` edits during the ROM build
+- `docs/text_system.md` - Documents text bank layout, encoding, controls, and tooling
 
 ```
 python tools/text_dump.py game.gbc
+python tools/extract_text_assets.py game.gbc --force
 python tools/map_dump.py game.gbc --list
 python tools/map_dump.py game.gbc --room 6
 python tools/extract_map_assets.py game.gbc --force

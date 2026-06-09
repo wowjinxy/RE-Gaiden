@@ -1,0 +1,4185 @@
+{
+  "format": "re-gaiden-text-assets-v1",
+  "bank": 104,
+  "notes": [
+    "Edit the text field. original_text/raw are used for exact round-tripping when text is unchanged.",
+    "Edited text must fit in the original fixed-size payload.",
+    "Use {XX} inside text to force a raw byte if needed."
+  ],
+  "entries": [
+    {
+      "id": "text_068_40a1",
+      "addr": 16545,
+      "rom_offset": 1704097,
+      "length": 17,
+      "original_text": "In an effort to",
+      "text": "In an effort to",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "09 28 00 1B 00 28 00 1F 20 20 29 2C 2E 08 00 2E 29"
+    },
+    {
+      "id": "text_068_40fe",
+      "addr": 16638,
+      "rom_offset": 1704190,
+      "length": 9,
+      "original_text": "Umbrlla",
+      "text": "Umbrlla",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 31
+        }
+      ],
+      "raw": "15 80 27 1C 2C 1F 26 26 1B"
+    },
+    {
+      "id": "text_068_4123",
+      "addr": 16675,
+      "rom_offset": 1704227,
+      "length": 16,
+      "original_text": " an nder\ngrond",
+      "text": " an nder\ngrond",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 47
+        },
+        {
+          "after": 12,
+          "byte": 47
+        }
+      ],
+      "raw": "00 1B 28 00 2F 28 1E 1F 2C 40 21 2C 29 2F 28 1E"
+    },
+    {
+      "id": "text_068_4153",
+      "addr": 16723,
+      "rom_offset": 1704275,
+      "length": 19,
+      "original_text": "Thiso rganiztHion",
+      "text": "Thiso rganiztHion",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 27
+        }
+      ],
+      "raw": "14 22 23 2D 00 29 00 2C 21 1B 28 23 34 1B 2E 08 23 29 28"
+    },
+    {
+      "id": "text_068_4198",
+      "addr": 16792,
+      "rom_offset": 1704344,
+      "length": 13,
+      "original_text": " exUbreHlla",
+      "text": " exUbreHlla",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 39
+        }
+      ],
+      "raw": "00 1F 32 49 15 27 1C 2C 1F 08 26 26 1B"
+    },
+    {
+      "id": "text_068_41b5",
+      "addr": 16821,
+      "rom_offset": 1704373,
+      "length": 20,
+      "original_text": "Somehe re inNoHrth",
+      "text": "Somehe re inNoHrth",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 49
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "13 29 27 1F 31 22 1F 00 2C 1F 00 23 28 00 0E 29 08 2C 2E 22"
+    },
+    {
+      "id": "text_068_420c",
+      "addr": 16908,
+      "rom_offset": 1704460,
+      "length": 7,
+      "original_text": "2\n30am",
+      "text": "2\n30am",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 12
+        }
+      ],
+      "raw": "37 40 38 35 0C 1B 27"
+    },
+    {
+      "id": "text_068_421a",
+      "addr": 16922,
+      "rom_offset": 1704474,
+      "length": 18,
+      "original_text": "Barry, Reporting",
+      "text": "Barry, Reporting",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 16
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 12 1F 2A 29 2C 10 2E 23 28 21"
+    },
+    {
+      "id": "text_068_423b",
+      "addr": 16955,
+      "rom_offset": 1704507,
+      "length": 20,
+      "original_text": "Chie,  Good o Hsee",
+      "text": "Chie,  Good o Hsee",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 32
+        },
+        {
+          "after": 12,
+          "byte": 46
+        }
+      ],
+      "raw": "03 22 23 1F 20 43 00 00 07 29 29 1E 00 2E 29 00 08 2D 1F 1F"
+    },
+    {
+      "id": "text_068_4295",
+      "addr": 17045,
+      "rom_offset": 1704597,
+      "length": 14,
+      "original_text": "A ne t\nype o",
+      "text": "A ne t\nype o",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 49
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "01 00 28 1F 31 00 2E 40 33 2A 1F 00 29 20"
+    },
+    {
+      "id": "text_068_42e9",
+      "addr": 17129,
+      "rom_offset": 1704681,
+      "length": 16,
+      "original_text": "This B\nO\nW\n is",
+      "text": "This B\nO\nW\n is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "14 22 23 2D 00 00 02 40 0F 40 17 40 00 04 23 2D"
+    },
+    {
+      "id": "text_068_432c",
+      "addr": 17196,
+      "rom_offset": 1704748,
+      "length": 14,
+      "original_text": " luxry oPcea",
+      "text": " luxry oPcea",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 47
+        },
+        {
+          "after": 12,
+          "byte": 40
+        }
+      ],
+      "raw": "00 26 2F 32 2F 2C 33 00 29 10 1D 1F 1B 28"
+    },
+    {
+      "id": "text_068_4358",
+      "addr": 17240,
+      "rom_offset": 1704792,
+      "length": 20,
+      "original_text": "T henew B \nOW\n isA",
+      "text": "T henew B \nOW\n isA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "14 00 22 1F 00 28 1F 31 00 02 00 40 0F 40 17 40 00 23 2D 01"
+    },
+    {
+      "id": "text_068_43af",
+      "addr": 17327,
+      "rom_offset": 1704879,
+      "length": 20,
+      "original_text": "Leon S\n Kennedy of",
+      "text": "Leon S\n Kennedy of",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "0C 1F 29 28 00 00 13 40 00 0B 1F 28 28 40 1F 1E 33 00 29 20"
+    },
+    {
+      "id": "text_068_4406",
+      "addr": 17414,
+      "rom_offset": 1704966,
+      "length": 17,
+      "original_text": "but e  have owA",
+      "text": "but e  have owA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 49
+        },
+        {
+          "after": 12,
+          "byte": 40
+        }
+      ],
+      "raw": "1C 2F 2E 00 31 1F 00 00 22 1B 30 1F 00 28 29 31 01"
+    },
+    {
+      "id": "text_068_4434",
+      "addr": 17460,
+      "rom_offset": 1705012,
+      "length": 17,
+      "original_text": "His a st reprBt",
+      "text": "His a st reprBt",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 38
+        },
+        {
+          "after": 12,
+          "byte": 41
+        }
+      ],
+      "raw": "08 23 2D 00 26 1B 00 2D 2E 00 2C 1F 2A 29 2C 02 2E"
+    },
+    {
+      "id": "text_068_446a",
+      "addr": 17514,
+      "rom_offset": 1705066,
+      "length": 11,
+      "original_text": "Objective,",
+      "text": "Objective,",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 64
+        }
+      ],
+      "raw": "0F 1C 24 1F 40 1D 2E 23 30 1F 43"
+    },
+    {
+      "id": "text_068_44b2",
+      "addr": 17586,
+      "rom_offset": 1705138,
+      "length": 11,
+      "original_text": "Insertion,",
+      "text": "Insertion,",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 64
+        }
+      ],
+      "raw": "09 28 2D 1F 40 2C 2E 23 29 28 43"
+    },
+    {
+      "id": "text_068_44d3",
+      "addr": 17619,
+      "rom_offset": 1705171,
+      "length": 10,
+      "original_text": "LocaioDn,",
+      "text": "LocaioDn,",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 46
+        }
+      ],
+      "raw": "0C 29 1D 1B 2E 23 29 04 28 43"
+    },
+    {
+      "id": "text_068_4519",
+      "addr": 17689,
+      "rom_offset": 1705241,
+      "length": 13,
+      "original_text": " ExtactiHon,",
+      "text": " ExtactiHon,",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        }
+      ],
+      "raw": "00 05 32 2E 2C 1B 1D 2E 23 08 29 28 43"
+    },
+    {
+      "id": "text_068_456f",
+      "addr": 17775,
+      "rom_offset": 1705327,
+      "length": 11,
+      "original_text": "Operative,",
+      "text": "Operative,",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 64
+        }
+      ],
+      "raw": "0F 2A 1F 2C 40 1B 2E 23 30 1F 43"
+    },
+    {
+      "id": "text_068_458d",
+      "addr": 17805,
+      "rom_offset": 1705357,
+      "length": 16,
+      "original_text": "G oo luckf wth",
+      "text": "G oo luckf wth",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 30
+        },
+        {
+          "after": 12,
+          "byte": 35
+        }
+      ],
+      "raw": "07 00 29 29 1E 00 26 2F 1D 25 20 00 31 23 2E 22"
+    },
+    {
+      "id": "text_068_45b5",
+      "addr": 17845,
+      "rom_offset": 1705397,
+      "length": 20,
+      "original_text": "Barry, What in the",
+      "text": "Barry, What in the",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 17 22 1B 2E 00 40 23 28 00 2E 22 1F"
+    },
+    {
+      "id": "text_068_4600",
+      "addr": 17920,
+      "rom_offset": 1705472,
+      "length": 16,
+      "original_text": "T he're nfot\n\n",
+      "text": "T he're nfot\n\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 51
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "14 00 22 1F 33 44 2C 1F 00 28 20 29 2E 40 40 40"
+    },
+    {
+      "id": "text_068_462e",
+      "addr": 17966,
+      "rom_offset": 1705518,
+      "length": 19,
+      "original_text": "Barry, Hmmm. what",
+      "text": "Barry, Hmmm. what",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 08 27 27 27 3F 20 00 31 22 1B 2E"
+    },
+    {
+      "id": "text_068_466a",
+      "addr": 18026,
+      "rom_offset": 1705578,
+      "length": 15,
+      "original_text": "Barr searche",
+      "text": "Barr searche",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 51
+        },
+        {
+          "after": 12,
+          "byte": 45
+        }
+      ],
+      "raw": "02 1B 2C 2C 33 00 2D 80 1F 1B 2C 1D 22 1F 2D"
+    },
+    {
+      "id": "text_068_46c2",
+      "addr": 18114,
+      "rom_offset": 1705666,
+      "length": 15,
+      "original_text": " Bary, Wfaita",
+      "text": " Bary, Wfaita",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "00 02 1B 2C 2C 33 43 00 17 20 1B 23 2E 00 1B"
+    },
+    {
+      "id": "text_068_4716",
+      "addr": 18198,
+      "rom_offset": 1705750,
+      "length": 12,
+      "original_text": "Barry, Hey-",
+      "text": "Barry, Hey-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "02 1B 2C 2C 80 33 43 00 08 1F 33 45"
+    },
+    {
+      "id": "text_068_4749",
+      "addr": 18249,
+      "rom_offset": 1705801,
+      "length": 16,
+      "original_text": "Girl, Leon!\n\n\n",
+      "text": "Girl, Leon!\n\n\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "07 23 2C 26 00 43 00 0C 1F 29 28 41 40 04 40 40"
+    },
+    {
+      "id": "text_068_476b",
+      "addr": 18283,
+      "rom_offset": 1705835,
+      "length": 16,
+      "original_text": "Barr,  Huh!\n\nA",
+      "text": "Barr,  Huh!\n\nA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 51
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "02 1B 2C 2C 33 43 00 00 08 2F 22 41 40 40 40 01"
+    },
+    {
+      "id": "text_068_4790",
+      "addr": 18320,
+      "rom_offset": 1705872,
+      "length": 20,
+      "original_text": "Girl  Who ar you!",
+      "text": "Girl  Who ar you!",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 67
+        },
+        {
+          "after": 12,
+          "byte": 31
+        }
+      ],
+      "raw": "07 23 2C 26 43 00 00 17 22 29 00 1B 2C 1F 60 00 33 29 2F 41"
+    },
+    {
+      "id": "text_068_47ab",
+      "addr": 18347,
+      "rom_offset": 1705899,
+      "length": 11,
+      "original_text": "Barry, I'm",
+      "text": "Barry, I'm",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 64
+        }
+      ],
+      "raw": "02 1B 2C 2C 40 33 43 00 09 44 27"
+    },
+    {
+      "id": "text_068_47f8",
+      "addr": 18424,
+      "rom_offset": 1705976,
+      "length": 18,
+      "original_text": "Girl, I'm Lucia\n",
+      "text": "Girl, I'm Lucia\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 16
+        }
+      ],
+      "raw": "07 23 2C 26 00 43 00 09 44 27 00 0C 2F 10 1D 23 1B 40"
+    },
+    {
+      "id": "text_068_485b",
+      "addr": 18523,
+      "rom_offset": 1706075,
+      "length": 17,
+      "original_text": "into\n\n\n into\n\n\n",
+      "text": "into\n\n\n into\n\n\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "23 28 2E 29 00 40 40 40 00 23 28 2E 29 08 40 40 40"
+    },
+    {
+      "id": "text_068_4879",
+      "addr": 18553,
+      "rom_offset": 1706105,
+      "length": 17,
+      "original_text": "L eo resc\nue me",
+      "text": "L eo resc\nue me",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 40
+        },
+        {
+          "after": 12,
+          "byte": 30
+        }
+      ],
+      "raw": "0C 00 1F 29 28 00 2C 1F 2D 1D 40 2F 1F 1E 00 27 1F"
+    },
+    {
+      "id": "text_068_48c0",
+      "addr": 18624,
+      "rom_offset": 1706176,
+      "length": 17,
+      "original_text": "Ba ry, Whefr is",
+      "text": "Ba ry, Whefr is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 31
+        }
+      ],
+      "raw": "02 1B 00 2C 2C 33 43 00 17 22 1F 20 2C 1F 00 23 2D"
+    },
+    {
+      "id": "text_068_48e6",
+      "addr": 18662,
+      "rom_offset": 1706214,
+      "length": 16,
+      "original_text": " Luca, I\n do't",
+      "text": " Luca, I\n do't",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        },
+        {
+          "after": 12,
+          "byte": 40
+        }
+      ],
+      "raw": "00 0C 2F 1D 23 1B 43 00 09 40 00 1E 29 28 44 2E"
+    },
+    {
+      "id": "text_068_4945",
+      "addr": 18757,
+      "rom_offset": 1706309,
+      "length": 19,
+      "original_text": "Lucia, Oh no. you",
+      "text": "Lucia, Oh no. you",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "0C 2F 1D 23 00 1B 43 00 0F 22 00 28 29 20 3F 00 33 29 2F"
+    },
+    {
+      "id": "text_068_49a3",
+      "addr": 18851,
+      "rom_offset": 1706403,
+      "length": 12,
+      "original_text": " He' herDe-",
+      "text": " He' herDe-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 45
+        }
+      ],
+      "raw": "00 08 1F 44 2D 00 22 1F 2C 04 1F 45"
+    },
+    {
+      "id": "text_068_49c7",
+      "addr": 18887,
+      "rom_offset": 1706439,
+      "length": 14,
+      "original_text": " Bary, DPon'",
+      "text": " Bary, DPon'",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 46
+        }
+      ],
+      "raw": "00 02 1B 2C 2C 33 43 00 04 10 29 28 44 2E"
+    },
+    {
+      "id": "text_068_4a0c",
+      "addr": 18956,
+      "rom_offset": 1706508,
+      "length": 19,
+      "original_text": "Luc a, I'm \nn the",
+      "text": "Luc a, I'm \nn the",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        },
+        {
+          "after": 12,
+          "byte": 41
+        }
+      ],
+      "raw": "0C 2F 1D 00 23 1B 43 00 09 44 27 00 40 29 28 00 2E 22 1F"
+    },
+    {
+      "id": "text_068_4a65",
+      "addr": 19045,
+      "rom_offset": 1706597,
+      "length": 17,
+      "original_text": "Barry, Hold on.",
+      "text": "Barry, Hold on.",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 08 29 26 1E 00 08 29 28 3F"
+    },
+    {
+      "id": "text_068_4a8f",
+      "addr": 19087,
+      "rom_offset": 1706639,
+      "length": 19,
+      "original_text": "Barry reaches the",
+      "text": "Barry reaches the",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 00 2C 1F 1B 1D 22 1F 20 2D 00 2E 22 1F"
+    },
+    {
+      "id": "text_068_4ab1",
+      "addr": 19121,
+      "rom_offset": 1706673,
+      "length": 18,
+      "original_text": "Fromt he edg Dof",
+      "text": "Fromt he edg Dof",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 31
+        }
+      ],
+      "raw": "06 2C 29 27 00 2E 00 22 1F 00 1F 1E 21 1F 00 04 29 20"
+    },
+    {
+      "id": "text_068_4b10",
+      "addr": 19216,
+      "rom_offset": 1706768,
+      "length": 21,
+      "original_text": "L uca, He lpMeeeeF-",
+      "text": "L uca, He lpMeeeeF-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "0C 00 2F 1D 23 1B 43 00 08 1F 00 26 2A 00 0D 1F 1F 1F 1F 06 45"
+    },
+    {
+      "id": "text_068_4b2c",
+      "addr": 19244,
+      "rom_offset": 1706796,
+      "length": 16,
+      "original_text": "Lucia, Keep it",
+      "text": "Lucia, Keep it",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "0C 2F 1D 23 00 1B 43 00 0B 1F 1F 2A 00 04 23 2E"
+    },
+    {
+      "id": "text_068_4b50",
+      "addr": 19280,
+      "rom_offset": 1706832,
+      "length": 18,
+      "original_text": "Barry, If that's",
+      "text": "Barry, If that's",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 16
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 09 20 00 2E 22 10 1B 2E 44 2D"
+    },
+    {
+      "id": "text_068_4b8e",
+      "addr": 19342,
+      "rom_offset": 1706894,
+      "length": 14,
+      "original_text": "Barry, Sweet",
+      "text": "Barry, Sweet",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 13 31 1F 1F 2E 01"
+    },
+    {
+      "id": "text_068_4bc6",
+      "addr": 19398,
+      "rom_offset": 1706950,
+      "length": 20,
+      "original_text": "Lucia, Ahhhhhhhhh-",
+      "text": "Lucia, Ahhhhhhhhh-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "0C 2F 1D 23 00 1B 43 00 01 22 22 22 22 40 22 22 22 22 22 45"
+    },
+    {
+      "id": "text_068_4bf3",
+      "addr": 19443,
+      "rom_offset": 1706995,
+      "length": 11,
+      "original_text": "The B\nO\nW\n",
+      "text": "The B\nO\nW\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 64
+        }
+      ],
+      "raw": "14 22 1F 00 40 02 40 0F 40 17 40"
+    },
+    {
+      "id": "text_068_4c2b",
+      "addr": 19499,
+      "rom_offset": 1707051,
+      "length": 21,
+      "original_text": "Th e it di sppearsA",
+      "text": "Th e it di sppearsA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 40
+        },
+        {
+          "after": 12,
+          "byte": 27
+        }
+      ],
+      "raw": "14 22 00 1F 28 00 23 2E 00 1E 23 00 2D 1B 2A 2A 1F 1B 2C 2D 01"
+    },
+    {
+      "id": "text_068_4c64",
+      "addr": 19556,
+      "rom_offset": 1707108,
+      "length": 19,
+      "original_text": "Barry, That thing",
+      "text": "Barry, That thing",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 14 22 1B 2E 00 20 2E 22 23 28 21"
+    },
+    {
+      "id": "text_068_4c8b",
+      "addr": 19595,
+      "rom_offset": 1707147,
+      "length": 21,
+      "original_text": "L uca, I' m lad iBt",
+      "text": "L uca, I' m lad iBt",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        },
+        {
+          "after": 12,
+          "byte": 33
+        }
+      ],
+      "raw": "0C 00 2F 1D 23 1B 43 00 09 44 00 27 00 21 26 1B 1E 00 23 02 2E"
+    },
+    {
+      "id": "text_068_4cca",
+      "addr": 19658,
+      "rom_offset": 1707210,
+      "length": 16,
+      "original_text": "B ary, Arfe ou",
+      "text": "B ary, Arfe ou",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 51
+        }
+      ],
+      "raw": "02 00 1B 2C 2C 33 43 00 01 2C 20 1F 00 33 29 2F"
+    },
+    {
+      "id": "text_068_4cfc",
+      "addr": 19708,
+      "rom_offset": 1707260,
+      "length": 13,
+      "original_text": "Whatthe\n\n\n ",
+      "text": "Whatthe\n\n\n ",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        }
+      ],
+      "raw": "17 22 1B 2E 00 80 2E 22 1F 40 40 40 00"
+    },
+    {
+      "id": "text_068_4d42",
+      "addr": 19778,
+      "rom_offset": 1707330,
+      "length": 19,
+      "original_text": "Luci,  I\n\n\n  wDas",
+      "text": "Luci,  I\n\n\n  wDas",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 27
+        },
+        {
+          "after": 12,
+          "byte": 9
+        }
+      ],
+      "raw": "0C 2F 1D 23 1B 43 00 00 09 40 40 40 00 09 00 31 04 1B 2D"
+    },
+    {
+      "id": "text_068_4d6a",
+      "addr": 19818,
+      "rom_offset": 1707370,
+      "length": 18,
+      "original_text": "Bar y, Uh. feah\n",
+      "text": "Bar y, Uh. feah\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 51
+        }
+      ],
+      "raw": "02 1B 2C 00 2C 33 43 00 15 22 3F 00 20 33 1F 1B 22 40"
+    },
+    {
+      "id": "text_068_4dbb",
+      "addr": 19899,
+      "rom_offset": 1707451,
+      "length": 18,
+      "original_text": "Sta  close.fthat",
+      "text": "Sta  close.fthat",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 51
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "13 2E 1B 00 33 00 1D 26 29 2D 1F 3F 20 00 2E 22 1B 2E"
+    },
+    {
+      "id": "text_068_4df1",
+      "addr": 19953,
+      "rom_offset": 1707505,
+      "length": 17,
+      "original_text": "Luc a, No. Pe's",
+      "text": "Luc a, No. Pe's",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        },
+        {
+          "after": 12,
+          "byte": 34
+        }
+      ],
+      "raw": "0C 2F 1D 00 23 1B 43 00 0E 29 3F 00 10 22 1F 44 2D"
+    },
+    {
+      "id": "text_068_4e0c",
+      "addr": 19980,
+      "rom_offset": 1707532,
+      "length": 19,
+      "original_text": "Bar y, What\nmakes",
+      "text": "Bar y, What\nmakes",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "02 1B 2C 00 2C 33 43 00 17 22 1B 2E 40 00 27 1B 25 1F 2D"
+    },
+    {
+      "id": "text_068_4e3a",
+      "addr": 20026,
+      "rom_offset": 1707578,
+      "length": 16,
+      "original_text": "Lu ca, I dPo't",
+      "text": "Lu ca, I dPo't",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        },
+        {
+          "after": 12,
+          "byte": 40
+        }
+      ],
+      "raw": "0C 2F 00 1D 23 1B 43 00 09 00 1E 10 29 28 44 2E"
+    },
+    {
+      "id": "text_068_4e6c",
+      "addr": 20076,
+      "rom_offset": 1707628,
+      "length": 19,
+      "original_text": "Barr,  Uh. rg3ht\n",
+      "text": "Barr,  Uh. rg3ht\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 51
+        },
+        {
+          "after": 12,
+          "byte": 35
+        }
+      ],
+      "raw": "02 1B 2C 2C 33 43 00 00 15 22 3F 00 2C 23 21 38 22 2E 40"
+    },
+    {
+      "id": "text_068_4e82",
+      "addr": 20098,
+      "rom_offset": 1707650,
+      "length": 21,
+      "original_text": "Lu ca, Wha tis it\nA",
+      "text": "Lu ca, Wha tis it\nA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "0C 2F 00 1D 23 1B 43 00 17 22 1B 00 2E 00 23 2D 00 23 2E 40 01"
+    },
+    {
+      "id": "text_068_4eb0",
+      "addr": 20144,
+      "rom_offset": 1707696,
+      "length": 12,
+      "original_text": "B ary, NoB.",
+      "text": "B ary, NoB.",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        }
+      ],
+      "raw": "02 00 1B 2C 2C 33 43 00 0E 29 02 3F"
+    },
+    {
+      "id": "text_068_4eef",
+      "addr": 20207,
+      "rom_offset": 1707759,
+      "length": 19,
+      "original_text": "Lucia, Wait- It's",
+      "text": "Lucia, Wait- It's",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "0C 2F 1D 23 00 1B 43 00 17 1B 23 2E 45 20 00 09 2E 44 2D"
+    },
+    {
+      "id": "text_068_4f37",
+      "addr": 20279,
+      "rom_offset": 1707831,
+      "length": 16,
+      "original_text": "Barry, Huh!\n\n\n",
+      "text": "Barry, Huh!\n\n\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 08 2F 22 41 40 04 40 40"
+    },
+    {
+      "id": "text_068_4f53",
+      "addr": 20307,
+      "rom_offset": 1707859,
+      "length": 16,
+      "original_text": "Luc a, I caH't",
+      "text": "Luc a, I caH't",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        },
+        {
+          "after": 12,
+          "byte": 40
+        }
+      ],
+      "raw": "0C 2F 1D 00 23 1B 43 00 09 00 1D 1B 08 28 44 2E"
+    },
+    {
+      "id": "text_068_4fa7",
+      "addr": 20391,
+      "rom_offset": 1707943,
+      "length": 20,
+      "original_text": "Barry, Hey. Lucia\n",
+      "text": "Barry, Hey. Lucia\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 08 1F 33 3F 00 40 0C 2F 1D 23 1B 40"
+    },
+    {
+      "id": "text_068_5002",
+      "addr": 20482,
+      "rom_offset": 1708034,
+      "length": 19,
+      "original_text": "Luc a, I to\nd you",
+      "text": "Luc a, I to\nd you",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        },
+        {
+          "after": 12,
+          "byte": 38
+        }
+      ],
+      "raw": "0C 2F 1D 00 23 1B 43 00 09 00 2E 29 40 26 1E 00 33 29 2F"
+    },
+    {
+      "id": "text_068_5035",
+      "addr": 20533,
+      "rom_offset": 1708085,
+      "length": 14,
+      "original_text": "Barr, Right-",
+      "text": "Barr, Right-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 51
+        }
+      ],
+      "raw": "02 1B 2C 2C 33 43 80 00 12 23 21 22 2E 45"
+    },
+    {
+      "id": "text_068_5063",
+      "addr": 20579,
+      "rom_offset": 1708131,
+      "length": 16,
+      "original_text": "But   got thBs",
+      "text": "But   got thBs",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 9
+        },
+        {
+          "after": 12,
+          "byte": 35
+        }
+      ],
+      "raw": "02 2F 2E 00 09 00 00 21 29 2E 00 2E 22 23 02 2D"
+    },
+    {
+      "id": "text_068_50b1",
+      "addr": 20657,
+      "rom_offset": 1708209,
+      "length": 14,
+      "original_text": "Lucia, I can",
+      "text": "Lucia, I can",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "0C 2F 1D 23 00 1B 43 00 09 00 1D 1B 28 01"
+    },
+    {
+      "id": "text_068_50ee",
+      "addr": 20718,
+      "rom_offset": 1708270,
+      "length": 20,
+      "original_text": "Barry, Noooooo----",
+      "text": "Barry, Noooooo----",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 192
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 0E 29 29 29 29 C0 29 29 45 45 45 45"
+    },
+    {
+      "id": "text_068_5109",
+      "addr": 20745,
+      "rom_offset": 1708297,
+      "length": 19,
+      "original_text": "Barry, That thing",
+      "text": "Barry, That thing",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 14 22 1B 2E 00 20 2E 22 23 28 21"
+    },
+    {
+      "id": "text_068_513c",
+      "addr": 20796,
+      "rom_offset": 1708348,
+      "length": 20,
+      "original_text": "\n\nthen\n\n\nvanished\n",
+      "text": "\n\nthen\n\n\nvanished\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 192
+        }
+      ],
+      "raw": "40 40 2E 22 00 1F 28 40 40 40 30 1B 28 C0 23 2D 22 1F 1E 40"
+    },
+    {
+      "id": "text_068_5159",
+      "addr": 20825,
+      "rom_offset": 1708377,
+      "length": 19,
+      "original_text": "HQ, Barry come in",
+      "text": "HQ, Barry come in",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "08 11 43 00 00 02 1B 2C 2C 33 00 1D 29 20 27 1F 00 23 28"
+    },
+    {
+      "id": "text_068_517c",
+      "addr": 20860,
+      "rom_offset": 1708412,
+      "length": 16,
+      "original_text": "Barry, Copy. I",
+      "text": "Barry, Copy. I",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 03 29 2A 33 3F 04 00 09"
+    },
+    {
+      "id": "text_068_51a3",
+      "addr": 20899,
+      "rom_offset": 1708451,
+      "length": 21,
+      "original_text": "H Q,You a renow oBn",
+      "text": "H Q,You a renow oBn",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "08 00 11 43 00 19 29 2F 00 1B 00 2C 1F 00 28 29 31 00 29 02 28"
+    },
+    {
+      "id": "text_068_5209",
+      "addr": 21001,
+      "rom_offset": 1708553,
+      "length": 17,
+      "original_text": "Lookfo r useulA",
+      "text": "Lookfo r useulA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "0C 29 29 25 00 20 29 00 2C 00 2F 2D 1F 20 2F 26 01"
+    },
+    {
+      "id": "text_068_526c",
+      "addr": 21100,
+      "rom_offset": 1708652,
+      "length": 17,
+      "original_text": "Youral ert ionA",
+      "text": "Youral ert ionA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 29
+        }
+      ],
+      "raw": "19 29 2F 2C 00 1B 26 00 1F 2C 2E 00 23 1D 29 28 01"
+    },
+    {
+      "id": "text_068_52ca",
+      "addr": 21194,
+      "rom_offset": 1708746,
+      "length": 18,
+      "original_text": "Goo  luck Bfrry\n",
+      "text": "Goo  luck Bfrry\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 30
+        },
+        {
+          "after": 12,
+          "byte": 27
+        }
+      ],
+      "raw": "07 29 29 00 1E 00 26 2F 1D 25 00 02 20 1B 2C 2C 33 40"
+    },
+    {
+      "id": "text_068_52f4",
+      "addr": 21236,
+      "rom_offset": 1708788,
+      "length": 15,
+      "original_text": "HQ, Barry. be",
+      "text": "HQ, Barry. be",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "08 11 43 00 00 02 1B 2C 2C 33 3F 00 1C 02 1F"
+    },
+    {
+      "id": "text_068_533d",
+      "addr": 21309,
+      "rom_offset": 1708861,
+      "length": 17,
+      "original_text": "If  ou needPto.",
+      "text": "If  ou needPto.",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 51
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "09 20 00 00 33 29 2F 00 28 1F 1F 1E 10 00 2E 29 3F"
+    },
+    {
+      "id": "text_068_538c",
+      "addr": 21388,
+      "rom_offset": 1708940,
+      "length": 18,
+      "original_text": "Once your taHget",
+      "text": "Once your taHget",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 44
+        }
+      ],
+      "raw": "0F 28 1D 1F 00 00 33 29 2F 2C 00 2E 1B 2C 08 21 1F 2E"
+    },
+    {
+      "id": "text_068_53d3",
+      "addr": 21459,
+      "rom_offset": 1709011,
+      "length": 16,
+      "original_text": "The i ght wilA",
+      "text": "The i ght wilA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 45
+        },
+        {
+          "after": 12,
+          "byte": 38
+        }
+      ],
+      "raw": "14 22 1F 00 2D 23 00 21 22 2E 00 31 23 26 26 01"
+    },
+    {
+      "id": "text_068_540f",
+      "addr": 21519,
+      "rom_offset": 1709071,
+      "length": 17,
+      "original_text": " Deativate te",
+      "text": " Deativate te",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 29
+        },
+        {
+          "after": 12,
+          "byte": 34
+        }
+      ],
+      "raw": "00 04 1F 49 1B 1D 2E 23 30 80 1B 2E 1F 00 2E 22 1F"
+    },
+    {
+      "id": "text_068_5468",
+      "addr": 21608,
+      "rom_offset": 1709160,
+      "length": 20,
+      "original_text": "O nc in a  bttle.A",
+      "text": "O nc in a  bttle.A",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 31
+        },
+        {
+          "after": 12,
+          "byte": 27
+        }
+      ],
+      "raw": "0F 00 28 1D 1F 00 23 28 00 1B 00 00 1C 1B 2E 2E 26 1F 3F 01"
+    },
+    {
+      "id": "text_068_54d0",
+      "addr": 21712,
+      "rom_offset": 1709264,
+      "length": 20,
+      "original_text": "Reme ber thaf your",
+      "text": "Reme ber thaf your",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 39
+        },
+        {
+          "after": 12,
+          "byte": 46
+        }
+      ],
+      "raw": "12 1F 27 1F 27 00 1C 1F 2C 00 2E 22 1B 2E 20 00 33 29 2F 2C"
+    },
+    {
+      "id": "text_068_551f",
+      "addr": 21791,
+      "rom_offset": 1709343,
+      "length": 11,
+      "original_text": "CautonH is",
+      "text": "CautonH is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        }
+      ],
+      "raw": "03 1B 2F 2E 23 29 28 08 00 23 2D"
+    },
+    {
+      "id": "text_068_5562",
+      "addr": 21858,
+      "rom_offset": 1709410,
+      "length": 15,
+      "original_text": "Be  areful Dn",
+      "text": "Be  areful Dn",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 29
+        },
+        {
+          "after": 12,
+          "byte": 35
+        }
+      ],
+      "raw": "02 1F 00 00 1D 1B 2C 1F 20 2F 26 00 04 23 28"
+    },
+    {
+      "id": "text_068_5580",
+      "addr": 21888,
+      "rom_offset": 1709440,
+      "length": 17,
+      "original_text": "Barry, Will do\n",
+      "text": "Barry, Will do\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 17 23 26 26 00 08 1E 29 40"
+    },
+    {
+      "id": "text_068_55a9",
+      "addr": 21929,
+      "rom_offset": 1709481,
+      "length": 19,
+      "original_text": "HQ, Make your way",
+      "text": "HQ, Make your way",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "08 11 43 00 00 0D 1B 25 1F 00 33 29 2F 20 2C 00 31 1B 33"
+    },
+    {
+      "id": "text_068_5602",
+      "addr": 22018,
+      "rom_offset": 1709570,
+      "length": 15,
+      "original_text": "Mayb  you caA",
+      "text": "Mayb  you caA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 31
+        },
+        {
+          "after": 12,
+          "byte": 40
+        }
+      ],
+      "raw": "0D 1B 33 1C 1F 00 00 33 29 2F 00 1D 1B 28 01"
+    },
+    {
+      "id": "text_068_5644",
+      "addr": 22084,
+      "rom_offset": 1709636,
+      "length": 18,
+      "original_text": "Barry, O\nK\n I'll",
+      "text": "Barry, O\nK\n I'll",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 16
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 0F 40 0B 40 00 10 09 44 26 26"
+    },
+    {
+      "id": "text_068_5692",
+      "addr": 22162,
+      "rom_offset": 1709714,
+      "length": 11,
+      "original_text": "Barry, The",
+      "text": "Barry, The",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 64
+        }
+      ],
+      "raw": "02 1B 2C 2C 40 33 43 00 14 22 1F"
+    },
+    {
+      "id": "text_068_56f0",
+      "addr": 22256,
+      "rom_offset": 1709808,
+      "length": 20,
+      "original_text": "Barry, I thought I",
+      "text": "Barry, I thought I",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 09 00 2E 22 29 40 2F 21 22 2E 00 09"
+    },
+    {
+      "id": "text_068_5750",
+      "addr": 22352,
+      "rom_offset": 1709904,
+      "length": 16,
+      "original_text": "Barry, There's",
+      "text": "Barry, There's",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 14 22 1F 2C 1F 04 44 2D"
+    },
+    {
+      "id": "text_068_5799",
+      "addr": 22425,
+      "rom_offset": 1709977,
+      "length": 20,
+      "original_text": "She must be eally",
+      "text": "She must be eally",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 44
+        }
+      ],
+      "raw": "13 22 1F 00 00 27 2F 2D 2E 00 1C 1F 80 00 2C 1F 1B 26 26 33"
+    },
+    {
+      "id": "text_068_57bf",
+      "addr": 22463,
+      "rom_offset": 1710015,
+      "length": 19,
+      "original_text": "Barry, I can hear",
+      "text": "Barry, I can hear",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 09 00 1D 1B 28 20 00 22 1F 1B 2C"
+    },
+    {
+      "id": "text_068_580e",
+      "addr": 22542,
+      "rom_offset": 1710094,
+      "length": 19,
+      "original_text": "HQ, Barry. do you",
+      "text": "HQ, Barry. do you",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "08 11 43 00 00 02 1B 2C 2C 33 3F 00 1E 20 29 00 33 29 2F"
+    },
+    {
+      "id": "text_068_5863",
+      "addr": 22627,
+      "rom_offset": 1710179,
+      "length": 19,
+      "original_text": " HQ,Thou ghtwe'dA",
+      "text": " HQ,Thou ghtwe'dA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "00 08 11 43 00 14 22 29 2F 00 21 22 2E 00 31 1F 44 1E 01"
+    },
+    {
+      "id": "text_068_58a2",
+      "addr": 22690,
+      "rom_offset": 1710242,
+      "length": 20,
+      "original_text": " Bary, I 'vefounBd",
+      "text": " Bary, I 'vefounBd",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "00 02 1B 2C 2C 33 43 00 09 00 44 30 1F 00 20 29 2F 28 02 1E"
+    },
+    {
+      "id": "text_068_58fa",
+      "addr": 22778,
+      "rom_offset": 1710330,
+      "length": 21,
+      "original_text": "It  ook ev eythingA",
+      "text": "It  ook ev eythingA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 46
+        },
+        {
+          "after": 12,
+          "byte": 44
+        }
+      ],
+      "raw": "09 2E 00 00 2E 29 29 25 00 1F 30 00 1F 2C 33 2E 22 23 28 21 01"
+    },
+    {
+      "id": "text_068_593b",
+      "addr": 22843,
+      "rom_offset": 1710395,
+      "length": 20,
+      "original_text": " HQ,Unlu ckyabouBt",
+      "text": " HQ,Unlu ckyabouBt",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "00 08 11 43 00 15 28 26 2F 00 1D 25 33 00 1B 1C 29 2F 02 2E"
+    },
+    {
+      "id": "text_068_5980",
+      "addr": 22912,
+      "rom_offset": 1710464,
+      "length": 8,
+      "original_text": "We Pave",
+      "text": "We Pave",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 34
+        }
+      ],
+      "raw": "17 1F 00 10 22 1B 30 1F"
+    },
+    {
+      "id": "text_068_59b0",
+      "addr": 22960,
+      "rom_offset": 1710512,
+      "length": 19,
+      "original_text": " We elie ve e isA",
+      "text": " We elie ve e isA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 28
+        },
+        {
+          "after": 12,
+          "byte": 34
+        }
+      ],
+      "raw": "00 17 1F 00 1C 1F 26 23 1F 00 30 1F 00 22 1F 00 23 2D 01"
+    },
+    {
+      "id": "text_068_59f2",
+      "addr": 23026,
+      "rom_offset": 1710578,
+      "length": 19,
+      "original_text": "Barr,  Thank Hfor",
+      "text": "Barr,  Thank Hfor",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 51
+        },
+        {
+          "after": 12,
+          "byte": 45
+        }
+      ],
+      "raw": "02 1B 2C 2C 33 43 00 00 14 22 1B 28 25 2D 00 08 20 29 2C"
+    },
+    {
+      "id": "text_068_5a2a",
+      "addr": 23082,
+      "rom_offset": 1710634,
+      "length": 19,
+      "original_text": "Barry, Hmm. looks",
+      "text": "Barry, Hmm. looks",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 08 27 27 3F 00 20 26 29 29 25 2D"
+    },
+    {
+      "id": "text_068_5a6f",
+      "addr": 23151,
+      "rom_offset": 1710703,
+      "length": 20,
+      "original_text": "Lucia, If it helps",
+      "text": "Lucia, If it helps",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "0C 2F 1D 23 00 1B 43 00 09 20 00 23 2E 40 00 22 1F 26 2A 2D"
+    },
+    {
+      "id": "text_068_5aa5",
+      "addr": 23205,
+      "rom_offset": 1710757,
+      "length": 19,
+      "original_text": "Barry, O\nK\n let's",
+      "text": "Barry, O\nK\n let's",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 0F 40 0B 40 00 20 26 1F 2E 44 2D"
+    },
+    {
+      "id": "text_068_5aee",
+      "addr": 23278,
+      "rom_offset": 1710830,
+      "length": 13,
+      "original_text": "We  ay findA",
+      "text": "We  ay findA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 39
+        }
+      ],
+      "raw": "17 1F 00 00 27 1B 33 00 20 23 28 1E 01"
+    },
+    {
+      "id": "text_068_5b1f",
+      "addr": 23327,
+      "rom_offset": 1710879,
+      "length": 20,
+      "original_text": "Barry, Now we have",
+      "text": "Barry, Now we have",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 0E 29 31 00 31 40 1F 00 22 1B 30 1F"
+    },
+    {
+      "id": "text_068_5b74",
+      "addr": 23412,
+      "rom_offset": 1710964,
+      "length": 20,
+      "original_text": "Lucia, Great- I'll",
+      "text": "Lucia, Great- I'll",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "0C 2F 1D 23 00 1B 43 00 07 2C 1F 1B 2E 40 45 00 09 44 26 26"
+    },
+    {
+      "id": "text_068_5ba5",
+      "addr": 23461,
+      "rom_offset": 1711013,
+      "length": 18,
+      "original_text": "Barry, This hole",
+      "text": "Barry, This hole",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 16
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 14 22 23 2D 00 10 22 29 26 1F"
+    },
+    {
+      "id": "text_068_5be1",
+      "addr": 23521,
+      "rom_offset": 1711073,
+      "length": 19,
+      "original_text": "Barry, I can just",
+      "text": "Barry, I can just",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 09 00 1D 1B 28 20 00 24 2F 2D 2E"
+    },
+    {
+      "id": "text_068_5c28",
+      "addr": 23592,
+      "rom_offset": 1711144,
+      "length": 19,
+      "original_text": "Barry decends the",
+      "text": "Barry decends the",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 00 1E 1F 1D 1F 28 1E 20 2D 00 2E 22 1F"
+    },
+    {
+      "id": "text_068_5c55",
+      "addr": 23637,
+      "rom_offset": 1711189,
+      "length": 20,
+      "original_text": "Barry, Leon c'mon-",
+      "text": "Barry, Leon c'mon-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 0C 1F 29 28 00 40 1D 44 27 29 28 45"
+    },
+    {
+      "id": "text_068_5c77",
+      "addr": 23671,
+      "rom_offset": 1711223,
+      "length": 13,
+      "original_text": "Leonr\negains",
+      "text": "Leonr\negains",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        }
+      ],
+      "raw": "0C 1F 29 28 00 2C 40 1F 21 1B 23 28 2D"
+    },
+    {
+      "id": "text_068_5c9c",
+      "addr": 23708,
+      "rom_offset": 1711260,
+      "length": 16,
+      "original_text": "Leon, Uhhhn\n\n\n",
+      "text": "Leon, Uhhhn\n\n\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "0C 1F 29 28 00 43 00 15 22 22 22 28 40 04 40 40"
+    },
+    {
+      "id": "text_068_5cdf",
+      "addr": 23775,
+      "rom_offset": 1711327,
+      "length": 17,
+      "original_text": " Bary, When ou",
+      "text": " Bary, When ou",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 51
+        }
+      ],
+      "raw": "00 02 1B 2C 2C 33 43 00 17 80 22 1F 28 00 33 29 2F"
+    },
+    {
+      "id": "text_068_5d32",
+      "addr": 23858,
+      "rom_offset": 1711410,
+      "length": 19,
+      "original_text": "So tey  calld Dme",
+      "text": "So tey  calld Dme",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 34
+        },
+        {
+          "after": 12,
+          "byte": 31
+        }
+      ],
+      "raw": "13 29 00 2E 22 1F 33 00 00 1D 1B 26 26 1F 1E 00 04 27 1F"
+    },
+    {
+      "id": "text_068_5d72",
+      "addr": 23922,
+      "rom_offset": 1711474,
+      "length": 16,
+      "original_text": "Leon  Right\n\nA",
+      "text": "Leon  Right\n\nA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 67
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "0C 1F 29 28 43 00 00 12 23 21 22 2E 40 40 40 01"
+    },
+    {
+      "id": "text_068_5dc9",
+      "addr": 24009,
+      "rom_offset": 1711561,
+      "length": 16,
+      "original_text": " Bary, Y\neah I",
+      "text": " Bary, Y\neah I",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 63
+        }
+      ],
+      "raw": "00 02 1B 2C 2C 33 43 00 19 40 1F 1B 22 3F 00 09"
+    },
+    {
+      "id": "text_068_5e26",
+      "addr": 24102,
+      "rom_offset": 1711654,
+      "length": 17,
+      "original_text": "Y'knw . ther'Bs",
+      "text": "Y'knw . ther'Bs",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 41
+        },
+        {
+          "after": 12,
+          "byte": 31
+        }
+      ],
+      "raw": "19 44 25 28 29 31 00 3F 00 2E 22 1F 2C 1F 44 02 2D"
+    },
+    {
+      "id": "text_068_5e6d",
+      "addr": 24173,
+      "rom_offset": 1711725,
+      "length": 18,
+      "original_text": "Leon L ike watN!",
+      "text": "Leon L ike watN!",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 67
+        },
+        {
+          "after": 12,
+          "byte": 34
+        }
+      ],
+      "raw": "0C 1F 29 28 43 00 0C 00 23 25 1F 00 31 22 1B 2E 0E 41"
+    },
+    {
+      "id": "text_068_5e82",
+      "addr": 24194,
+      "rom_offset": 1711746,
+      "length": 20,
+      "original_text": "Barry, Well. she's",
+      "text": "Barry, Well. she's",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 17 1F 26 26 3F 40 00 2D 22 1F 44 2D"
+    },
+    {
+      "id": "text_068_5eb2",
+      "addr": 24242,
+      "rom_offset": 1711794,
+      "length": 17,
+      "original_text": "M aye she\n'sthe",
+      "text": "M aye she\n'sthe",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 28
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "0D 00 1B 33 1C 1F 00 2D 22 1F 40 44 2D 00 2E 22 1F"
+    },
+    {
+      "id": "text_068_5eec",
+      "addr": 24300,
+      "rom_offset": 1711852,
+      "length": 20,
+      "original_text": "Leon  Yeah srPe\n\n\n",
+      "text": "Leon  Yeah srPe\n\n\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 67
+        },
+        {
+          "after": 12,
+          "byte": 47
+        }
+      ],
+      "raw": "0C 1F 29 28 43 00 00 19 1F 1B 22 00 2D 2F 2C 10 1F 40 40 40"
+    },
+    {
+      "id": "text_068_5f3e",
+      "addr": 24382,
+      "rom_offset": 1711934,
+      "length": 19,
+      "original_text": "Barr , Well Peah.",
+      "text": "Barr , Well Peah.",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 51
+        },
+        {
+          "after": 12,
+          "byte": 51
+        }
+      ],
+      "raw": "02 1B 2C 2C 33 00 43 00 17 1F 26 26 00 33 10 1F 1B 22 3F"
+    },
+    {
+      "id": "text_068_5f5c",
+      "addr": 24412,
+      "rom_offset": 1711964,
+      "length": 15,
+      "original_text": "Le o, ListHe\n",
+      "text": "Le o, ListHe\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 40
+        },
+        {
+          "after": 12,
+          "byte": 40
+        }
+      ],
+      "raw": "0C 1F 00 29 28 43 00 0C 23 2D 2E 08 1F 28 40"
+    },
+    {
+      "id": "text_068_5fb1",
+      "addr": 24497,
+      "rom_offset": 1712049,
+      "length": 20,
+      "original_text": "candda te fo wHhat",
+      "text": "candda te fo wHhat",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        },
+        {
+          "after": 12,
+          "byte": 44
+        }
+      ],
+      "raw": "1D 1B 28 1E 23 1E 1B 00 2E 1F 00 20 29 2C 00 31 08 22 1B 2E"
+    },
+    {
+      "id": "text_068_6005",
+      "addr": 24581,
+      "rom_offset": 1712133,
+      "length": 17,
+      "original_text": "I'd like to see",
+      "text": "I'd like to see",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "09 44 1E 00 00 26 23 25 1F 00 2E 29 00 08 2D 1F 1F"
+    },
+    {
+      "id": "text_068_6068",
+      "addr": 24680,
+      "rom_offset": 1712232,
+      "length": 15,
+      "original_text": "Barry, You're",
+      "text": "Barry, You're",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 19 29 2F 44 2C 02 1F"
+    },
+    {
+      "id": "text_068_60b4",
+      "addr": 24756,
+      "rom_offset": 1712308,
+      "length": 19,
+      "original_text": " We ight  beableA",
+      "text": " We ight  beableA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 39
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "00 17 1F 00 27 23 21 22 2E 00 00 1C 1F 00 1B 1C 26 1F 01"
+    },
+    {
+      "id": "text_068_6103",
+      "addr": 24835,
+      "rom_offset": 1712387,
+      "length": 18,
+      "original_text": "Leon, There they",
+      "text": "Leon, There they",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 16
+        }
+      ],
+      "raw": "0C 1F 29 28 00 43 00 14 22 1F 2C 1F 00 10 2E 22 1F 33"
+    },
+    {
+      "id": "text_068_611e",
+      "addr": 24862,
+      "rom_offset": 1712414,
+      "length": 19,
+      "original_text": "Barry, Looks like",
+      "text": "Barry, Looks like",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 0C 29 29 25 2D 20 00 26 23 25 1F"
+    },
+    {
+      "id": "text_068_617a",
+      "addr": 24954,
+      "rom_offset": 1712506,
+      "length": 19,
+      "original_text": "As  ar as weknow",
+      "text": "As  ar as weknow",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 32
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "01 2D 00 00 20 1B 2C 00 1B 2D 00 80 31 1F 00 25 28 29 31"
+    },
+    {
+      "id": "text_068_61c4",
+      "addr": 25028,
+      "rom_offset": 1712580,
+      "length": 16,
+      "original_text": " Whydoes\nn'tit",
+      "text": " Whydoes\nn'tit",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "00 17 22 33 00 1E 29 1F 2D 40 28 44 2E 00 23 2E"
+    },
+    {
+      "id": "text_068_61ed",
+      "addr": 25069,
+      "rom_offset": 1712621,
+      "length": 17,
+      "original_text": "Leon, You don't",
+      "text": "Leon, You don't",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "0C 1F 29 28 00 43 00 19 29 2F 00 1E 29 08 28 44 2E"
+    },
+    {
+      "id": "text_068_624d",
+      "addr": 25165,
+      "rom_offset": 1712717,
+      "length": 20,
+      "original_text": "but f  she i. Hwhy",
+      "text": "but f  she i. Hwhy",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        },
+        {
+          "after": 12,
+          "byte": 45
+        }
+      ],
+      "raw": "1C 2F 2E 00 23 20 00 00 2D 22 1F 00 23 2D 3F 00 08 31 22 33"
+    },
+    {
+      "id": "text_068_629a",
+      "addr": 25242,
+      "rom_offset": 1712794,
+      "length": 19,
+      "original_text": "Barry, I see your",
+      "text": "Barry, I see your",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 09 00 2D 1F 1F 20 00 33 29 2F 2C"
+    },
+    {
+      "id": "text_068_62c0",
+      "addr": 25280,
+      "rom_offset": 1712832,
+      "length": 16,
+      "original_text": "Le o, LookP\nIf",
+      "text": "Le o, LookP\nIf",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 40
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "0C 1F 00 29 28 43 00 0C 29 29 25 10 40 00 09 20"
+    },
+    {
+      "id": "text_068_630c",
+      "addr": 25356,
+      "rom_offset": 1712908,
+      "length": 18,
+      "original_text": "I knw  aboutitB\n",
+      "text": "I knw  aboutitB\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 41
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "09 00 25 28 29 31 00 00 1B 1C 29 2F 2E 00 23 2E 02 40"
+    },
+    {
+      "id": "text_068_6361",
+      "addr": 25441,
+      "rom_offset": 1712993,
+      "length": 17,
+      "original_text": "Abo t two yPars",
+      "text": "Abo t two yPars",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 47
+        },
+        {
+          "after": 12,
+          "byte": 31
+        }
+      ],
+      "raw": "01 1C 29 00 2F 2E 00 2E 31 29 00 33 10 1F 1B 2C 2D"
+    },
+    {
+      "id": "text_068_63a1",
+      "addr": 25505,
+      "rom_offset": 1713057,
+      "length": 19,
+      "original_text": "Sh esaid herears",
+      "text": "Sh esaid herears",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "13 22 00 1F 00 2D 1B 23 1E 00 22 80 1F 2C 00 1F 1B 2C 2D"
+    },
+    {
+      "id": "text_068_63dd",
+      "addr": 25565,
+      "rom_offset": 1713117,
+      "length": 18,
+      "original_text": "Barr , Her e3rs!",
+      "text": "Barr , Her e3rs!",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 51
+        },
+        {
+          "after": 12,
+          "byte": 27
+        }
+      ],
+      "raw": "02 1B 2C 2C 33 00 43 00 08 1F 2C 00 1F 1B 38 2C 2D 41"
+    },
+    {
+      "id": "text_068_63f2",
+      "addr": 25586,
+      "rom_offset": 1713138,
+      "length": 13,
+      "original_text": "Le o, YeahB\n",
+      "text": "Le o, YeahB\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 40
+        }
+      ],
+      "raw": "0C 1F 00 29 28 43 00 19 1F 1B 22 02 40"
+    },
+    {
+      "id": "text_068_6436",
+      "addr": 25654,
+      "rom_offset": 1713206,
+      "length": 16,
+      "original_text": "Not o  mentinA",
+      "text": "Not o  mentinA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 46
+        },
+        {
+          "after": 12,
+          "byte": 41
+        }
+      ],
+      "raw": "0E 29 2E 00 2E 29 00 00 27 1F 28 2E 23 29 28 01"
+    },
+    {
+      "id": "text_068_6498",
+      "addr": 25752,
+      "rom_offset": 1713304,
+      "length": 20,
+      "original_text": "In fct  thos sHame",
+      "text": "In fct  thos sHame",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 27
+        },
+        {
+          "after": 12,
+          "byte": 31
+        }
+      ],
+      "raw": "09 28 00 20 1B 1D 2E 00 00 2E 22 29 2D 1F 00 2D 08 1B 27 1F"
+    },
+    {
+      "id": "text_068_64e6",
+      "addr": 25830,
+      "rom_offset": 1713382,
+      "length": 21,
+      "original_text": "T he pick edon heBr",
+      "text": "T he pick edon heBr",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 51
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "14 00 22 1F 33 00 2A 23 1D 25 00 1F 1E 00 29 28 00 22 1F 02 2C"
+    },
+    {
+      "id": "text_068_6516",
+      "addr": 25878,
+      "rom_offset": 1713430,
+      "length": 14,
+      "original_text": "She ai\nd tha",
+      "text": "She ai\nd tha",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 45
+        },
+        {
+          "after": 12,
+          "byte": 46
+        }
+      ],
+      "raw": "13 22 1F 00 2D 1B 23 40 1E 00 2E 22 1B 2E"
+    },
+    {
+      "id": "text_068_6572",
+      "addr": 25970,
+      "rom_offset": 1713522,
+      "length": 13,
+      "original_text": "relaives in",
+      "text": "relaives in",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 46
+        }
+      ],
+      "raw": "2C 1F 26 1B 2E 80 23 30 1F 2D 00 23 28"
+    },
+    {
+      "id": "text_068_65af",
+      "addr": 26031,
+      "rom_offset": 1713583,
+      "length": 19,
+      "original_text": "Not ec ause heD's",
+      "text": "Not ec ause heD's",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 28
+        },
+        {
+          "after": 12,
+          "byte": 45
+        }
+      ],
+      "raw": "0E 29 2E 00 1C 1F 1D 00 1B 2F 2D 1F 00 2D 22 1F 04 44 2D"
+    },
+    {
+      "id": "text_068_65fe",
+      "addr": 26110,
+      "rom_offset": 1713662,
+      "length": 21,
+      "original_text": " Bary, T hatsounDds",
+      "text": " Bary, T hatsounDds",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "00 02 1B 2C 2C 33 43 00 14 00 22 1B 2E 00 2D 29 2F 28 04 1E 2D"
+    },
+    {
+      "id": "text_068_662b",
+      "addr": 26155,
+      "rom_offset": 1713707,
+      "length": 21,
+      "original_text": " Leo, Je ez.why Ddo",
+      "text": " Leo, Je ez.why Ddo",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 40
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "00 0C 1F 29 28 43 00 0A 1F 00 1F 34 3F 00 31 22 33 00 04 1E 29"
+    },
+    {
+      "id": "text_068_664e",
+      "addr": 26190,
+      "rom_offset": 1713742,
+      "length": 18,
+      "original_text": "C anyou at last",
+      "text": "C anyou at last",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 31
+        }
+      ],
+      "raw": "03 00 1B 28 00 33 29 2F 00 1B 80 2E 00 26 1F 1B 2D 2E"
+    },
+    {
+      "id": "text_068_6694",
+      "addr": 26260,
+      "rom_offset": 1713812,
+      "length": 15,
+      "original_text": "Rig t now. Dy",
+      "text": "Rig t now. Dy",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 34
+        },
+        {
+          "after": 12,
+          "byte": 39
+        }
+      ],
+      "raw": "12 23 21 00 22 2E 00 28 29 31 3F 00 04 27 33"
+    },
+    {
+      "id": "text_068_66e1",
+      "addr": 26337,
+      "rom_offset": 1713889,
+      "length": 10,
+      "original_text": "If tkiDng",
+      "text": "If tkiDng",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 27
+        }
+      ],
+      "raw": "09 20 00 2E 1B 25 23 04 28 21"
+    },
+    {
+      "id": "text_068_672f",
+      "addr": 26415,
+      "rom_offset": 1713967,
+      "length": 21,
+      "original_text": "w ha's th e robleBm",
+      "text": "w ha's th e robleBm",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 46
+        },
+        {
+          "after": 12,
+          "byte": 42
+        }
+      ],
+      "raw": "31 00 22 1B 2E 44 2D 00 2E 22 00 1F 00 2A 2C 29 1C 26 1F 02 27"
+    },
+    {
+      "id": "text_068_6791",
+      "addr": 26513,
+      "rom_offset": 1714065,
+      "length": 15,
+      "original_text": "Leon, Hold it",
+      "text": "Leon, Hold it",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "0C 1F 29 28 00 43 00 08 29 26 1E 00 23 02 2E"
+    },
+    {
+      "id": "text_068_67d2",
+      "addr": 26578,
+      "rom_offset": 1714130,
+      "length": 14,
+      "original_text": "Leon, Lucia-",
+      "text": "Leon, Lucia-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 7
+        }
+      ],
+      "raw": "0C 1F 29 28 00 43 00 0C 2F 1D 23 1B 45 07"
+    },
+    {
+      "id": "text_068_67e3",
+      "addr": 26595,
+      "rom_offset": 1714147,
+      "length": 20,
+      "original_text": "Luci , Leon fou're",
+      "text": "Luci , Leon fou're",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 27
+        },
+        {
+          "after": 12,
+          "byte": 51
+        }
+      ],
+      "raw": "0C 2F 1D 23 1B 00 43 00 0C 1F 29 28 00 33 20 29 2F 44 2C 1F"
+    },
+    {
+      "id": "text_068_6826",
+      "addr": 26662,
+      "rom_offset": 1714214,
+      "length": 16,
+      "original_text": "Barry, I don't",
+      "text": "Barry, I don't",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 09 00 1E 29 28 04 44 2E"
+    },
+    {
+      "id": "text_068_6869",
+      "addr": 26729,
+      "rom_offset": 1714281,
+      "length": 14,
+      "original_text": " Com on Pwe'",
+      "text": " Com on Pwe'",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 31
+        },
+        {
+          "after": 12,
+          "byte": 30
+        }
+      ],
+      "raw": "00 03 29 27 1F 00 29 28 00 10 31 1F 44 1E"
+    },
+    {
+      "id": "text_068_68aa",
+      "addr": 26794,
+      "rom_offset": 1714346,
+      "length": 18,
+      "original_text": "Barry, We really",
+      "text": "Barry, We really",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 16
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 17 1F 00 2C 1F 10 1B 26 26 33"
+    },
+    {
+      "id": "text_068_68e9",
+      "addr": 26857,
+      "rom_offset": 1714409,
+      "length": 15,
+      "original_text": "Lucia, Last I",
+      "text": "Lucia, Last I",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "0C 2F 1D 23 00 1B 43 00 0C 1B 2D 2E 00 02 09"
+    },
+    {
+      "id": "text_068_6942",
+      "addr": 26946,
+      "rom_offset": 1714498,
+      "length": 19,
+      "original_text": "Barry, Great- Now",
+      "text": "Barry, Great- Now",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 07 2C 1F 1B 2E 20 45 00 0E 29 31"
+    },
+    {
+      "id": "text_068_699f",
+      "addr": 27039,
+      "rom_offset": 1714591,
+      "length": 17,
+      "original_text": "Leon, Ok. we're",
+      "text": "Leon, Ok. we're",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "0C 1F 29 28 00 43 00 0F 25 3F 00 31 1F 08 44 2C 1F"
+    },
+    {
+      "id": "text_068_69cc",
+      "addr": 27084,
+      "rom_offset": 1714636,
+      "length": 12,
+      "original_text": "Suddenly an",
+      "text": "Suddenly an",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "13 2F 1E 1E 80 1F 28 26 33 00 1B 28"
+    },
+    {
+      "id": "text_068_6a02",
+      "addr": 27138,
+      "rom_offset": 1714690,
+      "length": 14,
+      "original_text": "Leon, Lucia-",
+      "text": "Leon, Lucia-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "0C 1F 29 28 00 43 00 0C 2F 1D 23 1B 45 01"
+    },
+    {
+      "id": "text_068_6a21",
+      "addr": 27169,
+      "rom_offset": 1714721,
+      "length": 19,
+      "original_text": " Luca, I 'm kay-A",
+      "text": " Luca, I 'm kay-A",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        },
+        {
+          "after": 12,
+          "byte": 41
+        }
+      ],
+      "raw": "00 0C 2F 1D 23 1B 43 00 09 00 44 27 00 29 25 1B 33 45 01"
+    },
+    {
+      "id": "text_068_6a42",
+      "addr": 27202,
+      "rom_offset": 1714754,
+      "length": 19,
+      "original_text": "Leo , The f\nre is",
+      "text": "Leo , The f\nre is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 40
+        },
+        {
+          "after": 12,
+          "byte": 35
+        }
+      ],
+      "raw": "0C 1F 29 00 28 43 00 14 22 1F 00 20 40 23 2C 1F 00 23 2D"
+    },
+    {
+      "id": "text_068_6aa7",
+      "addr": 27303,
+      "rom_offset": 1714855,
+      "length": 16,
+      "original_text": "w e'e gonfnago",
+      "text": "w e'e gonfnago",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "31 00 1F 44 2C 1F 00 21 29 28 20 28 1B 00 21 29"
+    },
+    {
+      "id": "text_068_6aca",
+      "addr": 27338,
+      "rom_offset": 1714890,
+      "length": 17,
+      "original_text": "Barry, I'll use",
+      "text": "Barry, I'll use",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 8
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 09 44 26 26 00 08 2F 2D 1F"
+    },
+    {
+      "id": "text_068_6b0a",
+      "addr": 27402,
+      "rom_offset": 1714954,
+      "length": 16,
+      "original_text": "we  eed to Het",
+      "text": "we  eed to Het",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 40
+        },
+        {
+          "after": 12,
+          "byte": 33
+        }
+      ],
+      "raw": "31 1F 00 00 28 1F 1F 1E 00 2E 29 00 08 21 1F 2E"
+    },
+    {
+      "id": "text_068_6b3f",
+      "addr": 27455,
+      "rom_offset": 1715007,
+      "length": 18,
+      "original_text": "Mayday-  Mayday-",
+      "text": "Mayday-  Mayday-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 16
+        }
+      ],
+      "raw": "0D 1B 33 1E 00 1B 33 45 00 00 0D 1B 33 10 1E 1B 33 45"
+    },
+    {
+      "id": "text_068_6b80",
+      "addr": 27520,
+      "rom_offset": 1715072,
+      "length": 12,
+      "original_text": "HQ, This is",
+      "text": "HQ, This is",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "08 11 43 00 80 14 22 23 2D 00 23 2D"
+    },
+    {
+      "id": "text_068_6ba6",
+      "addr": 27558,
+      "rom_offset": 1715110,
+      "length": 19,
+      "original_text": "Ba ry, I've ound",
+      "text": "Ba ry, I've ound",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "02 1B 00 2C 2C 33 43 00 09 44 30 80 1F 00 20 29 2F 28 1E"
+    },
+    {
+      "id": "text_068_6be6",
+      "addr": 27622,
+      "rom_offset": 1715174,
+      "length": 16,
+      "original_text": "S heappeafrsto",
+      "text": "S heappeafrsto",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "13 00 22 1F 00 1B 2A 2A 1F 1B 20 2C 2D 00 2E 29"
+    },
+    {
+      "id": "text_068_6c12",
+      "addr": 27666,
+      "rom_offset": 1715218,
+      "length": 16,
+      "original_text": "HQ ,What aPbut",
+      "text": "HQ ,What aPbut",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 41
+        }
+      ],
+      "raw": "08 11 00 43 00 17 22 1B 2E 00 1B 10 1C 29 2F 2E"
+    },
+    {
+      "id": "text_068_6c33",
+      "addr": 27699,
+      "rom_offset": 1715251,
+      "length": 20,
+      "original_text": "Barr , We'refstill",
+      "text": "Barr , We'refstill",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 51
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "02 1B 2C 2C 33 00 43 00 17 1F 44 2C 1F 00 20 2D 2E 23 26 26"
+    },
+    {
+      "id": "text_068_6c96",
+      "addr": 27798,
+      "rom_offset": 1715350,
+      "length": 12,
+      "original_text": "any \ninute-",
+      "text": "any \ninute-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 39
+        }
+      ],
+      "raw": "1B 28 33 00 27 40 23 28 2F 2E 1F 45"
+    },
+    {
+      "id": "text_068_6cd4",
+      "addr": 27860,
+      "rom_offset": 1715412,
+      "length": 16,
+      "original_text": "HQ, o  can d-A",
+      "text": "HQ, o  can d-A",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 14
+        },
+        {
+          "after": 12,
+          "byte": 41
+        }
+      ],
+      "raw": "08 11 43 00 0E 29 00 00 1D 1B 28 00 1E 29 45 01"
+    },
+    {
+      "id": "text_068_6d16",
+      "addr": 27926,
+      "rom_offset": 1715478,
+      "length": 18,
+      "original_text": "Sug est youfhold",
+      "text": "Sug est youfhold",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 33
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "13 2F 21 00 21 1F 2D 2E 00 33 29 2F 20 00 22 29 26 1E"
+    },
+    {
+      "id": "text_068_6d4f",
+      "addr": 27983,
+      "rom_offset": 1715535,
+      "length": 13,
+      "original_text": " We'l geHt a",
+      "text": " We'l geHt a",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 38
+        }
+      ],
+      "raw": "00 17 1F 44 26 26 00 21 1F 08 2E 00 1B"
+    },
+    {
+      "id": "text_068_6d8d",
+      "addr": 28045,
+      "rom_offset": 1715597,
+      "length": 17,
+      "original_text": "B ary, Ri\ngh\n\n\n",
+      "text": "B ary, Ri\ngh\n\n\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 46
+        }
+      ],
+      "raw": "02 00 1B 2C 2C 33 43 00 12 23 40 21 22 2E 40 40 40"
+    },
+    {
+      "id": "text_068_6dde",
+      "addr": 28126,
+      "rom_offset": 1715678,
+      "length": 14,
+      "original_text": "H Q,One mHor",
+      "text": "H Q,One mHor",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 31
+        }
+      ],
+      "raw": "08 00 11 43 00 0F 28 1F 00 27 08 29 2C 1F"
+    },
+    {
+      "id": "text_068_6e39",
+      "addr": 28217,
+      "rom_offset": 1715769,
+      "length": 19,
+      "original_text": " youiden tif theA",
+      "text": " youiden tif theA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 51
+        }
+      ],
+      "raw": "00 33 29 2F 00 23 1E 1F 28 00 2E 23 20 33 00 2E 22 1F 01"
+    },
+    {
+      "id": "text_068_6e91",
+      "addr": 28305,
+      "rom_offset": 1715857,
+      "length": 14,
+      "original_text": "Ac kowledgDe",
+      "text": "Ac kowledgDe",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 40
+        },
+        {
+          "after": 12,
+          "byte": 63
+        }
+      ],
+      "raw": "01 1D 00 25 28 29 31 26 1F 1E 21 04 1F 3F"
+    },
+    {
+      "id": "text_068_6eab",
+      "addr": 28331,
+      "rom_offset": 1715883,
+      "length": 14,
+      "original_text": "Bar y, GreeB",
+      "text": "Bar y, GreeB",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 40
+        }
+      ],
+      "raw": "02 1B 2C 00 2C 33 43 00 07 2C 1F 1F 02 28"
+    },
+    {
+      "id": "text_068_6ef0",
+      "addr": 28400,
+      "rom_offset": 1715952,
+      "length": 15,
+      "original_text": "Leon, Well it",
+      "text": "Leon, Well it",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "0C 1F 29 28 00 43 00 17 1F 26 26 00 23 02 2E"
+    },
+    {
+      "id": "text_068_6f20",
+      "addr": 28448,
+      "rom_offset": 1716000,
+      "length": 15,
+      "original_text": "B ary, YePahI",
+      "text": "B ary, YePahI",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "02 00 1B 2C 2C 33 43 00 19 1F 10 1B 22 00 09"
+    },
+    {
+      "id": "text_068_6f76",
+      "addr": 28534,
+      "rom_offset": 1716086,
+      "length": 18,
+      "original_text": "spri kler syHtem",
+      "text": "spri kler syHtem",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 40
+        },
+        {
+          "after": 12,
+          "byte": 45
+        }
+      ],
+      "raw": "2D 2A 2C 23 28 00 25 26 1F 2C 00 2D 33 2D 08 2E 1F 27"
+    },
+    {
+      "id": "text_068_6fca",
+      "addr": 28618,
+      "rom_offset": 1716170,
+      "length": 19,
+      "original_text": "Th a way we ight",
+      "text": "Th a way we ight",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 46
+        },
+        {
+          "after": 12,
+          "byte": 39
+        }
+      ],
+      "raw": "14 22 00 1B 2E 00 31 1B 33 00 31 80 1F 00 27 23 21 22 2E"
+    },
+    {
+      "id": "text_068_701c",
+      "addr": 28700,
+      "rom_offset": 1716252,
+      "length": 16,
+      "original_text": "L eo, Whaft re",
+      "text": "L eo, Whaft re",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 40
+        },
+        {
+          "after": 12,
+          "byte": 27
+        }
+      ],
+      "raw": "0C 00 1F 29 28 43 00 17 22 1B 20 2E 00 1B 2C 1F"
+    },
+    {
+      "id": "text_068_7043",
+      "addr": 28739,
+      "rom_offset": 1716291,
+      "length": 18,
+      "original_text": "Barr,  TrustmeB\n",
+      "text": "Barr,  TrustmeB\n",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 51
+        },
+        {
+          "after": 12,
+          "byte": 0
+        }
+      ],
+      "raw": "02 1B 2C 2C 33 43 00 00 14 2C 2F 2D 2E 00 27 1F 02 40"
+    },
+    {
+      "id": "text_068_706e",
+      "addr": 28782,
+      "rom_offset": 1716334,
+      "length": 13,
+      "original_text": " Leo, YeHah.",
+      "text": " Leo, YeHah.",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 40
+        }
+      ],
+      "raw": "00 0C 1F 29 28 43 00 19 1F 08 1B 22 3F"
+    },
+    {
+      "id": "text_068_708b",
+      "addr": 28811,
+      "rom_offset": 1716363,
+      "length": 18,
+      "original_text": "Leon, Lucia stay",
+      "text": "Leon, Lucia stay",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 16
+        }
+      ],
+      "raw": "0C 1F 29 28 00 43 00 0C 2F 1D 23 1B 00 10 2D 2E 1B 33"
+    },
+    {
+      "id": "text_068_70e9",
+      "addr": 28905,
+      "rom_offset": 1716457,
+      "length": 19,
+      "original_text": " a min c ompter\nA",
+      "text": " a min c ompter\nA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 27
+        },
+        {
+          "after": 12,
+          "byte": 47
+        }
+      ],
+      "raw": "00 1B 00 27 1B 23 28 00 1D 00 29 27 2A 2F 2E 1F 2C 40 01"
+    },
+    {
+      "id": "text_068_7146",
+      "addr": 28998,
+      "rom_offset": 1716550,
+      "length": 16,
+      "original_text": "someh ing thtA",
+      "text": "someh ing thtA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 46
+        },
+        {
+          "after": 12,
+          "byte": 27
+        }
+      ],
+      "raw": "2D 29 27 1F 2E 22 00 23 28 21 00 2E 22 1B 2E 01"
+    },
+    {
+      "id": "text_068_7181",
+      "addr": 29057,
+      "rom_offset": 1716609,
+      "length": 15,
+      "original_text": "L uca, OkP Im",
+      "text": "L uca, OkP Im",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        },
+        {
+          "after": 12,
+          "byte": 68
+        }
+      ],
+      "raw": "0C 00 2F 1D 23 1B 43 00 0F 25 10 00 09 44 27"
+    },
+    {
+      "id": "text_068_71ad",
+      "addr": 29101,
+      "rom_offset": 1716653,
+      "length": 18,
+      "original_text": "Leon, Ok. That's",
+      "text": "Leon, Ok. That's",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 16
+        }
+      ],
+      "raw": "0C 1F 29 28 00 43 00 0F 25 3F 00 14 22 10 1B 2E 44 2D"
+    },
+    {
+      "id": "text_068_720a",
+      "addr": 29194,
+      "rom_offset": 1716746,
+      "length": 21,
+      "original_text": "f ro here \n t sayBs",
+      "text": "f ro here \n t sayBs",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 39
+        },
+        {
+          "after": 12,
+          "byte": 9
+        }
+      ],
+      "raw": "20 00 2C 29 27 00 22 1F 2C 1F 00 40 00 09 2E 00 2D 1B 33 02 2D"
+    },
+    {
+      "id": "text_068_7264",
+      "addr": 29284,
+      "rom_offset": 1716836,
+      "length": 17,
+      "original_text": "I t ust b\ne art",
+      "text": "I t ust b\ne art",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 39
+        },
+        {
+          "after": 12,
+          "byte": 42
+        }
+      ],
+      "raw": "09 00 2E 00 27 2F 2D 2E 00 1C 40 1F 00 2A 1B 2C 2E"
+    },
+    {
+      "id": "text_068_7297",
+      "addr": 29335,
+      "rom_offset": 1716887,
+      "length": 18,
+      "original_text": "Lucia, Ok\n Let's",
+      "text": "Lucia, Ok\n Let's",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 16
+        }
+      ],
+      "raw": "0C 2F 1D 23 00 1B 43 00 0F 25 40 00 0C 10 1F 2E 44 2D"
+    },
+    {
+      "id": "text_068_72b6",
+      "addr": 29366,
+      "rom_offset": 1716918,
+      "length": 19,
+      "original_text": "Leon, Great- That",
+      "text": "Leon, Great- That",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "0C 1F 29 28 00 43 00 07 2C 1F 1B 2E 45 20 00 14 22 1B 2E"
+    },
+    {
+      "id": "text_068_7300",
+      "addr": 29440,
+      "rom_offset": 1716992,
+      "length": 16,
+      "original_text": "No wwe canP et",
+      "text": "No wwe canP et",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 33
+        }
+      ],
+      "raw": "0E 29 00 31 00 31 1F 00 1D 1B 28 10 00 21 1F 2E"
+    },
+    {
+      "id": "text_068_7367",
+      "addr": 29543,
+      "rom_offset": 1717095,
+      "length": 19,
+      "original_text": "Barry, Damn\n I'll",
+      "text": "Barry, Damn\n I'll",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 32
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 04 1B 27 28 40 20 00 09 44 26 26"
+    },
+    {
+      "id": "text_068_73a0",
+      "addr": 29600,
+      "rom_offset": 1717152,
+      "length": 21,
+      "original_text": "I 'msure  I aw onBe",
+      "text": "I 'msure  I aw onBe",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 45
+        }
+      ],
+      "raw": "09 00 44 27 00 2D 2F 2C 1F 00 00 09 00 2D 1B 31 00 29 28 02 1F"
+    },
+    {
+      "id": "text_068_73de",
+      "addr": 29662,
+      "rom_offset": 1717214,
+      "length": 18,
+      "original_text": "Lucia, Why don't",
+      "text": "Lucia, Why don't",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 16
+        }
+      ],
+      "raw": "0C 2F 1D 23 00 1B 43 00 17 22 33 00 1E 10 29 28 44 2E"
+    },
+    {
+      "id": "text_068_7431",
+      "addr": 29745,
+      "rom_offset": 1717297,
+      "length": 15,
+      "original_text": "Leon, Wait a ",
+      "text": "Leon, Wait a ",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 2
+        }
+      ],
+      "raw": "0C 1F 29 28 00 43 00 17 1B 23 2E 00 1B 02 00"
+    },
+    {
+      "id": "text_068_7469",
+      "addr": 29801,
+      "rom_offset": 1717353,
+      "length": 12,
+      "original_text": "Who's Barry",
+      "text": "Who's Barry",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 128
+        }
+      ],
+      "raw": "17 22 29 44 80 2D 00 02 1B 2C 2C 33"
+    },
+    {
+      "id": "text_068_7486",
+      "addr": 29830,
+      "rom_offset": 1717382,
+      "length": 14,
+      "original_text": "Lu ca, If Dw",
+      "text": "Lu ca, If Dw",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 35
+        },
+        {
+          "after": 12,
+          "byte": 31
+        }
+      ],
+      "raw": "0C 2F 00 1D 23 1B 43 00 09 20 00 04 31 1F"
+    },
+    {
+      "id": "text_068_74da",
+      "addr": 29914,
+      "rom_offset": 1717466,
+      "length": 14,
+      "original_text": "Leon, Who in",
+      "text": "Leon, Who in",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "0C 1F 29 28 00 43 00 17 22 29 00 23 28 01"
+    },
+    {
+      "id": "text_068_7510",
+      "addr": 29968,
+      "rom_offset": 1717520,
+      "length": 16,
+      "original_text": "Barry, Give me",
+      "text": "Barry, Give me",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "02 1B 2C 2C 00 33 43 00 07 23 30 1F 00 04 27 1F"
+    },
+    {
+      "id": "text_068_752e",
+      "addr": 29998,
+      "rom_offset": 1717550,
+      "length": 13,
+      "original_text": "L eo, WhaDt!",
+      "text": "L eo, WhaDt!",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 40
+        }
+      ],
+      "raw": "0C 00 1F 29 28 43 00 17 22 1B 04 2E 41"
+    },
+    {
+      "id": "text_068_7553",
+      "addr": 30035,
+      "rom_offset": 1717587,
+      "length": 19,
+      "original_text": " Bary, Y ou eardA",
+      "text": " Bary, Y ou eardA",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 44
+        },
+        {
+          "after": 12,
+          "byte": 34
+        }
+      ],
+      "raw": "00 02 1B 2C 2C 33 43 00 19 00 29 2F 00 22 1F 1B 2C 1E 01"
+    },
+    {
+      "id": "text_068_758b",
+      "addr": 30091,
+      "rom_offset": 1717643,
+      "length": 14,
+      "original_text": "Leon follows",
+      "text": "Leon follows",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 1
+        }
+      ],
+      "raw": "0C 1F 29 28 00 00 20 29 26 26 29 31 2D 01"
+    },
+    {
+      "id": "text_068_75ec",
+      "addr": 30188,
+      "rom_offset": 1717740,
+      "length": 20,
+      "original_text": "a roe  ladde Pto a",
+      "text": "a roe  ladde Pto a",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 42
+        },
+        {
+          "after": 12,
+          "byte": 44
+        }
+      ],
+      "raw": "1B 00 2C 29 2A 1F 00 00 26 1B 1E 1E 1F 2C 00 10 2E 29 00 1B"
+    },
+    {
+      "id": "text_068_767b",
+      "addr": 30331,
+      "rom_offset": 1717883,
+      "length": 20,
+      "original_text": "Leon, Somehow I've",
+      "text": "Leon, Somehow I've",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "0C 1F 29 28 00 43 00 13 29 27 1F 22 29 40 31 00 09 44 30 1F"
+    },
+    {
+      "id": "text_068_76d1",
+      "addr": 30417,
+      "rom_offset": 1717969,
+      "length": 16,
+      "original_text": "Suddenly armed",
+      "text": "Suddenly armed",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 4
+        }
+      ],
+      "raw": "13 2F 1E 1E 00 1F 28 26 33 00 1B 2C 27 04 1F 1E"
+    },
+    {
+      "id": "text_068_7716",
+      "addr": 30486,
+      "rom_offset": 1718038,
+      "length": 19,
+      "original_text": "Guars,  Get acDk-",
+      "text": "Guars,  Get acDk-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 30
+        },
+        {
+          "after": 12,
+          "byte": 28
+        }
+      ],
+      "raw": "07 2F 1B 2C 1E 2D 43 00 00 07 1F 2E 00 1C 1B 1D 04 25 45"
+    },
+    {
+      "id": "text_068_776d",
+      "addr": 30573,
+      "rom_offset": 1718125,
+      "length": 21,
+      "original_text": "L eo, Wha t re yoBu",
+      "text": "L eo, Wha t re yoBu",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 40
+        },
+        {
+          "after": 12,
+          "byte": 27
+        }
+      ],
+      "raw": "0C 00 1F 29 28 43 00 17 22 1B 00 2E 00 1B 2C 1F 00 33 29 02 2F"
+    },
+    {
+      "id": "text_068_77a5",
+      "addr": 30629,
+      "rom_offset": 1718181,
+      "length": 20,
+      "original_text": "Guards, OPEN FIRE-",
+      "text": "Guards, OPEN FIRE-",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 192
+        }
+      ],
+      "raw": "07 2F 1B 2C 00 1E 2D 43 00 0F 10 05 0E C0 00 06 09 12 05 45"
+    },
+    {
+      "id": "text_068_77c0",
+      "addr": 30656,
+      "rom_offset": 1718208,
+      "length": 21,
+      "original_text": "I  Lon , I cn'Bt",
+      "text": "I  Lon , I cn'Bt",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 31
+        },
+        {
+          "after": 12,
+          "byte": 27
+        }
+      ],
+      "raw": "FC 09 FB 00 00 F8 0C 1F 29 28 00 43 00 09 00 1D 1B 28 44 02 2E"
+    },
+    {
+      "id": "text_068_7812",
+      "addr": 30738,
+      "rom_offset": 1718290,
+      "length": 20,
+      "original_text": "A second explosion",
+      "text": "A second explosion",
+      "layout": [
+        {
+          "after": 4,
+          "byte": 0
+        },
+        {
+          "after": 12,
+          "byte": 64
+        }
+      ],
+      "raw": "01 00 2D 1F 00 1D 29 28 1E 00 1F 32 2A 40 26 29 2D 23 29 28"
+    }
+  ]
+}

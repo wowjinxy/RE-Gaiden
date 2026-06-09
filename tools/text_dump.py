@@ -23,10 +23,9 @@ Text structure:
     $FC = end of entry group
     $FF = end of text block
 
-  Byte at raw offset 4 is ALWAYS a font width byte for the variable-width
-  text renderer. If $00, it doubles as a space character. Otherwise it
-  encodes the pixel width of the first 4 characters and must be skipped
-  during text decoding.
+  Layout bytes are inserted after visible character 4, then after every
+  following 8 visible characters (12, 20, 28, ...). These bytes are renderer
+  metadata and must be skipped during text decoding.
 
 Usage:
   python text_dump.py game.gbc [--bank 0xNN] [--all] [--raw]
@@ -63,19 +62,18 @@ CTRL_CODES = {
 
 
 def decode_item_name(raw):
-    """Decode a raw text entry, skipping the width byte at position 4."""
+    """Decode a raw text entry, skipping embedded layout bytes."""
     result = []
-    for i, b in enumerate(raw):
-        if i == 4:
-            # Position 4 is always a width byte.
-            # If $00, it serves as space too.
-            if b == 0x00:
-                result.append(' ')
-            # Otherwise skip (it's a pixel width value, not a character)
+    visible_count = 0
+    next_layout_after = 4
+    for b in raw:
+        if visible_count == next_layout_after:
+            next_layout_after += 8
             continue
 
         if b in CHAR_TABLE:
             result.append(CHAR_TABLE[b])
+            visible_count += 1
         elif b in CTRL_CODES:
             result.append(CTRL_CODES[b])
         # else: skip unknown bytes silently
