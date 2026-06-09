@@ -567,6 +567,10 @@ jr_000_017e:
     ret
 
 
+; ExpandNibbles - Inner loop of BankDataTransfer
+; Reads 4 bytes from [HL], masks each with C, duplicates nibble (swap|orig),
+; writes expanded bytes to [DE]. Called 8 times per iteration = 32 bytes per pass.
+ExpandNibbles:
 Call_000_01a3:
     ld a, [hl+]
     and c
@@ -925,10 +929,14 @@ Jump_000_0300:
 Jump_000_0303:
     call Call_000_3f40
 
+; InitHardware - Initialize hardware subsystems and game state
+InitHardware::
 Call_000_0306:
-    call Call_000_0dcf
-    call Call_000_2ae3
+    call Call_000_0dcf            ; Initialize WRAM banks
+    call Call_000_2ae3            ; Initialize HDMA/DMA state
 
+; InitSubsystems - Initialize game subsystems
+InitSubsystems::
 Call_000_030c:
     call Call_000_36ef
     call Call_000_2bdc
@@ -962,24 +970,27 @@ Call_000_030c:
     ret
 
 
+; GameLoop_RoomInit - Initialize a new room (state machine phase 1)
+; Sets up camera, clears entities, loads room config, initializes graphics
+GameLoop_RoomInit::
 Call_000_0353:
     ldh a, [$8a]
     push af
     call Call_000_2812
-    call Call_000_259e
-    call Call_000_382c
+    call Call_000_259e            ; CallBank08_SpriteProcess
+    call Call_000_382c            ; ClearOAMBuffer
     call Call_000_300f
     call Call_000_3063
     ld a, [$c19e]
     bit 2, a
     call nz, Call_000_2c1f
     call Call_000_161f
-    call Call_000_08fe
-    call Call_000_28a5
+    call Call_000_08fe            ; ClearEntityTable
+    call Call_000_28a5            ; LoadRoomConfig
     call Call_000_17f0
     call Call_000_0df6
     call Call_000_0e40
-    call Call_000_316b
+    call Call_000_316b            ; DispatchCameraUpdate
     call Call_000_3893
     call Call_000_0671
     call Call_000_2a1d
@@ -991,14 +1002,17 @@ Call_000_0353:
     ret
 
 
+; GameLoop_EntityUpdate - Main entity update phase (state machine phase 2)
+; Processes input, updates all entities, resets camera, stops music
+GameLoop_EntityUpdate::
 Call_000_0398:
     ldh a, [$8a]
     push af
-    call Call_000_0e4d
-    call Call_000_0928
-    call Call_000_3160
-    call Call_000_3836
-    call Call_000_370c
+    call Call_000_0e4d            ; ProcessInputQueue
+    call Call_000_0928            ; UpdateAllEntities
+    call Call_000_3160            ; ResetCameraState
+    call Call_000_3836            ; OAM finalize
+    call Call_000_370c            ; StopMusic
     call Call_000_2819
     pop af
     ldh [$8a], a
@@ -1006,37 +1020,42 @@ Call_000_0398:
     ret
 
 
+; GameLoop_FrameEnd - End-of-frame processing (state machine phase 3)
+; Saves camera, updates rendering, processes scripts, updates sprites, checks reset
+GameLoop_FrameEnd::
 Call_000_03b4:
     ldh a, [$8a]
     push af
-    call Call_000_28db
+    call Call_000_28db            ; SaveCameraToPlayer
     call Call_000_0931
     call Call_000_17f1
     call Call_000_1639
-    call Call_000_3206
+    call Call_000_3206            ; DispatchCameraUpdate2
     ld a, [$c19e]
 
 Jump_000_03c9:
     bit 2, a
     call nz, Call_000_2c2e
     call Call_000_1efe
-    call Call_000_0e29
-    call Call_000_0e50
-    call Call_000_384d
-    call Call_000_29c1
-    call Call_000_283e
-    call Call_000_1edb
+    call Call_000_0e29            ; CallBank0A_ScriptUpdate
+    call Call_000_0e50            ; ProcessEntityQueue
+    call Call_000_384d            ; UpdateSprites
+    call Call_000_29c1            ; UpdateTimers
+    call Call_000_283e            ; CallBank0A_MapInteraction
+    call Call_000_1edb            ; CheckSystemReset
     pop af
     ldh [$8a], a
     ld [$2000], a
     ret
 
 
+; GameLoop_Minimal - Minimal frame update (camera + sprites only)
+GameLoop_Minimal::
 Call_000_03ea:
     ldh a, [$8a]
     push af
-    call Call_000_3206
-    call Call_000_384d
+    call Call_000_3206            ; DispatchCameraUpdate2
+    call Call_000_384d            ; UpdateSprites
     pop af
     ldh [$8a], a
     ld [$2000], a
@@ -1392,6 +1411,11 @@ Call_000_0626:
     ret
 
 
+; ReadAreaData - Read data from current area's config table in bank $50
+; Input: BC = offset into area's sub-pointer table
+; Output: HL = pointer to data (still in bank $50 context)
+; Uses $c131 as area ID to index the pointer table at $50:$4000
+ReadAreaData::
 Call_000_063f:
     ld a, $50
     ldh [$8a], a
@@ -1429,12 +1453,14 @@ Call_000_065b:
     ret
 
 
+; InitAreaFlags - Read area flags from offset $16 and clear state vars
+InitAreaFlags::
 Call_000_0671:
-    ld bc, $0016
-    call Call_000_063f
+    ld bc, $0016                  ; Area data offset $16 = area flags
+    call Call_000_063f            ; ReadAreaData
     ld a, [hl]
-    ld [$c200], a
-    ld hl, $c201
+    ld [$c200], a                 ; Store area flags
+    ld hl, $c201                  ; Clear area state bytes
     xor a
     ld [hl+], a
     ld [hl+], a
@@ -1445,6 +1471,8 @@ Jump_000_0683:
     ret
 
 
+; ClearInteractionFlags - Clear interaction state at $c228-$c22B
+ClearInteractionFlags::
 Call_000_0684:
     xor a
     ld hl, $c228
@@ -1970,6 +1998,9 @@ Call_000_08f8:
     ret
 
 
+; ClearEntityTable - Reset all entity/object slots ($D000-$DFFF pages)
+; Clears entity flags, positions, and state. Initializes slot page table at $c171.
+ClearEntityTable:
 Call_000_08fe:
     jp Jump_000_219e
 
@@ -1995,10 +2026,13 @@ Call_000_0904:
     ret
 
 
+; UpdateAllEntities - Set WRAM bank and run entity update loop
+; Iterates all entity slots ($D0-$DF pages) and updates active ones
+UpdateAllEntities:
 Call_000_0928:
     ld a, [$c13a]
     ldh [rSVBK], a
-    call Call_000_21d7
+    call Call_000_21d7            ; Entity iteration loop
     ret
 
 
@@ -2528,6 +2562,10 @@ Call_000_0baf:
     jp $7300
 
 
+; RunTransitionLoop - Execute a screen transition effect (fade/scroll/etc.)
+; Sets WRAM bank from $c13a, then loops: process sprites (bank $08),
+; wait for VBlank, check completion condition. Two-phase loop.
+RunTransitionLoop:
 Call_000_0bbc:
     ldh a, [$8a]
     ld c, a
@@ -3005,18 +3043,22 @@ Jump_000_0dcd:
     ret
 
 
+; InitBankRegisters - Initialize ROM bank ($2000) and WRAM bank (SVBK) to 1
+InitBankRegisters::
 Call_000_0dcf:
     xor a
-    ld [$3000], a
+    ld [$3000], a                 ; Clear MBC5 high bank bits
 
 Call_000_0dd3:
-    inc a
-    ldh [$8a], a
-    ld [$2000], a
-    ldh [rSVBK], a
+    inc a                         ; A = 1
+    ldh [$8a], a                  ; Store current bank in HRAM
+    ld [$2000], a                 ; Set ROM bank to 1
+    ldh [rSVBK], a                ; Set WRAM bank to 1
     ret
 
 
+; ClearMemFlag - Clear memory flag at $c482
+ClearMemFlag::
 Call_000_0ddc:
     xor a
     ld [$c482], a
@@ -3094,19 +3136,23 @@ Jump_000_0e20:
     ret
 
 
+; CallBank0A_ScriptUpdate - Call bank $0A:$4EF1 for script/event processing
+CallBank0A_ScriptUpdate::
 Call_000_0e29:
     ldh a, [$8a]
     push af
     ld a, $0a
     ldh [$8a], a
     ld [$2000], a
-    call $4ef1
+    call $4ef1                    ; Bank $0A script update handler
     pop af
     ldh [$8a], a
     ld [$2000], a
     ret
 
 
+; ProcessInputFlags - Process input flag state
+ProcessInputFlags::
 Call_000_0e3d:
     jp Jump_000_0ef0
 
@@ -3119,10 +3165,14 @@ Call_000_0e40:
     jp Jump_000_160c
 
 
+; ProcessInputQueue - Process buffered input events
+ProcessInputQueue::
 Call_000_0e4d:
     jp Jump_000_0ef0
 
 
+; ProcessEntityQueue - Process entity update queue entries
+ProcessEntityQueue::
 Call_000_0e50:
     ld a, $01
     ldh [rSVBK], a
@@ -4864,6 +4914,10 @@ Jump_000_1685:
     ret
 
 
+; ApplyScrollOffset - Add camera scroll offsets (HRAM $FF32+) to entity
+; coordinates at [HL], storing screen-space results at $HHbf+
+; Used to convert world positions to screen/OAM positions
+ApplyScrollOffset:
 Call_000_1686:
     push bc
     ld c, $32
@@ -5044,6 +5098,11 @@ Call_000_1730:
     ret
 
 
+; ReadMapTile - Read tile value at position ($HHc0, $HHc2) from the current map
+; Uses map width multiplier dispatch at $c1b3 and tilemap base from $c1a1-$c1a2
+; Supports both ROM-banked maps and WRAM bank 5/6 maps (bit 3 of $c19e)
+; Output: DE = tile data (low byte from VRAM bank 0, high from bank 1 or second ROM bank)
+ReadMapTile:
 Call_000_1732:
     ld l, $c0
     ld e, [hl]
@@ -5134,6 +5193,10 @@ jr_000_177e:
     ret
 
 
+; LoadAnimFrame - Load sprite/animation frame data
+; Reads frame table pointer from $c142-$c143, indexes by HRAM $9B * 8,
+; then reads frame data from the bank at $c144
+LoadAnimFrame:
 Call_000_17af:
     ld hl, $c142
     ld a, [hl+]
@@ -6038,16 +6101,22 @@ Call_000_1bc6:
     ret
 
 
+; ClearHDMAState - Clear HDMA state registers in HRAM ($ffe3-$ffe5)
+ClearHDMAState::
 Call_000_1bdc:
     ld hl, $ffe3
     ld a, $00
-    ld [hl+], a
-    ld [hl+], a
+    ld [hl+], a                   ; Clear HRAM $E3
+    ld [hl+], a                   ; Clear HRAM $E4
     xor a
-    ld [hl+], a
+    ld [hl+], a                   ; Clear HRAM $E5
     ret
 
 
+; SubmitHDMATransfer - Submit a VRAM DMA transfer request to the queue
+; Calls bank $0A:$506D to enqueue the transfer
+; Returns NZ if successfully queued, Z if queue was full
+SubmitHDMATransfer:
 Call_000_1be6:
     ldh a, [$8a]
     ld c, a
@@ -6065,15 +6134,18 @@ Jump_000_1bf6:
     ret
 
 
+; WaitHDMAReady - Repeatedly try to submit HDMA transfer until queue has space
+; Calls SubmitHDMATransfer, if queue full waits for VBlank and retries
+WaitHDMAReady:
 Call_000_1bfc:
 jr_000_1bfc:
-    call Call_000_1be6
-    ret nz
+    call Call_000_1be6            ; SubmitHDMATransfer
+    ret nz                        ; Return if successfully queued
 
 Call_000_1c00:
 Jump_000_1c00:
-    call Call_000_2b15
-    jr jr_000_1bfc
+    call Call_000_2b15            ; WaitForVBlank
+    jr jr_000_1bfc                ; Retry
 
 Call_000_1c05:
     ldh a, [$8a]
@@ -6294,16 +6366,21 @@ jr_000_1ce6:
     ret
 
 
+; ProcessHBlankDMA - Execute queued VRAM DMA transfers during HBlank
+; Queue stored at $CB00 in 8-byte entries, count in HRAM $E8, index in HRAM $E7
+; Each entry: flags, line_count, bank, vram_bank, src_lo, src_hi, dst_lo, dst_hi
+; Waits for rLY < $74 before starting, uses STAT mode checks for safe VRAM access
+ProcessHBlankDMA:
 Call_000_1cf3:
-    ldh a, [$e8]
+    ldh a, [$e8]                  ; Queue entry count
     and a
-    ret z
+    ret z                         ; Return if queue empty
 
-    ld c, $44
+    ld c, $44                     ; c = rLY register address
 
 jr_000_1cf9:
-    ld a, [c]
-    cp $74
+    ld a, [c]                     ; Read current scanline
+    cp $74                        ; Wait until scanline < 116
 
 Jump_000_1cfc:
     jr nc, jr_000_1cf9
@@ -6693,6 +6770,9 @@ jr_000_1e9d:
     ret
 
 
+; UpdateMapState - Call map/room update routine in bank $0A
+; Called every frame after VBlank to update map-related state
+UpdateMapState:
 Call_000_1ea1:
     ldh a, [$8a]
     ld c, a
@@ -6700,7 +6780,7 @@ Call_000_1ea1:
     ld a, $0a
     ldh [$8a], a
     ld [$2000], a
-    call $51ae
+    call $51ae                    ; Bank $0A map state update
     pop bc
     ld a, c
     ldh [$8a], a
@@ -6738,15 +6818,18 @@ Call_000_1ed2:
     ret
 
 
+; CheckSystemReset - If bit 2 of system flags ($c168) is set, trigger full reset
+; Jumps to system reinit (disable interrupts, reset stack, restart)
+CheckSystemReset:
 Call_000_1edb:
     push hl
-    ld hl, $c168
-    bit 2, [hl]
+    ld hl, $c168                  ; System flags byte
+    bit 2, [hl]                   ; Check reset request flag
     pop hl
-    ret z
+    ret z                         ; Return if no reset requested
 
 Jump_000_1ee3:
-    jp Jump_000_025d
+    jp Jump_000_025d              ; Jump to system reinit
 
 
 Call_000_1ee6:
@@ -7020,6 +7103,8 @@ jr_000_1ff1:
     ret
 
 
+; Memcpy_HLtoDE - Copy C bytes from [HL] to [DE]
+Memcpy_HLtoDE::
 Call_000_1ff8:
 Jump_000_1ff8:
 jr_000_1ff8:
@@ -7052,6 +7137,8 @@ Call_000_2003:
     ret
 
 
+; Memcpy_BC - Copy BC bytes from [HL] to [DE]
+Memcpy_BC::
 Call_000_2008:
 jr_000_2008:
     ld a, [hl+]
@@ -7068,6 +7155,8 @@ Jump_000_2010:
     ret
 
 
+; Memcpy_Words - Copy C 16-bit words from [DE] to [HL]
+Memcpy_Words::
 jr_000_2011:
     ld a, [de]
     inc de
@@ -7083,6 +7172,8 @@ Jump_000_2018:
     ret
 
 
+; Memcpy_Strided - Copy C entries (2 bytes each) with stride B from [HL] to [DE]
+Memcpy_Strided::
 Call_000_201b:
 jr_000_201b:
     ld a, [hl+]
@@ -7470,12 +7561,14 @@ jr_000_21c2:
     ret
 
 
+; ClearEntityTrackingTable - Zero out $c500-$c5FF (entity slot tracking)
+ClearEntityTrackingTable::
 Call_000_21c8:
-    ld a, [$c13a]
+    ld a, [$c13a]                 ; WRAM bank for entity data
     ldh [rSVBK], a
     ld hl, $c500
     xor a
-    ld c, a
+    ld c, a                       ; C = 0, loops 256 times
 
 jr_000_21d2:
     ld [hl+], a
@@ -7485,65 +7578,76 @@ jr_000_21d2:
     ret
 
 
+; EntityUpdateLoop - Iterate all 16 entity slots ($D000-$DFFF)
+; For each slot, checks byte 0 bit 0 (active flag) and calls entity tick handler
+EntityUpdateLoop:
 Call_000_21d7:
-    ld b, $d0
+    ld b, $d0                     ; Start at entity page $D0
 
 jr_000_21d9:
     ld c, $00
-    ld a, [bc]
-    bit 0, a
-    call nz, Call_000_2265
-    inc b
+    ld a, [bc]                    ; Read entity flags (byte 0)
+    bit 0, a                      ; Test active bit
+    call nz, Call_000_2265        ; Update if active
+    inc b                         ; Next entity page
     ld a, b
-    cp $e0
+    cp $e0                        ; Stop after page $DF (16 entities)
     jr nz, jr_000_21d9
 
     ret
 
 
+; SaveEntityPoolState - Save entity pool ($c171, 17 bytes) and tracking table ($c500, 256 bytes) to WRAM3
+SaveEntityPoolState::
 Call_000_21e8:
     ld a, $03
     ldh [rSVBK], a
-    ld de, $c171
-    ld hl, $d35f
-    ld bc, $0011
+    ld de, $c171                  ; Entity pool metadata
+    ld hl, $d35f                  ; WRAM3 save area
+    ld bc, $0011                  ; 17 bytes
     call Call_000_1fff
-    ld de, $c500
-    ld hl, $d370
-    ld bc, $0100
+    ld de, $c500                  ; Entity tracking table
+    ld hl, $d370                  ; WRAM3 save area
+    ld bc, $0100                  ; 256 bytes
     jp Jump_000_1fff
 
 
+; RestoreEntityPoolState - Restore entity tracking table and pool from WRAM3
+RestoreEntityPoolState::
 Call_000_2204:
     ld a, $03
     ldh [rSVBK], a
-    ld de, $d370
-    ld hl, $c500
-    ld bc, $0100
+    ld de, $d370                  ; WRAM3 save area
+    ld hl, $c500                  ; Entity tracking table
+    ld bc, $0100                  ; 256 bytes
     call Call_000_1fff
-    ld de, $d35f
+    ld de, $d35f                  ; WRAM3 save area for pool metadata
     ld hl, $c171
     ld bc, $0011
     jp Jump_000_1fff
 
 
+; AllocateEntity - Allocate an entity slot from the pool at $c181
+; Returns entity page in B. Pool is a stack: $c181 = count, $c182+ = free pages
+; Calls init chain: Call_000_22ff, Call_000_2355, Call_000_2385
+AllocateEntity::
 Call_000_2220:
-    ld de, $c181
-    ld a, [de]
+    ld de, $c181                  ; Entity pool base
+    ld a, [de]                    ; Current count
     inc a
-    cp e
-    jr z, jr_000_2235
+    cp e                          ; Check if pool is full (count == $81)
+    jr z, jr_000_2235             ; No free slots
 
 Call_000_2228:
-    ld [de], a
+    ld [de], a                    ; Increment count
     ld e, a
-    ld a, [de]
+    ld a, [de]                    ; Pop free page number from pool
 
 Call_000_222b:
-    ld b, a
-    call Call_000_22ff
-    call Call_000_2355
-    call Call_000_2385
+    ld b, a                       ; B = entity page
+    call Call_000_22ff            ; Initialize entity slot
+    call Call_000_2355            ; Set up entity script pointers
+    call Call_000_2385            ; Set up entity position/state
 
 jr_000_2235:
     ret
@@ -7589,6 +7693,9 @@ jr_000_225c:
     ret
 
 
+; EntityTick - Execute one update tick for entity in page B
+; Saves/restores ROM bank, calls entity behavior script then animation update
+EntityTick:
 Call_000_2265:
 Jump_000_2265:
     ldh a, [$8a]
@@ -7599,48 +7706,53 @@ Jump_000_2265:
     jr z, jr_000_2274
 
     ld h, b
-    call Call_000_249d
-    call Call_000_24e3
+    call Call_000_249d            ; Run entity behavior/AI script
+    call Call_000_24e3            ; Update entity animation
 
 jr_000_2274:
     pop bc
     ld a, c
     ldh [$8a], a
-    ld [$2000], a
+    ld [$2000], a                 ; Restore ROM bank
     ld h, b
     ld a, $00
     ret
 
 
+; UpdateAllEntityPositions - Copy $32-$35 to $36-$39 for all active entities
+UpdateAllEntityPositions::
 Call_000_227f:
-    ld h, $d0
+    ld h, $d0                     ; Start at entity page $D0
 
 Call_000_2281:
 jr_000_2281:
     ld l, $00
-    bit 0, [hl]
-    call nz, Call_000_2504
+    bit 0, [hl]                   ; Check entity active flag
+    call nz, Call_000_2504        ; Copy position if active
     inc h
     ld a, h
-    cp $e0
+    cp $e0                        ; Loop through all 16 entities
     jr nz, jr_000_2281
 
     ret
 
 
+; ApplyAllEntityVelocities - Apply velocity to all active entities
+; Switches to bank $09 for velocity tables
+ApplyAllEntityVelocities::
 Call_000_228f:
     ld a, $09
     ldh [$8a], a
-    ld [$2000], a
-    ld h, $d0
+    ld [$2000], a                 ; Switch to bank $09 (velocity data)
+    ld h, $d0                     ; Start at entity page $D0
 
 jr_000_2298:
     ld l, $00
-    bit 0, [hl]
-    call nz, Call_000_2515
+    bit 0, [hl]                   ; Check entity active flag
+    call nz, Call_000_2515        ; ApplyEntityVelocity if active
     inc h
     ld a, h
-    cp $e0
+    cp $e0                        ; Loop through all 16 entities
     jr nz, jr_000_2298
 
     ret
@@ -7722,11 +7834,15 @@ jr_000_22f4:
     ret
 
 
+; InitEntityFromSpawn - Copy spawn data to entity page B
+; Copies: slot index ($07), bytes $2C-$2D, position ($32-$35), bytes $89-$8E
+; Then reads 3-byte pointer (addr + bank) and switches bank, returns HL = data ptr
+InitEntityFromSpawn::
 Call_000_22ff:
-    ld c, $07
+    ld c, $07                     ; Entity slot index
     ld a, [hl+]
     ld [bc], a
-    ld c, $2c
+    ld c, $2c                     ; Entity bytes $2C-$2D
     ld a, [hl+]
     ld [bc], a
     inc c
@@ -7734,7 +7850,7 @@ Call_000_22ff:
 
 Jump_000_2309:
     ld [bc], a
-    ld c, $32
+    ld c, $32                     ; Entity position X/Y ($32-$35)
     ld a, [hl+]
     ld [bc], a
     inc c
@@ -7746,7 +7862,7 @@ Jump_000_2309:
     inc c
     ld a, [hl+]
     ld [bc], a
-    ld c, $89
+    ld c, $89                     ; Entity bytes $89-$8E
     ld a, [hl+]
     ld [bc], a
     inc c
@@ -7764,15 +7880,15 @@ Jump_000_2309:
     inc c
     ld a, [hl+]
     ld [bc], a
-    ld a, [hl+]
+    ld a, [hl+]                   ; Read data pointer (16-bit)
     ld e, a
     ld a, [hl+]
     ld d, a
-    ld a, [hl+]
+    ld a, [hl+]                   ; Read data bank
     ldh [$8a], a
-    ld [$2000], a
+    ld [$2000], a                 ; Switch to data bank
     ld l, e
-    ld h, d
+    ld h, d                       ; HL = data pointer
     ret
 
 
@@ -7806,12 +7922,15 @@ Call_000_2354:
     ret
 
 
+; SetEntityHeader - Copy entity header from [HL] to entity page B
+; Copies flags ($00-$04), stores HL pointer at $05-$06 (script table ptr)
+SetEntityHeader::
 Call_000_2355:
-    ld c, $00
+    ld c, $00                     ; Entity flags (byte $00)
     ld a, [hl+]
     ld [bc], a
     inc c
-    ld a, [hl+]
+    ld a, [hl+]                   ; Bytes $01-$04
 
 Call_000_235b:
     ld [bc], a
@@ -7825,7 +7944,7 @@ Call_000_235b:
     ld a, [hl+]
     ld [bc], a
     inc c
-    ld a, l
+    ld a, l                       ; Store script table pointer at $05-$06
     ld [bc], a
     inc c
     ld a, h
@@ -7861,54 +7980,58 @@ Jump_000_2377:
     ret
 
 
+; InitEntityState - Initialize entity state fields for page B
+; Clears tick/animation fields, sets default values for movement/physics
+; Copies spawn position ($32-$35) to both $36-$39 and $2E-$31
+InitEntityState::
 Call_000_2385:
     ld h, b
     ld d, b
     xor a
-    ld l, $08
+    ld l, $08                     ; Clear byte $08 (tick counter?)
     ld [hl+], a
-    ld l, $41
-    ld [hl+], a
-    ld [hl+], a
-    ld l, $6e
-    ld [hl+], a
-    ld l, $0a
-    dec a
+    ld l, $41                     ; Clear bytes $41-$42
     ld [hl+], a
     ld [hl+], a
+    ld l, $6e                     ; Clear byte $6E
+    ld [hl+], a
+    ld l, $0a                     ; Set bytes $0A-$0D to $FF
+    dec a                         ; A = $FF
     ld [hl+], a
     ld [hl+], a
-    ld l, $70
+    ld [hl+], a
+    ld [hl+], a
+    ld l, $70                     ; Set bytes $70-$71 to $40
     ld a, $40
     ld [hl+], a
     ld [hl+], a
-    ld l, $85
+    ld l, $85                     ; Set byte $85 to $85
     ld [hl], $85
-    ld c, $32
-    ld l, $36
-    ld e, $2e
-    ld a, [bc]
+    ld c, $32                     ; Source: spawn position ($32-$35)
+    ld l, $36                     ; Dest 1: $36-$39 (visual position)
+    ld e, $2e                     ; Dest 2: $2E-$31 (previous position)
+    ld a, [bc]                    ; Copy X low
     inc c
     ld [hl+], a
     ld [de], a
     inc e
-    ld a, [bc]
+    ld a, [bc]                    ; Copy X high
     inc c
     ld [hl+], a
     ld [de], a
     inc e
-    ld a, [bc]
+    ld a, [bc]                    ; Copy Y low
     inc c
     ld [hl+], a
     ld [de], a
     inc e
-    ld a, [bc]
+    ld a, [bc]                    ; Copy Y high
     ld [hl+], a
     ld [de], a
-    xor a
+    xor a                         ; Clear velocity ($3A-$3B)
     ld [hl+], a
     ld [hl+], a
-    ld l, $3c
+    ld l, $3c                     ; Clear bytes $3C-$40
 
 Jump_000_23c0:
     ld [hl+], a
@@ -8089,26 +8212,31 @@ jr_000_249a:
     ret
 
 
+; RunEntityScript - Dispatch to entity's behavior/AI function
+; Entity struct: byte 2 = ROM bank, bytes 5-6 = script table pointer
+; Reads function pointer at script_table+3, calls it (returns to jr_000_24ba)
+; If function pointer is $FFXX, script has ended
+RunEntityScript:
 Call_000_249d:
     ld l, $02
-    ld a, [hl]
+    ld a, [hl]                    ; Entity ROM bank
     ldh [$8a], a
     ld [$2000], a
     ld l, $05
-    ld a, [hl+]
-    ld h, [hl]
+    ld a, [hl+]                   ; Script table pointer (low)
+    ld h, [hl]                    ; Script table pointer (high)
     ld l, a
     ld de, $0003
-    add hl, de
+    add hl, de                    ; Offset to current script entry
     ld a, [hl-]
-    cp $ff
+    cp $ff                        ; $FF = script ended/no handler
     jr z, jr_000_24ba
 
     ld l, [hl]
-    ld h, a
-    ld de, $24ba
+    ld h, a                       ; HL = behavior function address
+    ld de, $24ba                  ; Push return address
     push de
-    jp hl
+    jp hl                         ; Jump to entity behavior function
 
 
 jr_000_24ba:
@@ -8140,38 +8268,44 @@ jr_000_24e2:
     ret
 
 
+; DeallocateEntity - Free entity in page B back to the entity pool
+; Clears active flags (byte $00), bytes $41-$42, byte $08
+; Removes from $c5xx tracking table, decrements entity count at $c181
+DeallocateEntity::
 Call_000_24e3:
     ld l, $00
-    bit 2, [hl]
+    bit 2, [hl]                   ; Bit 2 = skip $c5xx cleanup
     jr nz, jr_000_24f1
 
-    ld l, $07
+    ld l, $07                     ; Byte $07 = entity slot index
     ld l, [hl]
-    ld h, $c5
-    res 3, [hl]
+    ld h, $c5                     ; $c5xx = entity slot tracking table
+    res 3, [hl]                   ; Clear bit 3 (allocated flag)
     ld h, b
 
 jr_000_24f1:
     xor a
     ld l, $00
-    ld [hl+], a
+    ld [hl+], a                   ; Clear entity flags (deactivate)
     ld l, $41
-    ld [hl+], a
+    ld [hl+], a                   ; Clear bytes $41-$42
     ld [hl+], a
     ld l, $08
-    ld [hl+], a
-    ld hl, $c181
+    ld [hl+], a                   ; Clear byte $08
+    ld hl, $c181                  ; Entity pool count
     ld a, [hl]
-    dec [hl]
+    dec [hl]                      ; One fewer active entity
     ld l, a
-    ld [hl], b
+    ld [hl], b                    ; Return page B to free pool
     ret
 
 
+; CopyEntityPosition - Copy spawn position ($32-$35) to visual position ($36-$39)
+CopyEntityPosition::
 Call_000_2504:
-    ld b, h
-    ld c, $32
-    ld l, $36
+    ld b, h                       ; H = entity page
+    ld c, $32                     ; Source: $xx32-$xx35 (spawn position)
+    ld l, $36                     ; Dest: $xx36-$xx39 (visual position)
     ld a, [bc]
     inc c
     ld [hl+], a
@@ -8186,13 +8320,16 @@ Call_000_2504:
     ret
 
 
+; ApplyEntityVelocity - Read velocity from table at entity offset $3D-$3F
+; Looks up signed velocity byte, applies to entity position ($32-$35)
+ApplyEntityVelocity::
 Call_000_2515:
     ld b, h
-    ld l, $3d
+    ld l, $3d                     ; Entity velocity table index
     ld a, [hl+]
     srl a
     srl a
-    add $40
+    add $40                       ; D = high byte of velocity table address
     ld d, a
 
 Call_000_2520:
@@ -8297,13 +8434,18 @@ Jump_000_2583:
     ret
 
 
+; CallBank08_SpriteInit - Jump to bank $08:$65B5 for sprite initialization
+CallBank08_SpriteInit::
 Call_000_2594:
     ld a, $08
     ldh [$8a], a
     ld [$2000], a
-    jp $65b5
+    jp $65b5                      ; Bank $08 sprite init entry
 
 
+; CallBank08_SpriteProcess - Call bank $08:$65CA for entity sprite processing
+; Saves and restores current bank
+CallBank08_SpriteProcess::
 Call_000_259e:
     ldh a, [$8a]
     ld c, a
@@ -8311,7 +8453,7 @@ Call_000_259e:
     ld a, $08
     ldh [$8a], a
     ld [$2000], a
-    call $65ca
+    call $65ca                    ; Bank $08 sprite processing
     pop bc
     ld a, c
     ldh [$8a], a
@@ -8319,6 +8461,8 @@ Call_000_259e:
     ret
 
 
+; CallBank08_6719 - Jump to bank $08:$6719
+CallBank08_6719::
 Call_000_25b4:
     ld a, $08
     ldh [$8a], a
@@ -8326,6 +8470,8 @@ Call_000_25b4:
     jp $6719
 
 
+; CallBank08_6735 - Jump to bank $08:$6735
+CallBank08_6735::
 Call_000_25be:
     ld a, $08
     ldh [$8a], a
@@ -8773,6 +8919,8 @@ Call_000_27c9:
     ret
 
 
+; CallBank08_EntityProcess - Call bank $08:$696B for entity processing
+CallBank08_EntityProcess::
 Call_000_27e0:
     ldh a, [$8a]
     ld c, a
@@ -8780,7 +8928,7 @@ Call_000_27e0:
     ld a, $08
     ldh [$8a], a
     ld [$2000], a
-    call $696b
+    call $696b                    ; Bank $08 entity processing
     pop bc
     ld a, c
     ldh [$8a], a
@@ -8789,6 +8937,8 @@ Call_000_27e0:
     ret
 
 
+; CallBank08_68AA - Call bank $08:$68AA
+CallBank08_68AA::
 Call_000_27f7:
     ldh a, [$8a]
     ld c, a
@@ -8805,55 +8955,76 @@ Call_000_27f7:
     ret
 
 
+; SetGameState_0 - Set game state to 0
+SetGameState_0::
 Call_000_280e:
     ld h, $00
     jr jr_000_2872
 
+; SetGameState_1 - Set game state to 1 (after map interaction)
+SetGameState_1::
 Call_000_2812:
 Jump_000_2812:
-    call Call_000_283e
+    call Call_000_283e            ; CallBank0A_MapInteraction first
 
 Call_000_2815:
     ld h, $01
     jr jr_000_2872
 
+; SetGameState_2 - Set game state to 2 (after map interaction)
+SetGameState_2::
 Call_000_2819:
     call Call_000_283e
     ld h, $02
     jr jr_000_2872
 
+; SetGameState_3 - Set game state to 3
+SetGameState_3::
 Call_000_2820:
     ld h, $03
     jr jr_000_2872
 
+; SetGameState_4 - Set game state to 4
+SetGameState_4::
 Call_000_2824:
     ld h, $04
 
 Call_000_2826:
     jr jr_000_2872
 
+; SetGameState_5 - Set game state to 5
+SetGameState_5::
 Call_000_2828:
 Jump_000_2828:
     ld h, $05
     jr jr_000_2872
 
+; SetGameState_6 - Set game state to 6
+SetGameState_6::
 Call_000_282c:
     ld h, $06
     jr jr_000_2872
 
+; SetGameState_7 - Set game state to 7 (after map interaction)
+SetGameState_7::
 Call_000_2830:
     call Call_000_283e
     ld h, $07
     jr jr_000_2872
 
+; SetGameState_8 - Set game state to 8 (after map interaction)
+SetGameState_8::
 Call_000_2837:
     call Call_000_283e
     ld h, $08
     jr jr_000_2872
 
+; CallBank0A_MapInteraction - Call bank $0A:$560F for map/entity interaction
+; Skips if $c2cb bit 7 set (interactions disabled)
+CallBank0A_MapInteraction::
 Call_000_283e:
     ld a, [$c2cb]
-    and $80
+    and $80                       ; Check interactions disabled flag
     ret nz
 
     ldh a, [$8a]
@@ -8866,7 +9037,7 @@ Jump_000_284a:
     ld [$2000], a
 
 Call_000_284f:
-    call $560f
+    call $560f                    ; Bank $0A map interaction handler
     pop bc
     ld a, c
     ldh [$8a], a
@@ -8891,10 +9062,14 @@ Call_000_285b:
     ret
 
 
+; ApplyGameState - Common handler for game state changes
+; H = new state, calls bank $0A:$5580 to process state transition
+; Skips if $c2cb bit 7 set (interactions disabled)
+ApplyGameState::
 Jump_000_2872:
 jr_000_2872:
     ld a, [$c2cb]
-    and $80
+    and $80                       ; Check interactions disabled flag
     ret nz
 
     ldh a, [$8a]
@@ -8905,7 +9080,7 @@ Call_000_287c:
     ld a, $0a
     ldh [$8a], a
     ld [$2000], a
-    call $5580
+    call $5580                    ; Bank $0A state transition handler
     pop bc
     ld a, c
     ldh [$8a], a
@@ -8929,19 +9104,23 @@ Call_000_288f:
     ret
 
 
+; LoadRoomConfig - Load room configuration and allocate player entity
+; Reads area data offset 2 (room table), indexes by $c132 (room ID * 16)
+; Allocates entity slot, stores player page in $c380
+LoadRoomConfig::
 Call_000_28a5:
-    ld a, [$c13a]
+    ld a, [$c13a]                 ; Set WRAM bank for entity data
     ldh [rSVBK], a
-    ld bc, $0002
-    call Call_000_063f
-    ld a, [$c132]
-    swap a
+    ld bc, $0002                  ; Area data offset 2 = room config table
+    call Call_000_063f            ; ReadAreaData
+    ld a, [$c132]                 ; Room ID
+    swap a                        ; * 16 (each room entry = 16 bytes)
     ld c, a
     ld b, $00
-    add hl, bc
-    call Call_000_2220
+    add hl, bc                    ; HL = room config entry
+    call Call_000_2220            ; AllocateEntity for player
     ld a, b
-    ld [$c380], a
+    ld [$c380], a                 ; Store player entity page
 
 Jump_000_28c0:
     ld [$c382], a
@@ -8961,37 +9140,43 @@ Jump_000_28d7:
     ret
 
 
+; SaveCameraToPlayer - Store camera position ($c164-$c165) into player entity offset $CB
+SaveCameraToPlayer::
 Call_000_28db:
     ld a, [$c13a]
     ldh [rSVBK], a
-    ld a, [$c380]
+    ld a, [$c380]                 ; Player entity page
     ld h, a
-    ld l, $cb
-    ld a, [$c164]
+    ld l, $cb                     ; Entity offset $CB = stored camera pos
+    ld a, [$c164]                 ; Camera X
     ld [hl+], a
-    ld a, [$c165]
+    ld a, [$c165]                 ; Camera Y
     ld [hl+], a
     ret
 
 
+; SaveRoomState - Copy room state ($c380, 25 bytes) to WRAM3:$d346
+SaveRoomState::
 Call_000_28ef:
     ld a, $03
     ldh [rSVBK], a
-    ld de, $c380
-    ld hl, $d346
-    ld bc, $0019
-    jp Jump_000_1fff
+    ld de, $c380                  ; Source: room state in HRAM area
+    ld hl, $d346                  ; Dest: WRAM3 save area
+    ld bc, $0019                  ; 25 bytes
+    jp Jump_000_1fff              ; Memcpy
 
 
+; RestoreRoomState - Copy room state from WRAM3:$d346 back to $c380
+RestoreRoomState::
 Call_000_28ff:
     ld a, $03
 
 Call_000_2901:
     ldh [rSVBK], a
-    ld de, $d346
-    ld hl, $c380
-    ld bc, $0019
-    jp Jump_000_1fff
+    ld de, $d346                  ; Source: WRAM3 save area
+    ld hl, $c380                  ; Dest: room state
+    ld bc, $0019                  ; 25 bytes
+    jp Jump_000_1fff              ; Memcpy
 
 
     ld a, [$c380]
@@ -9132,16 +9317,21 @@ Call_000_29b5:
     ret
 
 
+; UpdateTimers - Update 3 gameplay timers ($c386+c, $c3bc+c, etc.)
+; Decrements each active timer and triggers effects when they expire
+UpdateTimers::
 Call_000_29c1:
     ld c, $00
-    call Call_000_29cf
+    call Call_000_29cf            ; Timer 0
     inc c
-    call Call_000_29cf
+    call Call_000_29cf            ; Timer 1
     inc c
-    call Call_000_29cf
+    call Call_000_29cf            ; Timer 2
     ret
 
 
+; UpdateSingleTimer - Update timer C (0-2)
+UpdateSingleTimer::
 Call_000_29cf:
     ld a, c
     ld hl, $c386
@@ -9216,18 +9406,22 @@ jr_000_2a12:
     ret
 
 
+; ClearRoomVars - Clear room-related variables ($c2cf-$c2d1, fill $c2d2 with $FF)
+ClearRoomVars::
 Call_000_2a1d:
     xor a
-    ld [$c2cf], a
+    ld [$c2cf], a                 ; Room state counter
     ld [$c2d0], a
     ld [$c2d1], a
-    ld hl, $c2d2
+    ld hl, $c2d2                  ; Entity spawn tracking (6 * 2 bytes)
     ld a, $ff
-    ld c, $0c
-    call Call_000_1fda
+    ld c, $0c                     ; 12 bytes
+    call Call_000_1fda            ; Memfill
     ret
 
 
+; IncrementRoomCounter - Increment room state counter at $c2cf (mod 6)
+IncrementRoomCounter::
 Call_000_2a32:
     ld hl, $c2cf
     ld a, [hl]
@@ -9422,11 +9616,13 @@ jr_000_2ae1:
     ret
 
 
+; InitDMAState - Jump to bank $0A:$5841 to initialize HDMA/DMA state
+InitDMAState::
 Call_000_2ae3:
     ld a, $0a
     ldh [$8a], a
     ld [$2000], a
-    jp $5841
+    jp $5841                      ; Bank $0A DMA initialization
 
 
 ; ============================================================================
@@ -10431,72 +10627,82 @@ Call_000_3006:
     ret
 
 
+; LoadAreaConfig - Load area configuration from bank $50 table
+; Copies 21 bytes to $c19e (area flags, tileset ptrs, collision data)
+; If bit 3 set, also loads map data to WRAM5/6
+LoadAreaConfig::
 Call_000_300f:
-    ld bc, $0000
-    call Call_000_063f
-    ld de, $c19e
-    ld c, $15
-    call Call_000_1ff8
-    ld a, [$c19e]
-    bit 3, a
+    ld bc, $0000                  ; Area data offset 0 = main config
+    call Call_000_063f            ; ReadAreaData
+    ld de, $c19e                  ; Dest: area config buffer
+    ld c, $15                     ; 21 bytes
+    call Call_000_1ff8            ; Memcpy_HLtoDE
+    ld a, [$c19e]                 ; Area flags
+    bit 3, a                      ; Bit 3 = has map data
     jr z, jr_000_305c
 
-    ld hl, $c19f
+    ; Load map data to WRAM5 and WRAM6
+    ld hl, $c19f                  ; Map size (width * height)
     ld a, [hl+]
     ld b, [hl]
     ld c, a
-    call Call_000_1f76
-    ld a, [$c1a3]
+    call Call_000_1f76            ; Multiply BC (prepare map size)
+    ld a, [$c1a3]                 ; Map data bank
     ldh [$8a], a
     ld [$2000], a
-    ld hl, $c1a1
+    ld hl, $c1a1                  ; Map data pointer
     ld a, [hl+]
     ld h, [hl]
     ld l, a
-    ld a, $05
+    ld a, $05                     ; WRAM5 = visual tilemap
     ldh [rSVBK], a
     ld de, $d000
     push bc
     push hl
-    call Call_000_2008
+    call Call_000_2008            ; Decompress/copy map data
     pop hl
     pop bc
-    ld a, [$c1a3]
+    ld a, [$c1a3]                 ; Map data bank + 1
     inc a
     ldh [$8a], a
     ld [$2000], a
     ld de, $d000
-    ld a, $06
+    ld a, $06                     ; WRAM6 = collision map
     ldh [rSVBK], a
-    call Call_000_2008
+    call Call_000_2008            ; Decompress/copy collision data
 
 jr_000_305c:
-    ld a, [$c19f]
+    ld a, [$c19f]                 ; Map width
     dec a
-    ld [$c1e6], a
+    ld [$c1e6], a                 ; Store width-1
 
+; LoadAreaTilesets - Load area tilesets via HDMA transfer
+; Reads tileset pointers from $c1aa/$c1ad/$c1b0 and loads to VRAM banks 0/1
+LoadAreaTilesets::
 Call_000_3063:
-    ld hl, $c1aa
+    ld hl, $c1aa                  ; Area tileset config
     call Call_000_26b1
     ld a, [$c19e]
-    bit 0, a
+    bit 0, a                      ; Check tileset mode
     jr nz, jr_000_3081
 
-    ld hl, $c1ad
+    ; Normal tileset load via HDMA
+    ld hl, $c1ad                  ; Tiles1 pointer (VRAM bank 0)
     xor a
-    call Call_000_3aab
-    ld hl, $c1b0
+    call Call_000_3aab            ; LoadTilesetHDMA
+    ld hl, $c1b0                  ; Tiles2 pointer (VRAM bank 1)
     ld a, $01
-    call Call_000_3aab
+    call Call_000_3aab            ; LoadTilesetHDMA
     jr jr_000_3090
 
 jr_000_3081:
+    ; Alternate tileset load
     ld hl, $c1af
     xor a
-    call Call_000_3aeb
+    call Call_000_3aeb            ; LoadTilesetAlt
     ld hl, $c1b2
     ld a, $01
-    call Call_000_3aeb
+    call Call_000_3aeb            ; LoadTilesetAlt
 
 jr_000_3090:
     ld a, [$c19f]
@@ -10631,29 +10837,34 @@ jr_000_314d:
     jp Jump_000_36c5
 
 
+; ResetCameraState - Reset camera/scroll state variables $c1eb-$c1ec
+ResetCameraState::
 Call_000_3160:
     call Call_000_36ca
     xor a
-    ld [$c1eb], a
-    ld [$c1ec], a
+    ld [$c1eb], a                 ; Clear camera scroll X
+    ld [$c1ec], a                 ; Clear camera scroll Y
     ret
 
 
+; DispatchCameraUpdate - Call camera/scroll update function via pointer at $c1b5
+; Reads player entity byte $6E to $ff99, dispatches through $c1b5 pointer
+DispatchCameraUpdate::
 Call_000_316b:
     ld a, [$c13a]
     ldh [rSVBK], a
-    ld a, [$c382]
+    ld a, [$c382]                 ; Player entity page
     ld h, a
     ld l, $6e
-    ld a, [hl]
-    ldh [$99], a
-    ld de, $3184
+    ld a, [hl]                    ; Read byte $6E (camera state?)
+    ldh [$99], a                  ; Store to HRAM $99
+    ld de, $3184                  ; Return address
     push de
-    ld hl, $c1b5
+    ld hl, $c1b5                  ; Camera update function pointer
     ld a, [hl+]
     ld h, [hl]
     ld l, a
-    jp hl
+    jp hl                         ; Dispatch to camera handler
 
 
     ld de, $318f
@@ -10736,21 +10947,24 @@ Jump_000_31be:
     ret
 
 
+; DispatchCameraUpdate2 - Alternate camera/scroll update dispatch via $c1b5
+; Similar to DispatchCameraUpdate but with different return address
+DispatchCameraUpdate2::
 Call_000_3206:
     ld a, [$c13a]
     ldh [rSVBK], a
-    ld a, [$c382]
+    ld a, [$c382]                 ; Player entity page
     ld h, a
     ld l, $6e
-    ld a, [hl]
-    ldh [$99], a
-    ld de, $321f
+    ld a, [hl]                    ; Read byte $6E (camera state?)
+    ldh [$99], a                  ; Store to HRAM $99
+    ld de, $321f                  ; Return address
     push de
-    ld hl, $c1b5
+    ld hl, $c1b5                  ; Camera update function pointer
     ld a, [hl+]
     ld h, [hl]
     ld l, a
-    jp hl
+    jp hl                         ; Dispatch to camera handler
 
 
     ld de, $322a
@@ -11521,6 +11735,11 @@ jr_000_3670:
     ret
 
 
+; MultiplyByMapWidth - Multiply C by the current map width
+; Dispatches through function pointer at $c1b3-$c1b4 (set during room load)
+; Input: C = row number
+; Output: HL = C * map_width
+MultiplyByMapWidth:
 Call_000_368f:
     ld hl, $c1b3
     ld a, [hl+]
@@ -11622,21 +11841,27 @@ Call_000_36ef:
     ret
 
 
+; CallBank0A_AudioInit - Jump to bank $0A:$6855 for audio initialization
+CallBank0A_AudioInit::
 Call_000_3702:
     ld a, $0a
     ldh [$8a], a
     ld [$2000], a
-    jp $6855
+    jp $6855                      ; Bank $0A audio init
 
 
+; StopMusic - Stop current music (request track 0)
+StopMusic::
 Call_000_370c:
-    ld e, $00
-    call Call_000_37bd
-    call Call_000_37a6
-    call Call_000_3774
+    ld e, $00                     ; Track 0 = silence
+    call Call_000_37bd            ; RequestMusic
+    call Call_000_37a6            ; Additional audio cleanup
+    call Call_000_3774            ; Final audio state update
     ret
 
 
+; CallBank0A_AudioUpdate - Call bank $0A:$6869 for audio update
+CallBank0A_AudioUpdate::
 Call_000_3718:
     ldh a, [$8a]
     ld c, a
@@ -11645,7 +11870,7 @@ Call_000_3718:
     ld a, $0a
     ldh [$8a], a
     ld [$2000], a
-    call $6869
+    call $6869                    ; Bank $0A audio update
     pop bc
     ld a, c
     ldh [$8a], a
@@ -11654,6 +11879,8 @@ Call_000_3718:
     ret
 
 
+; StopMusic2 - Alternate music stop (same as StopMusic)
+StopMusic2::
 Call_000_3731:
     ld e, $00
     call Call_000_37bd
@@ -11700,14 +11927,16 @@ jr_000_376b:
     ret
 
 
+; AudioEngine_Tick - Call bank $01:$4027 for audio tick processing
+AudioEngine_Tick::
 Call_000_3774:
     ldh a, [$8a]
     ld c, a
     push bc
-    ld a, $01
+    ld a, $01                     ; Audio engine bank
     ldh [$8a], a
     ld [$2000], a
-    call $4027
+    call $4027                    ; Bank $01 audio tick
     pop bc
     ld a, c
     ldh [$8a], a
@@ -11716,6 +11945,8 @@ Call_000_3774:
     ret
 
 
+; AudioEngine_PlaySFX - Call bank $01:$4003 to play SFX (E = SFX ID)
+AudioEngine_PlaySFX::
 Call_000_378b:
     ldh a, [$8a]
     ld c, a
@@ -11738,14 +11969,16 @@ jr_000_379d:
     ret
 
 
+; AudioEngine_Reset - Call bank $01:$401E for audio reset/cleanup
+AudioEngine_Reset::
 Call_000_37a6:
     ldh a, [$8a]
     ld c, a
     push bc
-    ld a, $01
+    ld a, $01                     ; Audio engine bank
     ldh [$8a], a
     ld [$2000], a
-    call $401e
+    call $401e                    ; Bank $01 audio reset
     pop bc
     ld a, c
     ldh [$8a], a
@@ -11754,6 +11987,9 @@ Call_000_37a6:
     ret
 
 
+; RequestMusic - Request music/SFX track change via bank $01 audio engine
+; E = track ID to play, compares with current ($cbc8) for crossfade grouping
+RequestMusic::
 Call_000_37bd:
 Jump_000_37bd:
     ldh a, [$8a]
@@ -11844,11 +12080,13 @@ Call_000_3822:
     jp $6e61
 
 
+; ClearOAMBuffer - Fill OAM staging buffer ($c680, 40 bytes) with $FF
+ClearOAMBuffer::
 Call_000_382c:
-    ld hl, $c680
-    ld c, $28
+    ld hl, $c680                  ; OAM staging buffer
+    ld c, $28                     ; 40 bytes (10 sprites * 4 bytes)
     ld a, $ff
-    jp Jump_000_1fda
+    jp Jump_000_1fda             ; Memfill
 
 
 Call_000_3836:
@@ -11869,11 +12107,14 @@ Call_000_3843:
     jp $6e92
 
 
+; UpdateSprites - Jump to sprite/OAM update routine in bank $08
+; Processes entity sprite rendering and OAM buffer updates
+UpdateSprites:
 Call_000_384d:
     ld a, $08
     ldh [$8a], a
     ld [$2000], a
-    jp $6fa6
+    jp $6fa6                      ; Bank $08 sprite update entry point
 
 
 Call_000_3857:
@@ -11918,28 +12159,36 @@ Jump_000_3882:
     jp $71e7
 
 
+; ClearEntitySlotRefs - Clear entity slot references at $c1f6-$c1f7
+ClearEntitySlotRefs::
 Call_000_388c:
     ld hl, $c1f6
     xor a
-    ld [hl+], a
-    ld [hl+], a
+    ld [hl+], a                   ; Clear entity ref 1
+    ld [hl+], a                   ; Clear entity ref 2
     ret
 
 
+; SpawnAreaEntities - Spawn entities from area data offsets $0C and $0E
+; Stores spawned entity pages in $c1f6 and $c1f7
+SpawnAreaEntities::
 Call_000_3893:
     ld a, [$c13a]
     ldh [rSVBK], a
-    ld bc, $000c
-    call Call_000_38b0
-    ld [$c1f6], a
+    ld bc, $000c                  ; Area data offset $0C = entity spawn 1
+    call Call_000_38b0            ; SpawnEntityFromArea
+    ld [$c1f6], a                 ; Store entity 1 page
     ld a, $d2
     ld [$c383], a
-    ld bc, $000e
-    call Call_000_38b0
-    ld [$c1f7], a
+    ld bc, $000e                  ; Area data offset $0E = entity spawn 2
+    call Call_000_38b0            ; SpawnEntityFromArea
+    ld [$c1f7], a                 ; Store entity 2 page
     ret
 
 
+; SpawnEntityFromArea - Read entity pointer from area data, allocate if non-null
+; BC = area data offset, returns A = entity page (0 if null)
+SpawnEntityFromArea::
 Call_000_38b0:
     call Call_000_063f
     ld a, h
@@ -11956,10 +12205,12 @@ jr_000_38bc:
     ret
 
 
+; LoadAreaScript - Read area script pointer (offset $12) and call bank $0A:$59C2
+LoadAreaScript::
 Call_000_38be:
-    ld bc, $0012
-    call Call_000_063f
-    ld a, [hl+]
+    ld bc, $0012                  ; Area data offset $12 = script pointer
+    call Call_000_063f            ; ReadAreaData
+    ld a, [hl+]                   ; Read 16-bit script pointer
     ld h, [hl]
     ld l, a
 
@@ -12026,11 +12277,13 @@ Call_000_3901:
     ret
 
 
+; TriggerAreaEvent - Jump to bank $0A:$5A5F for area event triggers
+TriggerAreaEvent::
 Call_000_3931:
     ld a, $0a
     ldh [$8a], a
     ld [$2000], a
-    jp $5a5f
+    jp $5a5f                      ; Bank $0A event trigger handler
 
 
 Call_000_393b:
@@ -12349,66 +12602,74 @@ Call_000_3aa3:
     ld d, [hl]
     jr jr_000_3ab3
 
+; LoadTilesetHDMA - Load tileset via HDMA transfer to VRAM
+; A = VRAM bank (0 or 1), [HL] = 3-byte pointer (addr_lo, addr_hi, bank)
+; Loads 4KB: first 2KB to VRAM $9000, next 2KB to VRAM $8800
+LoadTilesetHDMA::
 Call_000_3aab:
-    ld [$c147], a
-    ld a, [hl+]
+    ld [$c147], a                 ; Store target VRAM bank
+    ld a, [hl+]                   ; Read source address
     ld e, a
     ld a, [hl+]
     ld d, a
-    ld c, [hl]
+    ld c, [hl]                    ; Read source bank
 
 jr_000_3ab3:
-    ld hl, $c145
-    ld a, $80
+    ld hl, $c145                  ; HDMA transfer buffer
+    ld a, $80                     ; Transfer length = 128 tiles (2KB)
     ld [hl+], a
-    ld a, c
+    ld a, c                       ; Source bank
 
 Call_000_3aba:
     ld [hl+], a
     inc l
-    ld a, e
+    ld a, e                       ; Source address
     ld [hl+], a
     ld a, d
     ld [hl+], a
-    ld a, $00
+    ld a, $00                     ; Dest: $9000 (tiles 0-127)
     ld [hl+], a
     ld [hl], $90
     push de
-    call Call_000_1bfc
+    call Call_000_1bfc            ; WaitHDMAReady and transfer
     pop de
     ld hl, $c145
-    ld a, $80
+    ld a, $80                     ; Transfer length = 128 tiles (2KB)
     ld [hl+], a
 
 Call_000_3ad0:
     inc l
     inc l
-    ld a, e
+    ld a, e                       ; Source address + $0800
     ld [hl+], a
     ld a, d
-    add $08
+    add $08                       ; Source + $0800
     ld [hl+], a
-    ld a, $00
+    ld a, $00                     ; Dest: $8800 (tiles 128-255)
     ld [hl+], a
     ld [hl], $88
-    call Call_000_1bfc
+    call Call_000_1bfc            ; WaitHDMAReady and transfer
     jp Jump_000_1c1e
 
 
+; LoadTilesetDirect - Load tileset directly (non-HDMA mode)
+LoadTilesetDirect::
 Call_000_3ae3:
-    ld [$c147], a
-    ld a, [hl+]
+    ld [$c147], a                 ; Store target VRAM bank
+    ld a, [hl+]                   ; Read pointer (2 bytes, bank already set)
     ld h, [hl]
     ld l, a
     jr jr_000_3af7
 
+; LoadTilesetAlt - Alternate tileset load with bank switch
+LoadTilesetAlt::
 Call_000_3aeb:
-    ld [$c147], a
-    ld a, [hl-]
+    ld [$c147], a                 ; Store target VRAM bank
+    ld a, [hl-]                   ; Read bank first (3-byte reverse order)
     ldh [$8a], a
-    ld [$2000], a
-    ld a, [hl-]
-    ld l, [hl]
+    ld [$2000], a                 ; Switch to source bank
+    ld a, [hl-]                   ; Read address high
+    ld l, [hl]                    ; Read address low
     ld h, a
 
 jr_000_3af7:
