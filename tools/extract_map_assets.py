@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Extract fixed-size room map layers from game.gbc into data/maps/.
+Extract fixed-size room/screen and gameplay area map layers from game.gbc into
+data/maps/.
 
 By default this will not overwrite existing edited assets. Use --force to
 refresh them from the ROM.
@@ -9,7 +10,7 @@ refresh them from the ROM.
 import argparse
 from pathlib import Path
 
-from map_assets import default_asset_dir, read_room_layer_specs, write_layer_asset
+from map_assets import default_asset_dir, read_map_layer_specs, write_layer_asset
 
 
 def main():
@@ -25,14 +26,18 @@ def main():
 
     rom_path = Path(args.rom)
     rom = rom_path.read_bytes()
-    specs = read_room_layer_specs(rom)
+    specs = read_map_layer_specs(rom)
 
     written = 0
     skipped = 0
     for key in sorted(specs):
         spec = specs[key]
-        out_path = args.asset_dir / f'room_{spec["room"]:03d}' / (
-            f'{spec["layer"]}.bin')
+        if spec['scope'] == 'area':
+            out_path = args.asset_dir / f'area_{spec["area"]:02d}' / (
+                f'{spec["layer"]}.bin')
+        else:
+            out_path = args.asset_dir / f'room_{spec["room"]:03d}' / (
+                f'{spec["layer"]}.bin')
         if out_path.exists() and not args.force:
             skipped += 1
             continue

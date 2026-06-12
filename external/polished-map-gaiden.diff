@@ -1,0 +1,985 @@
+diff --git a/src/main-window.cpp b/src/main-window.cpp
+index deaf738..369ce4f 100644
+--- a/src/main-window.cpp
++++ b/src/main-window.cpp
+@@ -27,11 +27,42 @@
+ #include "main-window.h"
+ #include "image.h"
+ #include "colors.h"
+-#include "icons.h"
+-
+-#ifdef _WIN32
+-#include "resource.h"
+-#else
++#include "icons.h"
++
++static bool gaiden_attribute_path(const char *filename, char *buffer) {
++	std::string path(filename);
++	size_t slash = path.find_last_of("/\\");
++	std::string directory = slash == std::string::npos ? "" : path.substr(0, slash + 1);
++	std::string basename = slash == std::string::npos ? path : path.substr(slash + 1);
++	size_t first_dot = basename.find('.');
++	if (first_dot == std::string::npos) {
++		return false;
++	}
++
++	size_t tileset_dot = basename.find(".gaiden_area");
++	std::string attr;
++	if (tileset_dot != std::string::npos && tileset_dot > first_dot) {
++		attr = directory + basename.substr(0, first_dot) + "_meta" +
++			basename.substr(first_dot, tileset_dot - first_dot) + ".gaiden_area_meta.blk";
++	}
++	else {
++		tileset_dot = basename.find(".gaiden_room");
++		if (tileset_dot == std::string::npos || tileset_dot <= first_dot) {
++			return false;
++		}
++		attr = directory + basename.substr(0, first_dot) + "_collision" +
++			basename.substr(first_dot, tileset_dot - first_dot) + ".gaiden_collision.blk";
++	}
++	if (attr.size() >= FL_PATH_MAX) {
++		return false;
++	}
++	strcpy(buffer, attr.c_str());
++	return true;
++}
++
++#ifdef _WIN32
++#include "resource.h"
++#else
+ #include <unistd.h>
+ #include <X11/xpm.h>
+ #include "app-icon.xpm"
+@@ -1282,17 +1313,25 @@ void Main_Window::open_map(const char *directory, const char *filename) {
+ 			return;
+ 		}
+ 	}
+-	else {
+-		basename = NEW_MAP_NAME;
+-		_map.modified(true);
+-		for (uint8_t row = 0; row < h; row++) {
++	else {
++		basename = NEW_MAP_NAME;
++		_map.modified(true);
++		for (uint8_t row = 0; row < h; row++) {
+ 			for (uint8_t col = 0; col < w; col++) {
+ 				_map.block(col, row, new Block(row, col, 0x00));
+-			}
+-		}
+-	}
+-
+-	_map_group->size(ms * ((int)w + EVENT_MARGIN), ms * ((int)h + EVENT_MARGIN));
++			}
++		}
++	}
++
++	_map.clear_gaiden_attributes();
++	if (filename && _metatileset.gaiden_tile_mode()) {
++		char attr_file[FL_PATH_MAX] = {};
++		if (gaiden_attribute_path(filename, attr_file) && file_exists(attr_file)) {
++			_map.read_gaiden_attributes(attr_file);
++		}
++	}
++
++	_map_group->size(ms * ((int)w + EVENT_MARGIN), ms * ((int)h + EVENT_MARGIN));
+ 	for (uint8_t y = 0; y < h; y++) {
+ 		for (uint8_t x = 0; x < w; x++) {
+ 			Block *block = _map.block(x, y);
+@@ -1324,18 +1363,19 @@ void Main_Window::open_map(const char *directory, const char *filename) {
+ 	}
+ 	_png_chooser->preset_file(buffer);
+ 
+-	// populate sidebar with metatile buttons
+-	_sidebar->scroll_to(0, 0);
+-	size_t n = _metatileset.size();
+-	for (size_t i = 0; i < n; i++) {
+-		int x = ms * (i % METATILES_PER_ROW), y = ms * (i / METATILES_PER_ROW);
+-		Metatile_Button *mtb = new Metatile_Button(_sidebar->x() + x, _sidebar->y() + y, ms, (uint8_t)i);
+-		mtb->callback((Fl_Callback *)select_metatile_cb, this);
+-		_sidebar->add(mtb);
+-		_metatile_buttons[i] = mtb;
+-	}
+-	_sidebar->init_sizes();
+-	_sidebar->contents(ms * METATILES_PER_ROW, ms * (((int)n + METATILES_PER_ROW - 1) / METATILES_PER_ROW));
++	// populate sidebar with metatile buttons
++	_sidebar->scroll_to(0, 0);
++	size_t n = _metatileset.size();
++	int mpr = metatiles_per_row();
++	for (size_t i = 0; i < n; i++) {
++		int x = ms * (i % mpr), y = ms * (i / mpr);
++		Metatile_Button *mtb = new Metatile_Button(_sidebar->x() + x, _sidebar->y() + y, ms, (uint8_t)i);
++		mtb->callback((Fl_Callback *)select_metatile_cb, this);
++		_sidebar->add(mtb);
++		_metatile_buttons[i] = mtb;
++	}
++	_sidebar->init_sizes();
++	_sidebar->contents(ms * mpr, ms * (((int)n + mpr - 1) / mpr));
+ 
+ 	if (n) {
+ 		_metatile_buttons[0]->setonly();
+@@ -1609,11 +1649,15 @@ void Main_Window::load_roof_colors(bool quiet) {
+ bool Main_Window::read_metatile_data(const char *tileset_name, const char *roof_name) {
+ 	char buffer[FL_PATH_MAX] = {};
+ 
+-	Tileset &tileset = _metatileset.tileset();
+-	tileset.name(tileset_name);
+-	tileset.roof_name(roof_name);
+-
+-	const char *directory = _directory.c_str();
++	Tileset &tileset = _metatileset.tileset();
++	tileset.name(tileset_name);
++	tileset.roof_name(roof_name);
++	if (_metatileset.gaiden_tile_mode() && !Config::allow_256_tiles()) {
++		Config::allow_256_tiles(true);
++		_allow_256_tiles_mi->set();
++	}
++
++	const char *directory = _directory.c_str();
+ 
+ 	Config::palette_map_path(buffer, directory, tileset_name);
+ 	Palette_Map::Result rp = tileset.read_palette_map(buffer);
+@@ -1700,14 +1744,15 @@ void Main_Window::add_sub_metatiles(size_t n) {
+ 	force_add_sub_metatiles(s, n);
+ }
+ 
+-void Main_Window::force_add_sub_metatiles(size_t s, size_t n) {
+-	int ms = metatile_size();
+-
+-	if (n > s) {
+-		// add metatiles
+-		for (size_t i = (int)s; i < n; i++) {
+-			int x = ms * (i % METATILES_PER_ROW), y = ms * (i / METATILES_PER_ROW);
+-			Metatile_Button *mtb = new Metatile_Button(_sidebar->x() + x, _sidebar->y() - _sidebar->yposition() + y, ms, (uint8_t)i);
++void Main_Window::force_add_sub_metatiles(size_t s, size_t n) {
++	int ms = metatile_size();
++	int mpr = metatiles_per_row();
++
++	if (n > s) {
++		// add metatiles
++		for (size_t i = (int)s; i < n; i++) {
++			int x = ms * (i % mpr), y = ms * (i / mpr);
++			Metatile_Button *mtb = new Metatile_Button(_sidebar->x() + x, _sidebar->y() - _sidebar->yposition() + y, ms, (uint8_t)i);
+ 			mtb->callback((Fl_Callback *)select_metatile_cb, this);
+ 			_sidebar->add(mtb);
+ 			_metatile_buttons[i] = mtb;
+@@ -1738,15 +1783,15 @@ void Main_Window::force_add_sub_metatiles(size_t s, size_t n) {
+ 			_sidebar->remove((int)n);
+ 			_metatile_buttons[i] = NULL;
+ 		}
+-		int k = ms * ((int)(n - 1) / METATILES_PER_ROW + 1);
++		int k = ms * ((int)(n - 1) / mpr + 1);
+ 		if (_sidebar->yposition() + _sidebar->h() > k) {
+ 			_sidebar->scroll_to(0, std::max(k - _sidebar->h(), 0));
+ 		}
+ 	}
+ 
+-	_sidebar->size(ms * METATILES_PER_ROW + Fl::scrollbar_size(), _sidebar->h());
+-	_sidebar->init_sizes();
+-	_sidebar->contents(ms * METATILES_PER_ROW, ms * (((int)_metatileset.size() + METATILES_PER_ROW - 1) / METATILES_PER_ROW));
++	_sidebar->size(ms * mpr + Fl::scrollbar_size(), _sidebar->h());
++	_sidebar->init_sizes();
++	_sidebar->contents(ms * mpr, ms * (((int)_metatileset.size() + mpr - 1) / mpr));
+ 
+ 	Tileset &tileset = _metatileset.tileset();
+ 	_block_window->tileset(&tileset);
+@@ -2260,12 +2305,13 @@ void Main_Window::update_zoom() {
+ 	update_layout();
+ }
+ 
+-void Main_Window::update_layout() {
+-	init_sizes();
+-	int ms = metatile_size();
+-	size_t n = _metatileset.size();
+-	int rs = Fl::scrollbar_size();
+-	_sidebar->size(ms * METATILES_PER_ROW + rs, _sidebar->h());
++void Main_Window::update_layout() {
++	init_sizes();
++	int ms = metatile_size();
++	int mpr = metatiles_per_row();
++	size_t n = _metatileset.size();
++	int rs = Fl::scrollbar_size();
++	_sidebar->size(ms * mpr + rs, _sidebar->h());
+ 	int ox = _sidebar->w() + (rulers() ? rs : 0);
+ 	int oy = rulers() ? rs : 0;
+ 	_hor_ruler->resize(ox, _sidebar->y(), w() - ox, rs);
+@@ -2274,14 +2320,14 @@ void Main_Window::update_layout() {
+ 	_map_scroll->resize(ox, _sidebar->y() + oy, w() - ox, _sidebar->h() - oy);
+ 	int gw = ((int)_map.width() + EVENT_MARGIN) * ms, gh = ((int)_map.height() + EVENT_MARGIN) * ms;
+ 	_map_group->resize(ox - _map_scroll->xposition(), _sidebar->y() + oy - _map_scroll->yposition(), gw, gh);
+-	_sidebar->contents(ms * METATILES_PER_ROW, ms * (((int)n + METATILES_PER_ROW - 1) / METATILES_PER_ROW));
++	_sidebar->contents(ms * mpr, ms * (((int)n + mpr - 1) / mpr));
+ 	_map_scroll->contents(_map_group->w(), _map_group->h());
+-	int sx = _sidebar->x(), sy = _sidebar->y();
+-	for (size_t i = 0; i < n; i++) {
+-		Metatile_Button *mt = _metatile_buttons[i];
+-		int dx = ms * (i % METATILES_PER_ROW), dy = ms * (i / METATILES_PER_ROW);
+-		mt->resize(sx + dx, sy + dy, ms + 1, ms + 1);
+-	}
++	int sx = _sidebar->x(), sy = _sidebar->y();
++	for (size_t i = 0; i < n; i++) {
++		Metatile_Button *mt = _metatile_buttons[i];
++		int dx = ms * (i % mpr), dy = ms * (i / mpr);
++		mt->resize(sx + dx, sy + dy, ms + 1, ms + 1);
++	}
+ 	int mx = _map_group->x(), my = _map_group->y();
+ 	_map.resize_blocks(mx, my, ms);
+ 	_map_events.resize_events(mx, my, ms / 2);
+@@ -2305,20 +2351,21 @@ void Main_Window::update_palettes() {
+ 	redraw();
+ }
+ 
+-void Main_Window::select_metatile(Metatile_Button *mb) {
+-	_selected = mb;
+-	_selected->setonly();
+-	uint8_t id = mb->id();
+-	int ms = metatile_size();
+-	if (ms * (id / METATILES_PER_ROW) >= _sidebar->yposition() + _sidebar->h() - ms / 2) {
+-		_sidebar->scroll_to(0, ms * (id / METATILES_PER_ROW + 1) - _sidebar->h());
+-		_sidebar->redraw();
+-	}
+-	else if (ms * (id / METATILES_PER_ROW + 1) <= _sidebar->yposition() + ms / 2) {
+-		_sidebar->scroll_to(0, ms * (id / METATILES_PER_ROW));
+-		_sidebar->redraw();
+-	}
+-}
++void Main_Window::select_metatile(Metatile_Button *mb) {
++	_selected = mb;
++	_selected->setonly();
++	uint8_t id = mb->id();
++	int ms = metatile_size();
++	int mpr = metatiles_per_row();
++	if (ms * (id / mpr) >= _sidebar->yposition() + _sidebar->h() - ms / 2) {
++		_sidebar->scroll_to(0, ms * (id / mpr + 1) - _sidebar->h());
++		_sidebar->redraw();
++	}
++	else if (ms * (id / mpr + 1) <= _sidebar->yposition() + ms / 2) {
++		_sidebar->scroll_to(0, ms * (id / mpr));
++		_sidebar->redraw();
++	}
++}
+ 
+ void Main_Window::drag_and_drop_cb(DnD_Receiver *dndr, Main_Window *mw) {
+ 	Fl_Window *top = Fl::modal();
+@@ -2678,7 +2725,8 @@ void Main_Window::print_cb(Fl_Widget *, Main_Window *mw) {
+ 	Config::print_warp_ids(mw->_print_options_dialog->warp_ids());
+ 	if (mw->_print_options_dialog->canceled()) { return; }
+ 
+-	int w = (int)mw->_map.width() * METATILE_PX_SIZE, h = (int)mw->_map.height() * METATILE_PX_SIZE;
++	int w = (int)mw->_map.width() * mw->base_metatile_size();
++	int h = (int)mw->_map.height() * mw->base_metatile_size();
+ 	if (mw->_print_options_dialog->copied()) {
+ 		float scale = fl_override_scale();
+ 		Fl_Copy_Surface *surface = new Fl_Copy_Surface(w, h);
+diff --git a/src/main-window.h b/src/main-window.h
+index 2b0b861..2668996 100644
+--- a/src/main-window.h
++++ b/src/main-window.h
+@@ -142,10 +142,13 @@ public:
+ 	inline bool allow_priority(void) const { return _allow_priority_mi && !!_allow_priority_mi->value(); }
+ 	inline bool allow_256_tiles(void) const { return _allow_256_tiles_mi && !!_allow_256_tiles_mi->value(); }
+ 	inline bool auto_load_events(void) const { return _auto_events_mi && !!_auto_events_mi->value(); }
+-	inline bool auto_load_special_palettes(void) const { return _special_palettes_mi && !!_special_palettes_mi->value(); }
+-	inline bool auto_load_roof_colors(void) const { return _roof_colors_mi && !!_roof_colors_mi->value(); }
+-	inline bool drag_and_drop(void) const { return _drag_and_drop_mi && !!_drag_and_drop_mi->value(); }
+-	inline int metatile_size(void) const { return METATILE_PX_SIZE * (zoom() ? ZOOM_FACTOR : 1); }
++	inline bool auto_load_special_palettes(void) const { return _special_palettes_mi && !!_special_palettes_mi->value(); }
++	inline bool auto_load_roof_colors(void) const { return _roof_colors_mi && !!_roof_colors_mi->value(); }
++	inline bool drag_and_drop(void) const { return _drag_and_drop_mi && !!_drag_and_drop_mi->value(); }
++	inline bool gaiden_tile_mode(void) const { return _metatileset.gaiden_tile_mode(); }
++	inline int base_metatile_size(void) const { return TILE_SIZE * _metatileset.gaiden_map_tile_size(); }
++	inline int metatile_size(void) const { return base_metatile_size() * (zoom() ? ZOOM_FACTOR : 1); }
++	inline int metatiles_per_row(void) const { return gaiden_tile_mode() ? TILES_PER_ROW : METATILES_PER_ROW; }
+ 	inline int map_scroll_x(void) const { return _map_scroll->xposition(); }
+ 	inline int map_scroll_y(void) const { return _map_scroll->yposition(); }
+ 	inline int status_event_x(void) const { return _status_event_x; }
+@@ -158,12 +161,15 @@ public:
+ 	inline std::unordered_map<int, uint8_t>::const_iterator hotkey_metatile(int key) const { return _hotkey_metatiles.find(key); }
+ 	inline std::unordered_map<int, uint8_t>::const_iterator no_metatile(void) const { return _hotkey_metatiles.end(); }
+ 	inline void map_editable(bool e) { _map_editable = e; }
+-	const char *modified_filename(void);
+-	void draw_overlay(void);
+-	int handle(int event);
+-	inline void draw_metatile(int x, int y, uint8_t id) const { _metatileset.draw_metatile(x, y, id, zoom(), show_priority()); }
+-	inline void print_metatile(int x, int y, uint8_t id) const { _metatileset.draw_metatile(x, y, id, false, Config::print_priority()); }
+-	void update_status(Block *b);
++	const char *modified_filename(void);
++	void draw_overlay(void);
++	int handle(int event);
++	inline void draw_metatile(int x, int y, uint8_t id) const { _metatileset.draw_metatile(x, y, id, zoom(), show_priority()); }
++	inline void draw_metatile_attr(int x, int y, uint8_t id, uint8_t attr) const { _metatileset.draw_metatile_attr(x, y, id, attr, zoom(), show_priority()); }
++	inline void print_metatile(int x, int y, uint8_t id) const { _metatileset.draw_metatile(x, y, id, false, Config::print_priority()); }
++	inline void print_metatile_attr(int x, int y, uint8_t id, uint8_t attr) const { _metatileset.draw_metatile_attr(x, y, id, attr, false, Config::print_priority()); }
++	inline uint8_t gaiden_attribute(uint8_t x, uint8_t y) const { return _map.gaiden_attribute(x, y); }
++	void update_status(Block *b);
+ 	inline void update_status(Event *e) { update_status(_map.block_under(e)); }
+ 	void update_event_cursor(Block *b);
+ 	inline void update_event_cursor(Event *e) { update_event_cursor(_map.block_under(e)); }
+diff --git a/src/map-buttons.cpp b/src/map-buttons.cpp
+index 25f6838..4798f31 100644
+--- a/src/map-buttons.cpp
++++ b/src/map-buttons.cpp
+@@ -20,11 +20,11 @@ static void draw_selection_border(int x, int y, int rs, bool zoom) {
+ 	}
+ }
+ 
+-static void draw_map_button(Fl_Widget *wgt, uint8_t id, bool border) {
+-	Main_Window *mw = (Main_Window *)wgt->user_data();
+-	int x = wgt->x(), y = wgt->y();
+-	int ms = mw->metatile_size();
+-	mw->draw_metatile(x, y, id);
++static void draw_map_button(Fl_Widget *wgt, uint8_t id, bool border, uint8_t attr = 0) {
++	Main_Window *mw = (Main_Window *)wgt->user_data();
++	int x = wgt->x(), y = wgt->y();
++	int ms = mw->metatile_size();
++	mw->draw_metatile_attr(x, y, id, attr);
+ 	if (mw->grid()) {
+ 		fl_color(FL_INACTIVE_COLOR);
+ 		fl_xyline(x, y+ms-1, x+ms-1, y);
+@@ -131,30 +131,31 @@ void Block::update_label() {
+ 	copy_label(buffer);
+ }
+ 
+-void Block::draw() {
+-	Main_Window *mw = (Main_Window *)user_data();
+-	bool below_mouse = Fl::belowmouse() == this, event_cursor = mw->mode() == Mode::EVENTS;
+-	draw_map_button(this, _id, below_mouse && !event_cursor);
++void Block::draw() {
++	Main_Window *mw = (Main_Window *)user_data();
++	bool below_mouse = Fl::belowmouse() == this, event_cursor = mw->mode() == Mode::EVENTS;
++	draw_map_button(this, _id, below_mouse && !event_cursor, mw->gaiden_attribute(_col, _row));
+ 	if (!below_mouse || !event_cursor) { return; }
+ 	int hx = x() + right_half() * w() / 2, hy = y() + bottom_half() * h() / 2;
+ 	int hs = mw->metatile_size() / 2;
+ 	draw_selection_border(hx, hy, hs, mw->zoom());
+ }
+ 
+-void Block::print() {
+-	Main_Window *mw = (Main_Window *)user_data();
+-	int X = (int)_col * METATILE_PX_SIZE, Y = (int)_row * METATILE_PX_SIZE;
+-	mw->print_metatile(X, Y, _id);
+-	if (Config::print_grid()) {
+-		fl_color(FL_INACTIVE_COLOR);
+-		fl_xyline(X, Y+METATILE_PX_SIZE-1, X+METATILE_PX_SIZE-1, Y);
+-	}
+-	if (Config::print_ids()) {
+-		fl_font(FL_COURIER_BOLD, 14);
+-		draw_outlined_text(label(), X+3, Y+1, METATILE_PX_SIZE, METATILE_PX_SIZE, FL_ALIGN_TOP_LEFT | FL_ALIGN_INSIDE,
+-			FL_WHITE, FL_BLACK);
+-	}
+-}
++void Block::print() {
++	Main_Window *mw = (Main_Window *)user_data();
++	int ms = mw->base_metatile_size();
++	int X = (int)_col * ms, Y = (int)_row * ms;
++	mw->print_metatile_attr(X, Y, _id, mw->gaiden_attribute(_col, _row));
++	if (Config::print_grid()) {
++		fl_color(FL_INACTIVE_COLOR);
++		fl_xyline(X, Y + ms - 1, X + ms - 1, Y);
++	}
++	if (Config::print_ids()) {
++		fl_font(FL_COURIER_BOLD, 14);
++		draw_outlined_text(label(), X + 3, Y + 1, ms, ms, FL_ALIGN_TOP_LEFT | FL_ALIGN_INSIDE,
++			FL_WHITE, FL_BLACK);
++	}
++}
+ 
+ int Block::handle(int event) {
+ 	Main_Window *mw = (Main_Window *)user_data();
+diff --git a/src/map.cpp b/src/map.cpp
+index d5f35a1..95a708d 100644
+--- a/src/map.cpp
++++ b/src/map.cpp
+@@ -42,9 +42,10 @@ void Map::clear() {
+ 	_result = Result::MAP_NULL;
+ 	_modified = false;
+ 	_mod_time = 0;
+-	_history.clear();
+-	_future.clear();
+-}
++	_history.clear();
++	_future.clear();
++	_gaiden_attributes.clear();
++}
+ 
+ void Map::resize_blocks(int x, int y, int s) const {
+ 	size_t n = size();
+@@ -100,7 +101,7 @@ void Map::redo() {
+ 	_future.pop_back();
+ }
+ 
+-Map::Result Map::read_blocks(const char *f) {
++Map::Result Map::read_blocks(const char *f) {
+ 	if (ends_with_ignore_case(f, ".map")) { return read_asm_blocks(f); }
+ 
+ 	bool too_long = false;
+@@ -124,10 +125,29 @@ Map::Result Map::read_blocks(const char *f) {
+ 	}
+ 
+ 	delete [] data;
+-	return (_result = too_long ? Result::MAP_TOO_LONG : Result::MAP_OK);
+-}
+-
+-Map::Result Map::read_asm_blocks(const char *f) {
++	return (_result = too_long ? Result::MAP_TOO_LONG : Result::MAP_OK);
++}
++
++bool Map::read_gaiden_attributes(const char *f) {
++	_gaiden_attributes.clear();
++	FILE *file = fl_fopen(f, "rb");
++	if (file == NULL) { return false; }
++
++	_gaiden_attributes.resize(size());
++	size_t c = fread(_gaiden_attributes.data(), 1, size(), file);
++	fclose(file);
++	if (c < size()) {
++		_gaiden_attributes.clear();
++		return false;
++	}
++	return true;
++}
++
++void Map::clear_gaiden_attributes() {
++	_gaiden_attributes.clear();
++}
++
++Map::Result Map::read_asm_blocks(const char *f) {
+ 	Parsed_Asm data(f);
+ 	if (data.result() != Parsed_Asm::Result::ASM_OK) {
+ 		return (_result = Result::MAP_BAD_FILE); // cannot parse file
+diff --git a/src/map.h b/src/map.h
+index 733e836..ef90d75 100644
+--- a/src/map.h
++++ b/src/map.h
+@@ -30,12 +30,13 @@ protected:
+ 	};
+ public:
+ 	enum class Result { MAP_OK, MAP_BAD_FILE, MAP_TOO_SHORT, MAP_TOO_LONG, MAP_NULL };
+-private:
+-	Map_Attributes _attributes;
+-	uint8_t _width, _height;
+-	Block **_blocks;
+-	Result _result;
+-	bool _modified;
++private:
++	Map_Attributes _attributes;
++	uint8_t _width, _height;
++	Block **_blocks;
++	std::vector<uint8_t> _gaiden_attributes;
++	Result _result;
++	bool _modified;
+ 	std::deque<Map_State> _history, _future;
+ 	int64_t _mod_time;
+ public:
+@@ -65,10 +66,15 @@ public:
+ 	}
+ 	void size(uint8_t w, uint8_t h);
+ 	inline size_t size(void) const { return (size_t)_width * (size_t)_height; }
+-	inline Block *block(uint8_t x, uint8_t y) const { return _blocks[(size_t)y * _width + (size_t)x]; }
+-	inline Block *block(size_t i) const { return _blocks[i]; }
+-	Block *block_under(Event *e);
+-	void block(uint8_t x, uint8_t y, Block *b);
++	inline Block *block(uint8_t x, uint8_t y) const { return _blocks[(size_t)y * _width + (size_t)x]; }
++	inline Block *block(size_t i) const { return _blocks[i]; }
++	inline uint8_t gaiden_attribute(uint8_t x, uint8_t y) const {
++		size_t i = (size_t)y * _width + (size_t)x;
++		return i < _gaiden_attributes.size() ? _gaiden_attributes[i] : 0;
++	}
++	inline bool has_gaiden_attributes(void) const { return _gaiden_attributes.size() == size(); }
++	Block *block_under(Event *e);
++	void block(uint8_t x, uint8_t y, Block *b);
+ 	inline Result result(void) const { return _result; }
+ 	inline bool modified(void) const { return _modified; }
+ 	inline void modified(bool m) { _modified = m; }
+@@ -78,10 +84,12 @@ public:
+ 	void clear();
+ 	void resize_blocks(int x, int y, int s) const;
+ 	void remember(void);
+-	void undo(void);
+-	void redo(void);
+-	Result read_blocks(const char *f);
+-	bool write_blocks(const char *f);
++	void undo(void);
++	void redo(void);
++	Result read_blocks(const char *f);
++	bool read_gaiden_attributes(const char *f);
++	void clear_gaiden_attributes(void);
++	bool write_blocks(const char *f);
+ private:
+ 	Result read_asm_blocks(const char *f);
+ public:
+diff --git a/src/metatileset.cpp b/src/metatileset.cpp
+index 548ef99..acddba9 100644
+--- a/src/metatileset.cpp
++++ b/src/metatileset.cpp
+@@ -1,4 +1,5 @@
+-#include <cstdio>
++#include <cstdio>
++#include <cstring>
+ #include <fstream>
+ #include <sstream>
+ 
+@@ -23,11 +24,12 @@ Metatileset::~Metatileset() {
+ 	}
+ }
+ 
+-void Metatileset::clear() {
+-	_tileset.clear();
+-	for (Metatile *mt : _metatiles) {
+-		mt->clear();
+-	}
++void Metatileset::clear() {
++	_tileset.clear();
++	_gaiden_area_previews.clear();
++	for (Metatile *mt : _metatiles) {
++		mt->clear();
++	}
+ 	_num_metatiles = 0;
+ 	_result = Result::META_NULL;
+ 	_modified = false;
+@@ -35,18 +37,33 @@ void Metatileset::clear() {
+ 	_mod_time = _mod_time_coll = 0;
+ }
+ 
+-void Metatileset::size(size_t n) {
++void Metatileset::size(size_t n) {
+ 	size_t low = std::min(n, _num_metatiles), high = std::max(n, _num_metatiles);
+ 	for (size_t i = low; i < high; i++) {
+ 		_metatiles[i]->clear();
+ 	}
+ 	_num_metatiles = n;
+-	_modified = true;
+-}
+-
+-bool Metatileset::uses_tile(uint8_t id) const {
+-	for (size_t i = 0; i < _num_metatiles; i++) {
+-		if (_metatiles[i]->uses_tile(id)) {
++	_modified = true;
++}
++
++bool Metatileset::gaiden_area_mode() const {
++	return !strncmp(_tileset.name(), "gaiden_area", strlen("gaiden_area"));
++}
++
++bool Metatileset::gaiden_tile_mode() const {
++	return !strncmp(_tileset.name(), "gaiden_", strlen("gaiden_"));
++}
++
++int Metatileset::gaiden_map_tile_size() const {
++	if (gaiden_area_mode()) {
++		return 2;
++	}
++	return gaiden_tile_mode() ? 1 : METATILE_SIZE;
++}
++
++bool Metatileset::uses_tile(uint8_t id) const {
++	for (size_t i = 0; i < _num_metatiles; i++) {
++		if (_metatiles[i]->uses_tile(id)) {
+ 			return true;
+ 		}
+ 	}
+@@ -64,11 +81,26 @@ void Metatileset::trim_tileset() {
+ 	}
+ }
+ 
+-void Metatileset::draw_metatile(int x, int y, uint8_t id, bool zoom, bool show_priority) const {
+-	if (id < size()) {
+-		Metatile *mt = _metatiles[id];
+-		int s = TILE_SIZE * (zoom ? ZOOM_FACTOR : 1);
+-		for (int ty = 0; ty < METATILE_SIZE; ty++) {
++void Metatileset::draw_metatile(int x, int y, uint8_t id, bool zoom, bool show_priority) const {
++	draw_metatile_attr(x, y, id, 0, zoom, show_priority);
++}
++
++void Metatileset::draw_metatile_attr(int x, int y, uint8_t id, uint8_t attr, bool zoom, bool show_priority) const {
++	if (id < size()) {
++		Metatile *mt = _metatiles[id];
++		if (gaiden_area_mode()) {
++			draw_gaiden_area_metatile(x, y, id, attr, zoom);
++			return;
++		}
++		if (gaiden_tile_mode()) {
++			uint8_t tid = mt->tile_id(0, 0);
++			int s = TILE_SIZE * (zoom ? ZOOM_FACTOR : 1);
++			const Tile *t = _tileset.const_tile_or_roof(tid);
++			t->draw_with_priority_flipped(x, y, s, show_priority, attr & 0x20, attr & 0x40);
++			return;
++		}
++		int s = TILE_SIZE * (zoom ? ZOOM_FACTOR : 1);
++		for (int ty = 0; ty < METATILE_SIZE; ty++) {
+ 			int ay = y + ty * s;
+ 			for (int tx = 0; tx < METATILE_SIZE; tx++) {
+ 				int ax = x + tx * s;
+@@ -77,33 +109,83 @@ void Metatileset::draw_metatile(int x, int y, uint8_t id, bool zoom, bool show_p
+ 				t->draw_with_priority(ax, ay, zoom ? TILE_PX_SIZE : TILE_SIZE, show_priority);
+ 			}
+ 		}
+-	}
+-	else {
+-		int s = TILE_SIZE * METATILE_SIZE * (zoom ? ZOOM_FACTOR : 1);
+-		fl_color(EMPTY_RGB);
+-		fl_rectf(x, y, s, s);
+-	}
+-}
+-
+-uchar *Metatileset::print_rgb(const Map &map) const {
+-	int w = map.width(), h = map.height();
+-	int bw = w * METATILE_PX_SIZE, bh = h * METATILE_PX_SIZE;
+-	uchar *buffer = new uchar[bw * bh * NUM_CHANNELS]();
+-	for (int y = 0; y < h; y++) {
+-		for (int x = 0; x < w; x++) {
+-			Block *b = map.block((uint8_t)x, (uint8_t)y);
+-			const Metatile *m = _metatiles[b->id()];
+-			for (int ty = 0; ty < METATILE_SIZE; ty++) {
+-				for (int tx = 0; tx < METATILE_SIZE; tx++) {
+-					uint8_t tid = m->tile_id(tx, ty);
+-					const Tile *t = _tileset.const_tile_or_roof(tid);
+-					size_t o = ((y * METATILE_SIZE + ty) * bw + x * METATILE_SIZE + tx) * TILE_SIZE * NUM_CHANNELS;
+-					for (int py = 0; py < TILE_SIZE; py++) {
+-						for (int px = 0; px < TILE_SIZE; px++) {
+-							const uchar *rgb = t->const_pixel(px, py);
+-							size_t j = o + (py * bw + px) * NUM_CHANNELS;
+-							buffer[j++] = rgb[0];
+-							buffer[j++] = rgb[1];
++	}
++	else {
++		int s = TILE_SIZE * gaiden_map_tile_size() * (zoom ? ZOOM_FACTOR : 1);
++		fl_color(EMPTY_RGB);
++		fl_rectf(x, y, s, s);
++	}
++}
++
++void Metatileset::draw_gaiden_area_metatile(int x, int y, uint8_t id, uint8_t attr, bool zoom) const {
++	size_t entry = ((size_t)attr * MAX_NUM_METATILES + id) * GAIDEN_AREA_CELL_PIXELS;
++	int scale = zoom ? ZOOM_FACTOR : 1;
++	int s = GAIDEN_AREA_CELL_SIZE * scale;
++	if (entry + GAIDEN_AREA_CELL_PIXELS > _gaiden_area_previews.size()) {
++		fl_color(EMPTY_RGB);
++		fl_rectf(x, y, s, s);
++		return;
++	}
++
++	std::vector<uchar> rgb((size_t)s * s * NUM_CHANNELS);
++	int line_bytes = s * NUM_CHANNELS;
++	for (int py = 0; py < GAIDEN_AREA_CELL_SIZE; py++) {
++		for (int px = 0; px < GAIDEN_AREA_CELL_SIZE; px++) {
++			uchar c = _gaiden_area_previews[entry + py * GAIDEN_AREA_CELL_SIZE + px];
++			int dst = py * scale * line_bytes + px * scale * NUM_CHANNELS;
++			for (int row = 0; row < scale; row++) {
++				for (int col = 0; col < scale; col++) {
++					int o = dst + row * line_bytes + col * NUM_CHANNELS;
++					rgb[o] = c;
++					rgb[o + 1] = c;
++					rgb[o + 2] = c;
++				}
++			}
++		}
++	}
++	fl_draw_image(rgb.data(), x, y, s, s, NUM_CHANNELS, line_bytes);
++}
++
++uchar *Metatileset::print_rgb(const Map &map) const {
++	int w = map.width(), h = map.height();
++	int map_tile_size = gaiden_map_tile_size();
++	int bw = w * TILE_SIZE * map_tile_size, bh = h * TILE_SIZE * map_tile_size;
++	uchar *buffer = new uchar[bw * bh * NUM_CHANNELS]();
++	for (int y = 0; y < h; y++) {
++		for (int x = 0; x < w; x++) {
++			Block *b = map.block((uint8_t)x, (uint8_t)y);
++			uint8_t attr = gaiden_tile_mode() ? map.gaiden_attribute((uint8_t)x, (uint8_t)y) : 0;
++			if (gaiden_area_mode()) {
++				size_t entry = ((size_t)attr * MAX_NUM_METATILES + b->id()) * GAIDEN_AREA_CELL_PIXELS;
++				if (entry + GAIDEN_AREA_CELL_PIXELS > _gaiden_area_previews.size()) {
++					continue;
++				}
++				for (int py = 0; py < GAIDEN_AREA_CELL_SIZE; py++) {
++					for (int px = 0; px < GAIDEN_AREA_CELL_SIZE; px++) {
++						uchar c = _gaiden_area_previews[entry + py * GAIDEN_AREA_CELL_SIZE + px];
++						size_t j = (((y * GAIDEN_AREA_CELL_SIZE + py) * bw) +
++							(x * GAIDEN_AREA_CELL_SIZE + px)) * NUM_CHANNELS;
++						buffer[j++] = c;
++						buffer[j++] = c;
++						buffer[j] = c;
++					}
++				}
++				continue;
++			}
++			const Metatile *m = _metatiles[b->id()];
++			for (int ty = 0; ty < map_tile_size; ty++) {
++				for (int tx = 0; tx < map_tile_size; tx++) {
++					uint8_t tid = m->tile_id(tx, ty);
++					const Tile *t = _tileset.const_tile_or_roof(tid);
++					size_t o = ((y * map_tile_size + ty) * bw + x * map_tile_size + tx) * TILE_SIZE * NUM_CHANNELS;
++					for (int py = 0; py < TILE_SIZE; py++) {
++						for (int px = 0; px < TILE_SIZE; px++) {
++							int sx = (attr & 0x20) ? TILE_SIZE - 1 - px : px;
++							int sy = (attr & 0x40) ? TILE_SIZE - 1 - py : py;
++							const uchar *rgb = t->const_pixel(sx, sy);
++							size_t j = o + (py * bw + px) * NUM_CHANNELS;
++							buffer[j++] = rgb[0];
++							buffer[j++] = rgb[1];
+ 							buffer[j] = rgb[2];
+ 						}
+ 					}
+@@ -112,12 +194,13 @@ uchar *Metatileset::print_rgb(const Map &map) const {
+ 		}
+ 	}
+ 	return buffer;
+-}
+-
+-Metatileset::Result Metatileset::read_metatiles(const char *f) {
+-	if (!_tileset.num_tiles()) { return (_result = Result::META_NO_GFX); } // no graphics
+-
+-	if (ends_with_ignore_case(f, ".cel")) { return read_asm_metatiles(f); }
++}
++
++Metatileset::Result Metatileset::read_metatiles(const char *f) {
++	if (!_tileset.num_tiles()) { return (_result = Result::META_NO_GFX); } // no graphics
++	if (gaiden_area_mode()) { return read_gaiden_area_metatiles(f); }
++
++	if (ends_with_ignore_case(f, ".cel")) { return read_asm_metatiles(f); }
+ 
+ 	FILE *file = fl_fopen(f, "rb");
+ 	if (file == NULL) { return (_result = Result::META_BAD_FILE); } // cannot load file
+@@ -138,8 +221,40 @@ Metatileset::Result Metatileset::read_metatiles(const char *f) {
+ 
+ 	fclose(file);
+ 	_mod_time = file_modified(f);
+-	return (_result = Result::META_OK);
+-}
++	return (_result = Result::META_OK);
++}
++
++Metatileset::Result Metatileset::read_gaiden_area_metatiles(const char *f) {
++	FILE *file = fl_fopen(f, "rb");
++	if (file == NULL) { return (_result = Result::META_BAD_FILE); }
++
++	size_t n = file_size(file);
++	if (n < MAX_NUM_METATILES * GAIDEN_AREA_CELL_PIXELS) {
++		fclose(file);
++		return (_result = Result::META_TOO_SHORT);
++	}
++	if (n % GAIDEN_AREA_CELL_PIXELS) {
++		fclose(file);
++		return (_result = Result::META_TOO_SHORT);
++	}
++
++	_gaiden_area_previews.resize(n);
++	size_t r = fread(_gaiden_area_previews.data(), 1, n, file);
++	fclose(file);
++	if (r != n) { return (_result = Result::META_BAD_FILE); }
++
++	_num_metatiles = MAX_NUM_METATILES;
++	for (size_t i = 0; i < _num_metatiles; i++) {
++		Metatile *mt = _metatiles[i];
++		for (int y = 0; y < METATILE_SIZE; y++) {
++			for (int x = 0; x < METATILE_SIZE; x++) {
++				mt->tile_id(x, y, (uint8_t)i);
++			}
++		}
++	}
++	_mod_time = file_modified(f);
++	return (_result = Result::META_OK);
++}
+ 
+ Metatileset::Result Metatileset::read_asm_metatiles(const char *f) {
+ 	Parsed_Asm data(f);
+diff --git a/src/metatileset.h b/src/metatileset.h
+index dfb784f..7207b3c 100644
+--- a/src/metatileset.h
++++ b/src/metatileset.h
+@@ -1,24 +1,29 @@
+-#ifndef METATILESET_H
+-#define METATILESET_H
+-
+-#include "palette-map.h"
+-#include "tileset.h"
+-#include "map.h"
++#ifndef METATILESET_H
++#define METATILESET_H
++
++#include <vector>
++
++#include "palette-map.h"
++#include "tileset.h"
++#include "map.h"
+ #include "metatile.h"
+ 
+-#define EMPTY_RGB 0xAB, 0xCD, 0xEF // intentionally leave out parentheses or brackets
+-
+-#define MAX_NUM_METATILES 256
+-
+-class Metatileset {
+-public:
++#define EMPTY_RGB 0xAB, 0xCD, 0xEF // intentionally leave out parentheses or brackets
++
++#define MAX_NUM_METATILES 256
++#define GAIDEN_AREA_CELL_SIZE (TILE_SIZE * 2)
++#define GAIDEN_AREA_CELL_PIXELS (GAIDEN_AREA_CELL_SIZE * GAIDEN_AREA_CELL_SIZE)
++
++class Metatileset {
++public:
+ 	enum class Result { META_OK, META_NO_GFX, META_BAD_FILE, META_TOO_SHORT, META_TOO_LONG, META_NULL };
+ private:
+-	Tileset _tileset;
+-	Metatile *_metatiles[MAX_NUM_METATILES];
+-	size_t _num_metatiles;
+-	Result _result;
+-	bool _modified, _bin_collisions;
++	Tileset _tileset;
++	Metatile *_metatiles[MAX_NUM_METATILES];
++	std::vector<uchar> _gaiden_area_previews;
++	size_t _num_metatiles;
++	Result _result;
++	bool _modified, _bin_collisions;
+ 	int64_t _mod_time, _mod_time_coll;
+ public:
+ 	Metatileset();
+@@ -32,23 +37,29 @@ public:
+ 	inline bool modified(void) const { return _modified; }
+ 	inline void modified(bool m) { _modified = m; }
+ 	inline bool other_modified(const char *f) const { return file_modified(f) > _mod_time; }
+-	inline bool other_modified_collisions(const char *f) const { return file_modified(f) > _mod_time_coll; }
+-	inline bool bin_collisions(void) const { return _bin_collisions; }
+-	inline void bin_collisions(bool b) { _bin_collisions = b; }
+-	bool uses_tile(uint8_t id) const;
+-	void trim_tileset(void);
+-	void clear(void);
+-	void draw_metatile(int x, int y, uint8_t id, bool zoom, bool show_priority) const;
+-	uchar *print_rgb(const Map &map) const;
++	inline bool other_modified_collisions(const char *f) const { return file_modified(f) > _mod_time_coll; }
++	inline bool bin_collisions(void) const { return _bin_collisions; }
++	inline void bin_collisions(bool b) { _bin_collisions = b; }
++	bool gaiden_area_mode(void) const;
++	bool gaiden_tile_mode(void) const;
++	int gaiden_map_tile_size(void) const;
++	bool uses_tile(uint8_t id) const;
++	void trim_tileset(void);
++	void clear(void);
++	void draw_metatile(int x, int y, uint8_t id, bool zoom, bool show_priority) const;
++	void draw_metatile_attr(int x, int y, uint8_t id, uint8_t attr, bool zoom, bool show_priority) const;
++	uchar *print_rgb(const Map &map) const;
+ 	Result read_metatiles(const char *f);
+ 	bool write_metatiles(const char *f);
+ 	inline Result read_collisions(const char *f) { return _bin_collisions ? read_bin_collisions(f) : read_asm_collisions(f); }
+ 	inline bool write_collisions(const char *f) { return _bin_collisions ? write_bin_collisions(f) : write_asm_collisions(f); }
+ 	static const char *error_message(Result result);
+-private:
+-	Result read_asm_metatiles(const char *f);
+-	Result read_asm_collisions(const char *f);
+-	Result read_bin_collisions(const char *f);
++private:
++	Result read_gaiden_area_metatiles(const char *f);
++	void draw_gaiden_area_metatile(int x, int y, uint8_t id, uint8_t attr, bool zoom) const;
++	Result read_asm_metatiles(const char *f);
++	Result read_asm_collisions(const char *f);
++	Result read_bin_collisions(const char *f);
+ 	bool write_asm_collisions(const char *f);
+ 	bool write_bin_collisions(const char *f);
+ };
+diff --git a/src/tile.cpp b/src/tile.cpp
+index 9fce353..679991c 100644
+--- a/src/tile.cpp
++++ b/src/tile.cpp
+@@ -1,4 +1,5 @@
+-#include <algorithm>
++#include <algorithm>
++#include <vector>
+ 
+ #pragma warning(push, 0)
+ #include <FL/Fl_PNG_Image.H>
+@@ -104,9 +105,9 @@ void Tile::update_palettes(Palettes l) {
+ 	}
+ }
+ 
+-void Tile::draw_with_priority(int x, int y, int s, bool show_priority) const {
+-	const uchar *rgb = _rgb;
+-	show_priority &= priority();
++void Tile::draw_with_priority(int x, int y, int s, bool show_priority) const {
++	const uchar *rgb = _rgb;
++	show_priority &= priority();
+ 	if (s == CHIP_PX_SIZE) {
+ 		uchar chip[CHIP_PX_SIZE * CHIP_PX_SIZE * NUM_CHANNELS] = {};
+ 		for (int ty = 0; ty < TILE_SIZE; ty++) {
+@@ -139,12 +140,53 @@ void Tile::draw_with_priority(int x, int y, int s, bool show_priority) const {
+ 		if (show_priority) {
+ 			small_priority_png.draw(x, y, TILE_SIZE, TILE_SIZE);
+ 		}
+-	}
+-}
+-
+-void Tile::draw_for_clipboard(int x, int y) {
+-	for (int ty = 0; ty < TILE_SIZE; ty++) {
+-		for (int tx = 0; tx < TILE_SIZE; tx++) {
++	}
++}
++
++void Tile::draw_with_priority_flipped(int x, int y, int s, bool show_priority, bool xflip, bool yflip) const {
++	if (!xflip && !yflip) {
++		draw_with_priority(x, y, s, show_priority);
++		return;
++	}
++
++	int scale = s / TILE_SIZE;
++	if (scale < 1) { scale = 1; }
++	int line_bytes = s * NUM_CHANNELS;
++	std::vector<uchar> flipped((size_t)s * s * NUM_CHANNELS);
++	for (int ty = 0; ty < TILE_SIZE; ty++) {
++		int sy = yflip ? TILE_SIZE - 1 - ty : ty;
++		for (int tx = 0; tx < TILE_SIZE; tx++) {
++			int sx = xflip ? TILE_SIZE - 1 - tx : tx;
++			const uchar *rgb = const_pixel(sx, sy);
++			int dst = (ty * scale * line_bytes) + (tx * scale * NUM_CHANNELS);
++			for (int row = 0; row < scale; row++) {
++				for (int col = 0; col < scale; col++) {
++					int o = dst + row * line_bytes + col * NUM_CHANNELS;
++					flipped[o] = rgb[0];
++					flipped[o + 1] = rgb[1];
++					flipped[o + 2] = rgb[2];
++				}
++			}
++		}
++	}
++	fl_draw_image(flipped.data(), x, y, s, s, NUM_CHANNELS, line_bytes);
++	show_priority &= priority();
++	if (show_priority) {
++		if (s == CHIP_PX_SIZE) {
++			chip_priority_png.draw(x, y, CHIP_PX_SIZE, CHIP_PX_SIZE);
++		}
++		else if (s == TILE_PX_SIZE) {
++			large_priority_png.draw(x, y, TILE_PX_SIZE, TILE_PX_SIZE);
++		}
++		else {
++			small_priority_png.draw(x, y, TILE_SIZE, TILE_SIZE);
++		}
++	}
++}
++
++void Tile::draw_for_clipboard(int x, int y) {
++	for (int ty = 0; ty < TILE_SIZE; ty++) {
++		for (int tx = 0; tx < TILE_SIZE; tx++) {
+ 			int ti = ty * TILE_SIZE + tx;
+ 			uchar c = Color::hue_mono(_hues[ti]);
+ 			fl_color(c, c, c);
+diff --git a/src/tile.h b/src/tile.h
+index 3bd27f4..8c81c00 100644
+--- a/src/tile.h
++++ b/src/tile.h
+@@ -43,11 +43,12 @@ public:
+ 	inline const uchar *const_pixel(int x, int y) const { return _rgb + (y * LINE_BYTES + x * NUM_CHANNELS) * ZOOM_FACTOR; }
+ 	bool is_blank(void) const;
+ 	void pixel(int x, int y, Hue h, uchar r, uchar g, uchar b);
+-	void clear(void);
+-	void copy(const Tile *t);
+-	void update_palettes(Palettes l);
+-	void draw_with_priority(int x, int y, int s, bool show_priority) const;
+-	void draw_for_clipboard(int x, int y);
+-};
++	void clear(void);
++	void copy(const Tile *t);
++	void update_palettes(Palettes l);
++	void draw_with_priority(int x, int y, int s, bool show_priority) const;
++	void draw_with_priority_flipped(int x, int y, int s, bool show_priority, bool xflip, bool yflip) const;
++	void draw_for_clipboard(int x, int y);
++};
+ 
+ #endif

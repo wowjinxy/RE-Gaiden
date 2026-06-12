@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
-RE Gaiden (GBC) Map Viewer/Editor
+RE Gaiden (GBC) Screen Layout Viewer/Editor
 
-Tkinter GUI for browsing, visualizing, and editing room/map data.
+Tkinter GUI for browsing, visualizing, and editing the bank $0A
+screen/background room layouts. These are useful for cutscene/static BG
+screens; gameplay area maps are exported through export_polished_area_maps.py.
 Auto-detects game.gbc in the project root (parent of tools/).
 Edits are saved as fixed-size binary assets under data/maps/ and applied by
 the Makefile before rgbfix.
@@ -124,6 +126,16 @@ def load_tileset(rom, area_tileset, use_tiles2=False):
             tiles.append([[0] * 8 for _ in range(8)])
 
     return tiles
+
+
+def room_tileset_area(header, area_count):
+    """Infer the area tileset index from room header byte 2."""
+    if not area_count:
+        return 0
+    area_id = header['tileset_bank'] >> 3
+    if 0 <= area_id < area_count:
+        return area_id
+    return 0
 
 
 def decode_tile(rom, offset):
@@ -305,7 +317,7 @@ class MapViewer(tk.Tk):
                           value='tilemap',
                           command=self._on_view_mode_change).pack(
             side=tk.LEFT, padx=(0, 8))
-        ttk.Radiobutton(toolbar, text='Collision', variable=self.view_mode,
+        ttk.Radiobutton(toolbar, text='Attributes', variable=self.view_mode,
                           value='collision',
                           command=self._on_view_mode_change).pack(
             side=tk.LEFT, padx=(0, 8))
@@ -398,7 +410,7 @@ class MapViewer(tk.Tk):
 
         collision_row = ttk.Frame(panel)
         collision_row.pack(fill=tk.X, pady=(4, 0))
-        ttk.Label(collision_row, text='Collision').pack(side=tk.LEFT)
+        ttk.Label(collision_row, text='Attribute').pack(side=tk.LEFT)
         self.collision_combo = ttk.Combobox(
             collision_row, width=13, state='readonly',
             values=[self._collision_combo_label(v)
@@ -554,6 +566,13 @@ class MapViewer(tk.Tk):
         if room_idx not in self.headers:
             return
         self.current_room = room_idx
+        _entry, hdr = self.headers[room_idx]
+        area_id = room_tileset_area(hdr, len(self.area_tilesets))
+        if area_id != self.current_area.get():
+            self.current_area.set(area_id)
+            if hasattr(self, 'tileset_combo') and area_id < len(self.area_tilesets):
+                self.tileset_combo.current(area_id)
+            self._draw_tile_picker()
         self._redraw()
         self._update_info()
         self._update_status()
@@ -864,7 +883,7 @@ class MapViewer(tk.Tk):
             f"Byte2: ${hdr['tileset_bank']:02X}  "
             f"Flags: ${hdr['flags']:02X}\n"
             f"Tilemap: ${hdr['ptr_tilemap']:04X}  "
-            f"Collision: ${hdr['ptr_collision']:04X}  "
+            f"Attributes: ${hdr['ptr_collision']:04X}  "
             f"Palette: ${hdr['ptr_palette']:04X}  "
             f"Entities: ${hdr['ptr_entities']:04X}\n"
             f"Tileset: Area {area_id} "

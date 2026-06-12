@@ -41,10 +41,12 @@ src/
 - `tools/text_dump.py` - Dumps English text strings from the ROM (banks $67-$6A)
 - `tools/extract_text_assets.py` - Extracts editable text JSON into `data/text/`
 - `tools/apply_text_assets.py` - Applies `data/text/` edits during the ROM build
-- `tools/map_dump.py` - Extracts and visualizes room/map data (75 rooms)
-- `tools/map_viewer.py` - Tkinter room viewer/editor for tilemap and collision layers
-- `tools/extract_map_assets.py` - Extracts fixed-size map layer files into `data/maps/`
-- `tools/apply_map_assets.py` - Applies `data/maps/` edits during the ROM build
+- `tools/map_dump.py` - Extracts bank $0A screen/background room layouts
+- `tools/export_polished_maps.py` - Exports those screen layouts for Polished Map
+- `tools/export_polished_area_maps.py` - Exports bank $50 gameplay area maps for Polished Map
+- `tools/map_viewer.py` - Tkinter viewer/editor for the older screen layout workflow
+- `tools/extract_map_assets.py` - Extracts fixed-size screen and gameplay area layer files into `data/maps/`
+- `tools/apply_map_assets.py` - Applies `data/maps/` and `maps/*.blk` edits during the ROM build
 - `docs/text_system.md` - Documents text bank layout, encoding, controls, and tooling
 
 ```
@@ -53,12 +55,14 @@ python tools/extract_text_assets.py game.gbc --force
 python tools/map_dump.py game.gbc --list
 python tools/map_dump.py game.gbc --room 6
 python tools/extract_map_assets.py game.gbc --force
+python tools/export_polished_area_maps.py game.gbc --force
 python tools/map_viewer.py game.gbc
 ```
 
-Map edits saved by the viewer live in `data/maps/room_XXX/*.bin`. Running
-`make` assembles the disassembly, overlays those map assets into `game.gbc`,
-then runs `rgbfix`, so fixed-size tilemap/collision edits compile without
+Screen/background edits live in `data/maps/room_XXX/*.bin`. Gameplay area edits
+live in `data/maps/area_XX/*.bin`, and Polished Map exports live in `maps/`.
+Running `make` assembles the disassembly, overlays those assets into
+`game.gbc`, then runs `rgbfix`, so fixed-size map edits compile without
 manually touching raw bank assembly.
 
 ## Technical Details
@@ -67,4 +71,5 @@ manually touching raw bank assembly.
 - **ROM**: 2 MB, 128 banks (MBC5)
 - **Disassembler**: mgbdis v2.0
 - **Text encoding**: Custom tile-index format ($01-$1A = A-Z, $1B-$34 = a-z, $35-$3E = 0-9)
-- **Room format**: 20x18 tile grids with separate visual, collision, palette, and entity layers
+- **Screen room format**: bank $0A 20x18-ish BG layouts with visual and CGB attribute layers
+- **Gameplay area format**: bank $50 area configs with low tilemap bytes plus high metadata bytes expanded to 16x16 cells

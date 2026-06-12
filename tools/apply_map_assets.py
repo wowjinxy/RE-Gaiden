@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Apply data/maps room layer assets to a linked RE Gaiden ROM.
+Apply data/maps room/screen and gameplay area layer assets to a linked RE Gaiden
+ROM.
 
 This is intended to run during make after rgblink and before rgbfix, so edited
 map files get a normal ROM header/checksum fix afterward.
@@ -39,11 +40,16 @@ def main():
         rom_path.write_bytes(rom)
 
     action = 'Would apply' if args.dry_run else 'Applied'
-    print(f'{action} {len(patches)} map asset file(s) from {args.asset_dir}.')
+    print(
+        f'{action} {len(patches)} map asset file(s) '
+        f'from {args.asset_dir} and maps/*.blk.')
     if not args.quiet:
         for patch in patches:
+            label = (
+                f'area {patch["area"]:02d}' if patch['scope'] == 'area'
+                else f'room {patch["room"]:03d}')
             print(
-                f'  room {patch["room"]:03d} {patch["layer"]:<9} '
+                f'  {label} {patch["layer"]:<9} '
                 f'-> ROM ${patch["rom_offset"]:06X} ({patch["size"]} bytes)')
 
 

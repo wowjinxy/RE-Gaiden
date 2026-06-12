@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-RE Gaiden (GBC) Map / Room Data Dumper
+RE Gaiden (GBC) Screen / Background Room Data Dumper
 
-Reads the room pointer table from bank $0A at address $58E1 and dumps
-room data from the ROM.
+Reads the room pointer table from bank $0A at address $58E1 and dumps screen
+background layouts from the ROM. These are mostly cutscene/title/static BG
+maps, not the gameplay navigation maps loaded through bank $50 area configs.
 
 Room Pointer Table (bank $0A, $58E1):
   3-byte entries: addr_lo, addr_hi, bank_num
@@ -17,20 +18,20 @@ Each entry points to a 21-byte ($15) room header structure:
   Byte 4-5: 16-bit value (unknown, varies)
   Byte  6: constant ($0C)
   Byte 7-8:   ptr0 - visual tilemap (width*height bytes, tile indices)
-  Byte 9-10:  ptr1 - collision map  (width*height bytes, collision types)
+  Byte 9-10:  ptr1 - CGB BG attribute map (width*height bytes)
   Byte 11-12: ptr2 - palette/attribute data (~64 bytes)
   Byte 13-14: ptr3 - entity/object placement data
   Byte 15-20: additional flags (byte 19 typically $03)
 
 All pointers are little-endian and within the same bank as the header.
 
-Collision tile types (layer 1):
-  $02 = wall/solid
-  $04 = walkable floor
-  $06 = obstacle (table, etc.)
+Attribute byte bits (layer 1):
+  bits 0-2 = palette
+  bit 5    = X flip
+  bit 6    = Y flip
 
 Usage:
-  python map_dump.py game.gbc [--list] [--room N] [--tilemap] [--collision] [--raw]
+  python map_dump.py game.gbc [--list] [--room N] [--tilemap] [--attributes] [--raw]
 """
 
 import sys
@@ -125,7 +126,7 @@ def print_tilemap_grid(data, width, height, hex_mode=True):
         if hex_mode:
             print('  ' + ' '.join(f'{t:02X}' for t in tiles))
         else:
-            # ASCII visualization for collision map
+            # Legacy ASCII visualization for old collision assumptions.
             coll_chars = {0x02: '#', 0x04: '.', 0x06: 'X', 0x00: ' '}
             print('  ' + ''.join(coll_chars.get(t, '?') for t in tiles))
 
@@ -133,7 +134,7 @@ def print_tilemap_grid(data, width, height, hex_mode=True):
 def main():
     if len(sys.argv) < 2:
         print(f"Usage: {sys.argv[0]} <rom_file> [--list] [--room N] "
-              f"[--tilemap] [--collision] [--raw]")
+              f"[--tilemap] [--attributes] [--raw]")
         sys.exit(1)
 
     rom_path = sys.argv[1]
@@ -143,7 +144,7 @@ def main():
     show_raw = '--raw' in sys.argv
     list_mode = '--list' in sys.argv
     show_tilemap = '--tilemap' in sys.argv
-    show_collision = '--collision' in sys.argv
+    show_collision = '--collision' in sys.argv or '--attributes' in sys.argv
     specific_room = None
     for i, arg in enumerate(sys.argv):
         if arg == '--room' and i + 1 < len(sys.argv):
@@ -173,7 +174,7 @@ def main():
               f"Tileset bank: ${hdr['tileset_bank']:02X}  "
               f"Flags: ${hdr['flags']:02X}")
         print(f"  Tilemap:   ${hdr['ptr_tilemap']:04X}  "
-              f"Collision: ${hdr['ptr_collision']:04X}  "
+              f"Attributes: ${hdr['ptr_collision']:04X}  "
               f"Palette:   ${hdr['ptr_palette']:04X}  "
               f"Entities:  ${hdr['ptr_entities']:04X}")
 
@@ -191,9 +192,9 @@ def main():
             cmap = read_tilemap(rom, hdr['bank'], hdr['ptr_collision'],
                                 hdr['width'], hdr['height'])
             if cmap:
-                print(f"  --- Collision (layer 1) ---")
+                print(f"  --- BG attributes (layer 1) ---")
                 print_tilemap_grid(cmap, hdr['width'], hdr['height'],
-                                   hex_mode=False)
+                                   hex_mode=True)
 
         print()
 
