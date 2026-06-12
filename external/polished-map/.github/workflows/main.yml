@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get install -y git zlib1g-dev libpng-dev libxpm-dev libx11-dev libxft-dev libxinerama-dev libfontconfig1-dev x11proto-xext-dev libxrender-dev libxfixes-dev libcairo2-dev libpango1.0-dev
+
+      - name: Checkout FLTK
+        uses: actions/checkout@master
+        with:
+          path: lib/fltk
+          repository: fltk/fltk
+          ref: release-1.4.5
+          fetch-depth: 1
+
+      - name: Install FLTK
+        working-directory: lib/fltk
+        run: |
+          cmake -B build \
+            -D CMAKE_INSTALL_PREFIX="$(realpath "$PWD/../..")" \
+            -D CMAKE_BUILD_TYPE=Release \
+            -D FLTK_ABI_VERSION=10405 \
+            -D FLTK_BUILD_GL=0 \
+            -D FLTK_BUILD_TEST=0 \
+            -D FLTK_GRAPHICS_CAIRO=1 \
+            -D FLTK_BACKEND_WAYLAND=0 \
+            -D FLTK_USE_SYSTEM_LIBPNG=0 \
+            -D FLTK_USE_SYSTEM_ZLIB=0
+          cmake --build build
+          cmake --install build
+
+      - name: Build
+        run: |
+          make

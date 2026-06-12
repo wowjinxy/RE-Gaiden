@@ -2,17 +2,12 @@
 
 ## Polished Map
 
-The Gaiden-aware map editor is based on
-`https://github.com/rangi42/polished-map`.
+The Gaiden-aware map editor is vendored in `external/polished-map`.
 
-The clone itself is intentionally not committed here. To recreate the local
-editor checkout:
-
-```sh
-git clone https://github.com/rangi42/polished-map external/polished-map
-git -C external/polished-map apply ../polished-map-gaiden.diff
-```
+It is based on `https://github.com/rangi42/polished-map` at upstream commit
+`8b9bdc2` (`Update FLTK to 1.4.5 (#110)`) with local RE Gaiden support added on
+top.
 
 Build the editor from `external/polished-map/ide/polished-map.sln` in
-Release/Win32. The patch adds Gaiden screen and gameplay area support for the
-generated files in `maps/`.
+Release/Win32. The vendored fork opens the generated Gaiden files in `maps/`,
+including real gameplay area maps like `Area00.128x64.gaiden_area00.blk`.
