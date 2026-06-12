@@ -61,3 +61,14 @@ CLAUDE.md
 rgbds.zip
 rgbds_tools/libpng16.dll
 rgbds_tools/zlib1.dll
+
+# local Codex/project scratch files
+AGENTS.md
+
+# local map reference sheets
+Game Boy _ GBC - Resident Evil Gaiden - Maps - *.png
+
+# local RGBDS/tool installs and scratch notes
+rgbds_tools/
+tools/maps.txt
+tools/rgbds/
